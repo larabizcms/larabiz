@@ -11,9 +11,6 @@
 |
 */
 
-use Illuminate\Support\Facades\Route;
-use Modules\App\Http\Controllers\Auth\LoginController;
+use LarabizCom\Core\Routes;
 
-Route::post('auth/login', [LoginController::class, 'login']);
-
-Route::post('auth/logout', [LoginController::class, 'logout']);
+Routes\Auth::apis();
