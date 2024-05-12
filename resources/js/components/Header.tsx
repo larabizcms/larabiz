@@ -49,7 +49,8 @@ const Header = (): React.JSX.Element => {
                 {isLoggedIn ? (
                     <li>
                         <Link to="/admin-cp/dashboard">Dashboard</Link> |{" "}
-                        <Link to="/logout">Logout</Link>
+                        <Link to="/logout">Logout</Link> |{" "}
+                        <Link to="/admin-cp/api/documentation">API</Link>
                     </li>
                 ) : (
                     <li>
