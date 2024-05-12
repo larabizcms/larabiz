@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "874464471b37adb1d339327fd8cfad6a",
+    "content-hash": "9cc84af991c6313fa6e8f7b94101a210",
     "packages": [
         {
             "name": "brick/math",
@@ -1788,6 +1788,66 @@
             ],
             "abandoned": true,
             "time": "2022-05-08T05:17:21+00:00"
+        },
+        {
+            "name": "larabizcom/core",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "./packages/core",
+                "reference": "64eb2d939f559cb37836a8ab807a6ce309756a37"
+            },
+            "require": {
+                "doctrine/dbal": "^3.3",
+                "intervention/image": "^2.5",
+                "juzaweb/config": "^2.2",
+                "juzaweb/laravel-chunk-upload": "^1.5",
+                "juzaweb/laravel-translation-loader": "^2.0",
+                "laravel/socialite": "^5.5",
+                "nwidart/laravel-modules": "^9.0",
+                "php": "^8.0|^8.1",
+                "psr/http-message": "^1.1",
+                "spatie/image-optimizer": "^1.4",
+                "spatie/laravel-activitylog": "^4.7"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.5.10"
+            },
+            "suggest": {
+                "symfony/yaml": "~3.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "LarabizCom\\Core\\": "src"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Hassan Khan",
+                    "role": "Developer",
+                    "homepage": "http://hassankhan.me/"
+                }
+            ],
+            "description": "Lightweight configuration file loader that supports PHP, INI, XML, JSON, and YAML files",
+            "homepage": "http://hassankhan.me/config/",
+            "keywords": [
+                "config",
+                "configuration",
+                "ini",
+                "json",
+                "microphp",
+                "unframework",
+                "xml",
+                "yaml",
+                "yml"
+            ],
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "laravel/framework",
@@ -11617,6 +11677,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "larabizcom/core": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": true,
