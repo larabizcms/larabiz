@@ -31,14 +31,14 @@ return [
         'files' => [
             'routes/web' => 'Routes/web.php',
             'routes/api' => 'Routes/api.php',
-            'views/index' => 'resources/views/index.blade.php',
-            'views/master' => 'resources/views/layouts/master.blade.php',
-            'scaffold/config' => 'Config/config.php',
+            // 'views/index' => 'resources/views/index.blade.php',
+            // 'views/master' => 'resources/views/layouts/master.blade.php',
+            'scaffold/config' => 'config/config.php',
             'composer' => 'composer.json',
             'assets/js/app' => 'resources/assets/js/app.js',
             'assets/sass/app' => 'resources/assets/sass/app.scss',
-            'vite' => 'vite.config.js',
-            'package' => 'package.json',
+            // 'vite' => 'vite.config.js',
+            // 'package' => 'package.json',
         ],
         'replacements' => [
             'routes/web' => ['LOWER_NAME', 'STUDLY_NAME'],
@@ -98,7 +98,7 @@ return [
         | Generator path
         |--------------------------------------------------------------------------
         | Customise the paths where the folders will be generated.
-        | Set the generate key to false to not generate that folder
+        | Set the generate key too false to not generate that folder
         */
         'generator' => [
             'config' => ['path' => 'Config', 'generate' => true],
