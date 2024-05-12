@@ -30,17 +30,17 @@ $app->useAppPath('modules/App');
 
 $app->singleton(
     Illuminate\Contracts\Http\Kernel::class,
-    Modules\App\Http\Kernel::class
+    Larabiz\Modules\App\Http\Kernel::class
 );
 
 $app->singleton(
     Illuminate\Contracts\Console\Kernel::class,
-    Modules\App\Console\Kernel::class
+    Larabiz\Modules\App\Console\Kernel::class
 );
 
 $app->singleton(
     Illuminate\Contracts\Debug\ExceptionHandler::class,
-    Modules\App\Exceptions\Handler::class
+    Larabiz\Modules\App\Exceptions\Handler::class
 );
 
 /*

@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\App\Http\Middleware;
+namespace Larabiz\Modules\App\Http\Middleware;
 
 use Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance as Middleware;
 

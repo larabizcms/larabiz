@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\App\Http\Requests;
+namespace Larabiz\Modules\App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 

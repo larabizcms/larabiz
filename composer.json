@@ -34,7 +34,7 @@
         "psr-4": {
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/",
-            "Modules\\": "modules/"
+            "Larabiz\\Modules\\": "modules/"
         }
     },
     "autoload-dev": {

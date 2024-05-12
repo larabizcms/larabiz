@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate, NavigateFunction } from "react-router-dom";
 import AuthService from "../service/Auth.service";
 
-const Login = (): JSX.Element => {
+const Login = (): React.JSX.Element => {
     let [isFormSubmitting, setIsFormSubmitting] = useState<boolean>(false);
     let [error, setError] = useState<string>();
     let [email, setEmail] = useState<string>("");

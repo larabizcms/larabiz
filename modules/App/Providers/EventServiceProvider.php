@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\App\Providers;
+namespace Larabiz\Modules\App\Providers;
 
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;

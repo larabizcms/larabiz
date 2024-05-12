@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\App\Exceptions;
+namespace Larabiz\Modules\App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
