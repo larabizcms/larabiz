@@ -14,7 +14,9 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use LarabizCom\Core\Http\Controllers\Controller;
+use Modules\App\Events\LoginSuccess;
 use Modules\App\Http\Requests\LoginRequest;
+use Modules\App\Models\User;
 
 class LoginController extends Controller
 {
@@ -32,7 +34,11 @@ class LoginController extends Controller
             'username' => $request->post('email'),
             'password' => $request->post('password'),
             'scope' => '*',
-        ]);
+        ])->throw();
+
+        $user = User::find($response->json('user_id'));
+
+        event(new LoginSuccess($user));
 
         return $response->json();
     }

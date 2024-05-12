@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9cc84af991c6313fa6e8f7b94101a210",
+    "content-hash": "91791618f502d7e42f0a03e79f006b7f",
     "packages": [
         {
             "name": "brick/math",
@@ -1791,11 +1791,11 @@
         },
         {
             "name": "larabizcom/core",
-            "version": "dev-main",
+            "version": "dev-master",
             "dist": {
                 "type": "path",
                 "url": "./packages/core",
-                "reference": "64eb2d939f559cb37836a8ab807a6ce309756a37"
+                "reference": "cfaad7adea89726a9264c98ac506ddb97fc72e35"
             },
             "require": {
                 "doctrine/dbal": "^3.3",
@@ -1803,6 +1803,7 @@
                 "juzaweb/config": "^2.2",
                 "juzaweb/laravel-chunk-upload": "^1.5",
                 "juzaweb/laravel-translation-loader": "^2.0",
+                "laravel/passport": "^12.2",
                 "laravel/socialite": "^5.5",
                 "nwidart/laravel-modules": "^9.0",
                 "php": "^8.0|^8.1",
@@ -1813,27 +1814,34 @@
             "require-dev": {
                 "phpunit/phpunit": "^9.5.10"
             },
-            "suggest": {
-                "symfony/yaml": "~3.4"
-            },
             "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "LarabizCom\\Core\\Providers\\LarabizCoreServiceProvider"
+                    ]
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "LarabizCom\\Core\\": "src"
-                }
+                },
+                "files": [
+                    "helpers/helpers.php"
+                ]
             },
             "license": [
                 "MIT"
             ],
             "authors": [
                 {
-                    "name": "Hassan Khan",
+                    "name": "The Anh",
                     "role": "Developer",
-                    "homepage": "http://hassankhan.me/"
+                    "homepage": "https://larabiz.com"
                 }
             ],
             "description": "Lightweight configuration file loader that supports PHP, INI, XML, JSON, and YAML files",
-            "homepage": "http://hassankhan.me/config/",
+            "homepage": "https://larabiz.com",
             "keywords": [
                 "config",
                 "configuration",
@@ -11678,7 +11686,8 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "larabizcom/core": 20,
-        "roave/security-advisories": 20
+        "roave/security-advisories": 20,
+        "larabiz/core": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
