@@ -150,7 +150,7 @@ __webpack_require__.r(__webpack_exports__);
 /* provided dependency */ var process = __webpack_require__(/*! process/browser.js */ "./node_modules/process/browser.js");
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (axios__WEBPACK_IMPORTED_MODULE_0___default().create({
-  baseURL: process.env.MIX_APP_URL,
+  baseURL: process.env.MIX_APP_URL + "/api",
   headers: {
     "Content-type": "application/json"
   }
