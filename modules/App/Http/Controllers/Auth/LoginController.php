@@ -10,6 +10,7 @@
 
 namespace Modules\App\Http\Controllers\Auth;
 
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use LarabizCom\Core\Http\Controllers\Controller;
@@ -26,8 +27,8 @@ class LoginController extends Controller
     {
         $response = Http::asForm()->post('/oauth/token', [
             'grant_type' => 'password',
-            'client_id' => 'client-id',
-            'client_secret' => 'client-secret',
+            'client_id' => config('app-module.authentication.users.client_id'),
+            'client_secret' => config('app-module.authentication.users.client_secret'),
             'username' => $request->post('email'),
             'password' => $request->post('password'),
             'scope' => '*',
@@ -36,8 +37,10 @@ class LoginController extends Controller
         return $response->json();
     }
 
-    public function logout(Request $request)
+    public function logout(Request $request): JsonResponse
     {
+        $request->user()->token()->revoke();
 
+        return response()->json(['message' => 'Successfully logged out']);
     }
 }
