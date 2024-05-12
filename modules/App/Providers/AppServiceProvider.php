@@ -2,7 +2,7 @@
 
 namespace Larabiz\Modules\App\Providers;
 
-use Illuminate\Support\ServiceProvider;
+use LarabizCom\Core\Providers\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,6 +23,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        $this->loadCustomizer(__DIR__ . '/../customizer.php');
     }
 }
