@@ -10,7 +10,3 @@
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
-use LarabizCom\Core\Routes;
-
-Routes\Auth::apis();
