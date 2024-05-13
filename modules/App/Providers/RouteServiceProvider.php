@@ -1,6 +1,6 @@
 <?php
 
-namespace Larabiz\Modules\App\Providers;
+namespace LarabizCom\Modules\App\Providers;
 
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;

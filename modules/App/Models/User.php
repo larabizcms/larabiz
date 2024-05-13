@@ -1,6 +1,6 @@
 <?php
 
-namespace Larabiz\Modules\App\Models;
+namespace LarabizCom\Modules\App\Models;
 
 use LarabizCom\Core\Models\User as UserBase;
 
