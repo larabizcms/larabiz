@@ -3,40 +3,45 @@ const path = require('path');
 //const ChunkRenamePlugin = require("webpack-chunk-rename-plugin");
 
 mix.disableNotifications();
+mix.options(
+    {
+        postCss: [
+            require('postcss-discard-comments') (
+                {
+                    removeAll: true
+                }
+            )
+        ],
+        uglify: {
+            comments: false
+        },
+        terser: {
+            extractComments: false,
+            terserOptions: {
+                output: {
+                    comments: false,
+                },
+            },
+        }
+    }
+);
 
-//mix.options({ runtimeChunkPath: 'chunks' });
+mix.webpackConfig({
+    resolve: {
+        extensions: [".ts", ".tsx"],
+        alias: {
+            //'@': path.resolve(__dirname, 'resources/js/'),
+        },
+    },
+    output: {
+        //chunkFilename: mix.inProduction() ? "js/front/chunks/[name].[chunkhash].js" : "js/front/chunks/[name].js",
+        filename: "[name].js",
+        chunkFilename: "chunks/[name].[chunkhash].js",
+    },
+});
 
 mix.js("resources/js/app.tsx", "public/js")
     .extract()
-    .webpackConfig({
-        resolve: {
-            extensions: [".ts", ".tsx"],
-            alias: {
-                //'@': path.resolve(__dirname, 'resources/js/'),
-            },
-        },
-        output: {
-            //chunkFilename: mix.inProduction() ? "js/front/chunks/[name].[chunkhash].js" : "js/front/chunks/[name].js",
-            filename: "[name].js",
-            //clean: true,
-            chunkFilename: "chunks/[name].[chunkhash].js",
-        },
-        // optimization: {
-        //     splitChunks: {
-        //         maxSize: 1000000,
-        //         chunks: 'all'
-        //     },
-        // },
-        // entry: {
-        //     mySpecialChunk: "js/chunks",
-        //   },
-        // plugins: [
-        //     new ChunkRenamePlugin({
-        //         initialChunksWithEntry: true,
-        //         mySpecialChunk: "specialName.[name].js",
-        //     }),
-        //   ],
-    })
     .react()
     .postCss("resources/css/app.css", "public/css", [
         //
@@ -44,5 +49,21 @@ mix.js("resources/js/app.tsx", "public/js")
 
 mix.version();
 
-//mix.browserSync('127.0.0.1:8000');
-
+// mix.browserSync({
+//     files: [
+//         'modules/**/Http/Controllers/*.php',
+//         'modules/**/*.blade.php',
+//         'public/**/*.js',
+//         'public/**/*.css',
+//     ],
+//     proxy: process.env.APP_URL,
+//     notify: false,
+//     snippetOptions: {
+//         rule: {
+//             match: /<\/head>/i,
+//             fn: function (snippet, match) {
+//                 return snippet + match;
+//             }
+//         }
+//     }
+// });
