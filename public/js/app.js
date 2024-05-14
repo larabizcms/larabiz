@@ -34,116 +34,6 @@ react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot(document.getElementById
 
 /***/ }),
 
-/***/ "./resources/js/components/Footer.tsx":
-/*!********************************************!*\
-  !*** ./resources/js/components/Footer.tsx ***!
-  \********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-var Footer = function Footer() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("footer", {
-    children: "Whatever normally goes into the footer"
-  });
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Footer);
-
-/***/ }),
-
-/***/ "./resources/js/components/Header.tsx":
-/*!********************************************!*\
-  !*** ./resources/js/components/Header.tsx ***!
-  \********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
-/* harmony import */ var _service_Auth_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../service/Auth.service */ "./resources/js/service/Auth.service.ts");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
-function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-
-
-
-
-var Header = function Header() {
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
-    _useState2 = _slicedToArray(_useState, 2),
-    isLoggedIn = _useState2[0],
-    setIsLoggedIn = _useState2[1];
-  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useNavigate)();
-  var location = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useLocation)();
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    // 1.1
-    _service_Auth_service__WEBPACK_IMPORTED_MODULE_1__["default"].getUser().then(function (response) {
-      // 1.2
-      if (location.pathname === "/admin-cp/login" || location.pathname === "/admin-cp/register") {
-        navigate("/admin-cp/dashboard");
-      }
-      setIsLoggedIn(true);
-    })["catch"](function (e) {
-      // 1.3
-      if (e.response.data.message === "Unauthenticated." && location.pathname === "/admin-cp/dashboard") {
-        navigate("/login");
-      }
-      setIsLoggedIn(false);
-    });
-  }, []);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("nav", {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("ul", {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-          to: "/",
-          children: "Index"
-        })
-      }), isLoggedIn ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("li", {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-          to: "/admin-cp/dashboard",
-          children: "Dashboard"
-        }), " |", " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-          to: "/logout",
-          children: "Logout"
-        }), " |", " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-          to: "/admin-cp/api/documentation",
-          children: "API"
-        })]
-      }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("li", {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-          to: "/admin-cp/login",
-          children: "Login"
-        }), " |", " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-          to: "/admin-cp/register",
-          children: "Register"
-        })]
-      })]
-    })
-  });
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Header);
-
-/***/ }),
-
 /***/ "./resources/js/http-common.ts":
 /*!*************************************!*\
   !*** ./resources/js/http-common.ts ***!
@@ -176,29 +66,26 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "default": () => (/* binding */ Master)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
-/* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Header */ "./resources/js/components/Header.tsx");
-/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Footer */ "./resources/js/components/Footer.tsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _utils_theme_DefaultColors__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/utils/theme/DefaultColors */ "./resources/js/utils/theme/DefaultColors.tsx");
+/* harmony import */ var _mui_material_styles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @mui/material/styles */ "./node_modules/@mui/material/styles/ThemeProvider.js");
+/* harmony import */ var _mui_material_CssBaseline__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @mui/material/CssBaseline */ "./node_modules/@mui/material/CssBaseline/CssBaseline.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
 
 
-var Master = function Master() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("main", {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("section", {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Outlet, {})
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_Footer__WEBPACK_IMPORTED_MODULE_2__["default"], {})]
+function Master(_ref) {
+  var children = _ref.children;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_mui_material_styles__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    theme: _utils_theme_DefaultColors__WEBPACK_IMPORTED_MODULE_1__.baselightTheme,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_mui_material_CssBaseline__WEBPACK_IMPORTED_MODULE_4__["default"], {}), children]
   });
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Master);
+}
 
 /***/ }),
 
@@ -333,6 +220,164 @@ var store = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__.configureStore)({
 // Infer the `RootState` and `AppDispatch` types from the store itself
 
 // Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
+
+/***/ }),
+
+/***/ "./resources/js/utils/theme/DefaultColors.tsx":
+/*!****************************************************!*\
+  !*** ./resources/js/utils/theme/DefaultColors.tsx ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   baselightTheme: () => (/* binding */ baselightTheme)
+/* harmony export */ });
+/* harmony import */ var _mui_material_styles__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @mui/material/styles */ "./node_modules/@mui/material/styles/createTheme.js");
+
+// import { Plus_Jakarta_Sans } from "next/font/google";
+
+// export const plus = Plus_Jakarta_Sans({
+//   weight: ["300", "400", "500", "600", "700"],
+//   subsets: ["latin"],
+//   display: "swap",
+//   fallback: ["Helvetica", "Arial", "sans-serif"],
+// });
+
+var baselightTheme = (0,_mui_material_styles__WEBPACK_IMPORTED_MODULE_0__["default"])({
+  direction: "ltr",
+  palette: {
+    primary: {
+      main: "#5D87FF",
+      light: "#ECF2FF",
+      dark: "#4570EA"
+    },
+    secondary: {
+      main: "#49BEFF",
+      light: "#E8F7FF",
+      dark: "#23afdb"
+    },
+    success: {
+      main: "#13DEB9",
+      light: "#E6FFFA",
+      dark: "#02b3a9",
+      contrastText: "#ffffff"
+    },
+    info: {
+      main: "#539BFF",
+      light: "#EBF3FE",
+      dark: "#1682d4",
+      contrastText: "#ffffff"
+    },
+    error: {
+      main: "#FA896B",
+      light: "#FDEDE8",
+      dark: "#f3704d",
+      contrastText: "#ffffff"
+    },
+    warning: {
+      main: "#FFAE1F",
+      light: "#FEF5E5",
+      dark: "#ae8e59",
+      contrastText: "#ffffff"
+    },
+    grey: {
+      100: "#F2F6FA",
+      200: "#EAEFF4",
+      300: "#DFE5EF",
+      400: "#7C8FAC",
+      500: "#5A6A85",
+      600: "#2A3547"
+    },
+    text: {
+      primary: "#2A3547",
+      secondary: "#5A6A85"
+    },
+    action: {
+      disabledBackground: "rgba(73,82,88,0.12)",
+      hoverOpacity: 0.02,
+      hover: "#f6f9fc"
+    },
+    divider: "#e5eaef"
+  },
+  typography: {
+    //fontFamily: plus.style.fontFamily,
+    h1: {
+      fontWeight: 600,
+      fontSize: "2.25rem",
+      lineHeight: "2.75rem"
+      //fontFamily: plus.style.fontFamily,
+    },
+    h2: {
+      fontWeight: 600,
+      fontSize: "1.875rem",
+      lineHeight: "2.25rem"
+      //fontFamily: plus.style.fontFamily,
+    },
+    h3: {
+      fontWeight: 600,
+      fontSize: "1.5rem",
+      lineHeight: "1.75rem"
+      //fontFamily: plus.style.fontFamily,
+    },
+    h4: {
+      fontWeight: 600,
+      fontSize: "1.3125rem",
+      lineHeight: "1.6rem"
+    },
+    h5: {
+      fontWeight: 600,
+      fontSize: "1.125rem",
+      lineHeight: "1.6rem"
+    },
+    h6: {
+      fontWeight: 600,
+      fontSize: "1rem",
+      lineHeight: "1.2rem"
+    },
+    button: {
+      textTransform: "capitalize",
+      fontWeight: 400
+    },
+    body1: {
+      fontSize: "0.875rem",
+      fontWeight: 400,
+      lineHeight: "1.334rem"
+    },
+    body2: {
+      fontSize: "0.75rem",
+      letterSpacing: "0rem",
+      fontWeight: 400,
+      lineHeight: "1rem"
+    },
+    subtitle1: {
+      fontSize: "0.875rem",
+      fontWeight: 400
+    },
+    subtitle2: {
+      fontSize: "0.875rem",
+      fontWeight: 400
+    }
+  },
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        ".MuiPaper-elevation9, .MuiPopover-root .MuiPaper-elevation": {
+          boxShadow: "rgb(145 158 171 / 30%) 0px 0px 2px 0px, rgb(145 158 171 / 12%) 0px 12px 24px -4px !important"
+        }
+      }
+    },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          borderRadius: "7px"
+        }
+      }
+    }
+  }
+});
+
 
 /***/ }),
 
