@@ -14,7 +14,7 @@ const Dashboard = (): JSX.Element => {
             })
             .catch((e) => {
                 if (e.response.data.message === "Unauthenticated.") {
-                    navigate("/login");
+                    navigate("admin-cp/login");
                 }
             });
     }, []);

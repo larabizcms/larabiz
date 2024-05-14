@@ -1,4 +1,5 @@
 const mix = require("laravel-mix");
+const path = require('path');
 //const ChunkRenamePlugin = require("webpack-chunk-rename-plugin");
 
 mix.disableNotifications();
@@ -10,6 +11,9 @@ mix.js("resources/js/app.tsx", "public/js")
     .webpackConfig({
         resolve: {
             extensions: [".ts", ".tsx"],
+            alias: {
+                //'@': path.resolve(__dirname, 'resources/js/'),
+            },
         },
         output: {
             //chunkFilename: mix.inProduction() ? "js/front/chunks/[name].[chunkhash].js" : "js/front/chunks/[name].js",
