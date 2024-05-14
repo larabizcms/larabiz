@@ -167,7 +167,7 @@ return [
         /*
          * Package Service Providers...
          */
-
+        LarabizCom\Core\Providers\LarabizCoreServiceProvider::class,
         /*
          * Application Service Providers...
          */

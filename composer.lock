@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2de3f0cf21bb4b742f0d7699c68b5ddd",
+    "content-hash": "91791618f502d7e42f0a03e79f006b7f",
     "packages": [
         {
             "name": "astrotomic/laravel-translatable",
@@ -1888,9 +1888,10 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/core",
-                "reference": "cfaad7adea89726a9264c98ac506ddb97fc72e35"
+                "reference": "e49970b14cf5b359983ea72b5fcdde2b3d7c19b5"
             },
             "require": {
+                "astrotomic/laravel-translatable": "^11.13",
                 "doctrine/dbal": "^3.3",
                 "intervention/image": "^2.5",
                 "juzaweb/config": "^2.2",
@@ -1908,13 +1909,6 @@
                 "phpunit/phpunit": "^9.5.10"
             },
             "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "LarabizCom\\Core\\Providers\\LarabizCoreServiceProvider"
-                    ]
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "LarabizCom\\Core\\": "src"
@@ -11779,7 +11773,8 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "larabizcom/core": 20,
-        "roave/security-advisories": 20
+        "roave/security-advisories": 20,
+        "larabiz/core": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
