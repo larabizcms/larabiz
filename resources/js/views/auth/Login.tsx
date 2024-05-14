@@ -73,15 +73,13 @@ const Login = () => {
                       New to Modernize?
                     </Typography>
                     <Typography
-                      component={Link}
-                      href="/authentication/register"
                       fontWeight="500"
                       sx={{
                         textDecoration: "none",
                         color: "primary.main",
                       }}
                     >
-                      Create an account
+                      <Link to="/admin-cp/register">Create an account</Link>
                     </Typography>
                   </Stack>
                 }

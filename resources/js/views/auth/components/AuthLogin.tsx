@@ -66,15 +66,13 @@ const AuthLogin = ({ title, subtitle, subtext }: loginType) => (
           />
         </FormGroup>
         <Typography
-          component={Link}
-          href="/"
           fontWeight="500"
           sx={{
             textDecoration: "none",
             color: "primary.main",
           }}
         >
-          Forgot Password ?
+          <Link to={'admin-cp/forgot-password'}>Forgot Password ?</Link>
         </Typography>
       </Stack>
     </Stack>
@@ -84,8 +82,6 @@ const AuthLogin = ({ title, subtitle, subtext }: loginType) => (
         variant="contained"
         size="large"
         fullWidth
-        component={Link}
-        href="/"
         type="submit"
       >
         Sign In

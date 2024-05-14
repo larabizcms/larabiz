@@ -4,10 +4,10 @@ import { Routes, Route } from "react-router-dom";
 import Master from "./layouts/Master";
 import Home from "./views/Home";
 import Login from "./views/auth/Login";
-import Register from "./views/Register";
 import Dashboard from "./views/user/Dashboard";
 import NotFound from "./views/NotFound";
 import Document from "./views/api/Document";
+import Register from "./views/auth/Register";
 
 export function App(): React.JSX.Element {
     return (
