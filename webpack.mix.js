@@ -12,7 +12,7 @@ mix.js("resources/js/app.tsx", "public/js")
         resolve: {
             extensions: [".ts", ".tsx"],
             alias: {
-                '@': path.resolve(__dirname, 'resources/js/'),
+                //'@': path.resolve(__dirname, 'resources/js/'),
             },
         },
         output: {
