@@ -1,8 +1,8 @@
 import React from 'react';
 import { Box, Typography, Button } from '@mui/material';
-import Link  from 'next/link';
+import { Link } from "react-router-dom";
 
-import CustomTextField from '../../components/forms/theme-elements/CustomTextField';
+import CustomTextField from '../../../components/forms/theme-elements/CustomTextField';
 import { Stack } from '@mui/system';
 
 interface registerType {

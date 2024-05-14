@@ -8,7 +8,7 @@ import {
   Stack,
   Checkbox,
 } from "@mui/material";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 
 import CustomTextField from "../../../components/forms/theme-elements/CustomTextField";
 

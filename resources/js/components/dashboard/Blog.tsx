@@ -1,5 +1,5 @@
-
-import Link from "next/link";
+import React from 'react';
+import {Link} from "react-router-dom";
 import {
   CardContent,
   Typography,
@@ -16,7 +16,6 @@ import {
 import { Stack } from "@mui/system";
 import { IconBasket } from "@tabler/icons-react";
 import BlankCard from "../../components/shared/BlankCard";
-import Image from "next/image";
 
 const ecoCard = [
   {
