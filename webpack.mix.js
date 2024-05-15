@@ -49,21 +49,21 @@ mix.js("resources/js/app.tsx", "public/js")
 
 mix.version();
 
-// mix.browserSync({
-//     files: [
-//         'modules/**/Http/Controllers/*.php',
-//         'modules/**/*.blade.php',
-//         'public/**/*.js',
-//         'public/**/*.css',
-//     ],
-//     proxy: process.env.APP_URL,
-//     notify: false,
-//     snippetOptions: {
-//         rule: {
-//             match: /<\/head>/i,
-//             fn: function (snippet, match) {
-//                 return snippet + match;
-//             }
-//         }
-//     }
-// });
+mix.browserSync({
+    files: [
+        'modules/**/Http/Controllers/*.php',
+        'modules/**/*.blade.php',
+        'public/**/*.js',
+        'public/**/*.css',
+    ],
+    proxy: process.env.APP_URL,
+    notify: false,
+    snippetOptions: {
+        rule: {
+            match: /<\/head>/i,
+            fn: function (snippet, match) {
+                return snippet + match;
+            }
+        }
+    }
+});
