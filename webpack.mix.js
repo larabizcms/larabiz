@@ -34,14 +34,14 @@ mix.webpackConfig({
     },
     output: {
         //chunkFilename: mix.inProduction() ? "js/front/chunks/[name].[chunkhash].js" : "js/front/chunks/[name].js",
-        publicPath: '/build/',
+        //publicPath: '/build/',
         filename: "[name].js",
         chunkFilename: "chunks/[name].[chunkhash].js",
-        
+        //clean: true,
     },
 });
 
-mix.setPublicPath('public/build');
+//mix.setPublicPath('public/build');
 
 mix.js("resources/js/app.tsx", "js")
     .extract([

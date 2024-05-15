@@ -6,14 +6,14 @@
 
     <title>LaraBiz</title>
 
-    <link href="{{ mix('css/app.css', 'build') }}" rel="stylesheet">
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app"></div>
 
-    <script src="{{ mix('js/manifest.js', 'build') }}"></script>
-    <script src="{{ mix('js/vendor-core.min.js', 'build') }}"></script>
-    <script src="{{ mix('js/vendor.js', 'build') }}"></script>
-    <script src="{{ mix('js/app.js', 'build') }}"></script>
+    <script src="{{ mix('js/manifest.js') }}"></script>
+    <script src="{{ mix('js/vendor-core.min.js') }}"></script>
+    <script src="{{ mix('js/vendor.js') }}"></script>
+    <script src="{{ mix('js/app.js') }}"></script>
 </body>
 </html>
