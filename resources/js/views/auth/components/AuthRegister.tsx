@@ -49,7 +49,14 @@ const AuthRegister = ({ title, subtitle, subtext }: registerType) => {
                     <Stack mb={3}>
                         <Typography variant="subtitle1"
                             fontWeight={600} component="label" htmlFor='name' mb="5px">Name</Typography>
-                        <CustomTextField id="name" variant="outlined" fullWidth />
+                        <CustomTextField
+                        id="name"
+                        variant="outlined"
+                        fullWidth
+                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                            setEmail(e.target.value);
+                        }}
+                        />
 
                         <Typography variant="subtitle1"
                             fontWeight={600} component="label" htmlFor='email' mb="5px" mt="25px">Email Address</Typography>
@@ -57,7 +64,15 @@ const AuthRegister = ({ title, subtitle, subtext }: registerType) => {
 
                         <Typography variant="subtitle1"
                             fontWeight={600} component="label" htmlFor='password' mb="5px" mt="25px">Password</Typography>
-                        <CustomTextField id="password" variant="outlined" fullWidth />
+                        <CustomTextField
+                            id="password"
+                            variant="outlined"
+                            fullWidth
+                            type="password"
+                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                                setPassword(e.target.value);
+                            }}
+                        />
                     </Stack>
                     <LoadingButton
                         color="primary"

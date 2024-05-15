@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import Link from "react-router-dom";
 import {
   CardContent,
   Typography,
@@ -58,7 +58,7 @@ const Blog = () => {
       {ecoCard.map((product, index) => (
         <Grid item xs={12} md={4} lg={3} key={index}>
           <BlankCard>
-            <Typography component={Link} href="/">
+            <Typography>
               <Avatar
                 src={product.photo} variant="square"
                 sx={{

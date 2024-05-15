@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/{all}', function () {
+Route::get('admin-cp/{all}', function () {
     return view('welcome');
 })->where('all', '^(?!api).*$')->name('frontend');
