@@ -16,6 +16,8 @@
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
         "postcss": "^8.1.14",
+        "resolve-url-loader": "^5.0.0",
+        "sass-loader": "^12.1.0",
         "typescript": "^5.1.6",
         "webpack-chunk-rename-plugin": "^1.0.3",
         "webpack-split-chunks": "^0.2.1"

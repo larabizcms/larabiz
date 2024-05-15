@@ -6,7 +6,7 @@ mix.disableNotifications();
 mix.options(
     {
         postCss: [
-            require('postcss-discard-comments') (
+            require('postcss-discard-comments')(
                 {
                     removeAll: true
                 }
@@ -41,6 +41,13 @@ mix.webpackConfig({
 });
 
 mix.js("resources/js/app.tsx", "public/js")
+    // .extract([
+    //     'react',
+    //     'react-dom',
+    //     'react-router-dom',
+    //     'react-redux',
+    //     'react-dom/client'
+    // ], 'js/vendor-core.min.js')
     .extract()
     .react()
     .postCss("resources/css/app.css", "public/css", [
@@ -54,6 +61,7 @@ mix.browserSync({
         'modules/**/Http/Controllers/*.php',
         'modules/**/*.blade.php',
         'public/**/*.js',
+        'public/**/*.sass',
         'public/**/*.css',
     ],
     proxy: process.env.APP_URL,

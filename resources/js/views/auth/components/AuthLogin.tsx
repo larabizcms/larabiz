@@ -4,7 +4,6 @@ import {
     Typography,
     FormGroup,
     FormControlLabel,
-    Button,
     Stack,
     Checkbox,
 } from "@mui/material";
@@ -21,11 +20,11 @@ interface loginType {
 }
 
 const AuthLogin = ({ title, subtitle, subtext }: loginType) => {
-    let [isFormSubmitting, setIsFormSubmitting] = useState<boolean>(false);
-    let [error, setError] = useState<string>();
-    let [email, setEmail] = useState<string>("");
-    let [password, setPassword] = useState<string>("");
-    let navigate: NavigateFunction = useNavigate();
+    const [isFormSubmitting, setIsFormSubmitting] = useState<boolean>(false);
+    const [error, setError] = useState<string>();
+    const [email, setEmail] = useState<string>("");
+    const [password, setPassword] = useState<string>("");
+    const navigate: NavigateFunction = useNavigate();
 
     const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
         e.preventDefault();

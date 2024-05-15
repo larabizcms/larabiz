@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
-import { App } from "./router";
+import { Router } from "./router";
 import { store } from './store';
 import { Provider } from 'react-redux';
 
@@ -9,7 +9,7 @@ import { Provider } from 'react-redux';
     <React.StrictMode>
         <Provider store={store}>
             <BrowserRouter>
-                <App />
+                <Router />
             </BrowserRouter>
         </Provider>
     </React.StrictMode>

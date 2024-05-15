@@ -1,10 +1,8 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import { Select, MenuItem } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import DashboardCard from '../../components/shared/DashboardCard';
-import dynamic from "next/dynamic";
-const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
-
+const Chart = lazy(() => import("react-apexcharts"));
 
 const SalesOverview = () => {
 
