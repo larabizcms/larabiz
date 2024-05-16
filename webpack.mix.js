@@ -33,10 +33,10 @@ mix.webpackConfig({
         },
     },
     output: {
-        //chunkFilename: mix.inProduction() ? "js/front/chunks/[name].[chunkhash].js" : "js/front/chunks/[name].js",
+        chunkFilename: mix.inProduction() ? "js/chunks/[name].[chunkhash].js" : "js/chunks/dev/[name].js",
         //publicPath: '/build/',
         filename: "[name].js",
-        chunkFilename: "chunks/[name].[chunkhash].js",
+        //chunkFilename: "chunks/[name].[chunkhash].js",
         //clean: true,
     },
 });

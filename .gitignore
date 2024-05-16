@@ -13,3 +13,4 @@ yarn-error.log
 /.idea
 /.vscode
 /modules/statuses.json
+/public/js/chunks/dev

@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\App\Http\Resources\Users;
+namespace LarabizCom\Modules\App\Http\Resources\Users;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 

@@ -8,6 +8,7 @@ import Document from "./views/api/Document";
 import Register from "./views/auth/Register";
 import Dashboard from "./views/Dashboard";
 import Auth from "./layouts/Auth";
+import ForgotPassword from "./views/auth/ForgotPassword";
 
 const Login = React.lazy(() => import("./views/auth/Login"));
 
@@ -18,6 +19,7 @@ export function Router(): React.JSX.Element {
                 <Route index element={<Home />} />
                 <Route path="/admin-cp/login" element={<Login />} />
                 <Route path="/admin-cp/register" element={<Register />} />
+                <Route path="/admin-cp/forgot-password" element={<ForgotPassword />} />
             </Route>
             <Route path="/" element={<Master />}>
                 <Route path="/admin-cp" element={<Dashboard />} />

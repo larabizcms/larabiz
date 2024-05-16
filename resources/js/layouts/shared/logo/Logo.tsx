@@ -11,7 +11,7 @@ const LinkStyled = styled(Link)(() => ({
 
 const Logo = () => {
   return (
-    <LinkStyled href="/">
+    <LinkStyled to="/">
       <img src="/images/logos/dark-logo.svg" alt="logo" height={70} width={174} />
     </LinkStyled>
   );
