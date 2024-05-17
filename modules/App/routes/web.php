@@ -12,7 +12,3 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('admin-cp/{all}', function () {
-    return view('welcome');
-})->where('all', '^(?!api).*$')->name('frontend');

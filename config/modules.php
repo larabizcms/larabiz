@@ -233,7 +233,7 @@ return [
     'cache' => [
         'enabled' => false,
         'driver' => 'file',
-        'key' => 'laravel-modules',
+        'key' => 'larabiz-modules',
         'lifetime' => 60,
     ],
     /*

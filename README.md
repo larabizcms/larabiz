@@ -27,3 +27,12 @@ customizer()->adminMenu('dashboard')
 customizer()->apiDocumentation('auth/login')
     ->tags('Auth');
 ```
+
+- Add setting
+
+```php
+customizer()->setting('title')->name('Title');
+
+// Add setting with validations
+customizer()->setting('description')->name('Description')->validations(['required', 'string', 'max:230']);
+```
