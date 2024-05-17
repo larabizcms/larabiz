@@ -1429,7 +1429,7 @@ namespace Illuminate\Support\Facades {
          * @static 
          */        public static function handle($input, $output = null)
         {            //Method inherited from \Illuminate\Foundation\Console\Kernel         
-                        /** @var \LarabizCom\Modules\App\Console\Kernel $instance */
+                        /** @var \LarabizCms\Modules\App\Console\Kernel $instance */
                         return $instance->handle($input, $output);
         }
                     /**
@@ -1441,7 +1441,7 @@ namespace Illuminate\Support\Facades {
          * @static 
          */        public static function terminate($input, $status)
         {            //Method inherited from \Illuminate\Foundation\Console\Kernel         
-                        /** @var \LarabizCom\Modules\App\Console\Kernel $instance */
+                        /** @var \LarabizCms\Modules\App\Console\Kernel $instance */
                         $instance->terminate($input, $status);
         }
                     /**
@@ -1453,7 +1453,7 @@ namespace Illuminate\Support\Facades {
          * @static 
          */        public static function whenCommandLifecycleIsLongerThan($threshold, $handler)
         {            //Method inherited from \Illuminate\Foundation\Console\Kernel         
-                        /** @var \LarabizCom\Modules\App\Console\Kernel $instance */
+                        /** @var \LarabizCms\Modules\App\Console\Kernel $instance */
                         $instance->whenCommandLifecycleIsLongerThan($threshold, $handler);
         }
                     /**
@@ -1463,7 +1463,7 @@ namespace Illuminate\Support\Facades {
          * @static 
          */        public static function commandStartedAt()
         {            //Method inherited from \Illuminate\Foundation\Console\Kernel         
-                        /** @var \LarabizCom\Modules\App\Console\Kernel $instance */
+                        /** @var \LarabizCms\Modules\App\Console\Kernel $instance */
                         return $instance->commandStartedAt();
         }
                     /**
@@ -1475,7 +1475,7 @@ namespace Illuminate\Support\Facades {
          * @static 
          */        public static function command($signature, $callback)
         {            //Method inherited from \Illuminate\Foundation\Console\Kernel         
-                        /** @var \LarabizCom\Modules\App\Console\Kernel $instance */
+                        /** @var \LarabizCms\Modules\App\Console\Kernel $instance */
                         return $instance->command($signature, $callback);
         }
                     /**
@@ -1486,7 +1486,7 @@ namespace Illuminate\Support\Facades {
          * @static 
          */        public static function registerCommand($command)
         {            //Method inherited from \Illuminate\Foundation\Console\Kernel         
-                        /** @var \LarabizCom\Modules\App\Console\Kernel $instance */
+                        /** @var \LarabizCms\Modules\App\Console\Kernel $instance */
                         $instance->registerCommand($command);
         }
                     /**
@@ -1500,7 +1500,7 @@ namespace Illuminate\Support\Facades {
          * @static 
          */        public static function call($command, $parameters = [], $outputBuffer = null)
         {            //Method inherited from \Illuminate\Foundation\Console\Kernel         
-                        /** @var \LarabizCom\Modules\App\Console\Kernel $instance */
+                        /** @var \LarabizCms\Modules\App\Console\Kernel $instance */
                         return $instance->call($command, $parameters, $outputBuffer);
         }
                     /**
@@ -1512,7 +1512,7 @@ namespace Illuminate\Support\Facades {
          * @static 
          */        public static function queue($command, $parameters = [])
         {            //Method inherited from \Illuminate\Foundation\Console\Kernel         
-                        /** @var \LarabizCom\Modules\App\Console\Kernel $instance */
+                        /** @var \LarabizCms\Modules\App\Console\Kernel $instance */
                         return $instance->queue($command, $parameters);
         }
                     /**
@@ -1522,7 +1522,7 @@ namespace Illuminate\Support\Facades {
          * @static 
          */        public static function all()
         {            //Method inherited from \Illuminate\Foundation\Console\Kernel         
-                        /** @var \LarabizCom\Modules\App\Console\Kernel $instance */
+                        /** @var \LarabizCms\Modules\App\Console\Kernel $instance */
                         return $instance->all();
         }
                     /**
@@ -1532,7 +1532,7 @@ namespace Illuminate\Support\Facades {
          * @static 
          */        public static function output()
         {            //Method inherited from \Illuminate\Foundation\Console\Kernel         
-                        /** @var \LarabizCom\Modules\App\Console\Kernel $instance */
+                        /** @var \LarabizCms\Modules\App\Console\Kernel $instance */
                         return $instance->output();
         }
                     /**
@@ -1542,7 +1542,7 @@ namespace Illuminate\Support\Facades {
          * @static 
          */        public static function bootstrap()
         {            //Method inherited from \Illuminate\Foundation\Console\Kernel         
-                        /** @var \LarabizCom\Modules\App\Console\Kernel $instance */
+                        /** @var \LarabizCms\Modules\App\Console\Kernel $instance */
                         $instance->bootstrap();
         }
                     /**
@@ -1552,7 +1552,7 @@ namespace Illuminate\Support\Facades {
          * @static 
          */        public static function bootstrapWithoutBootingProviders()
         {            //Method inherited from \Illuminate\Foundation\Console\Kernel         
-                        /** @var \LarabizCom\Modules\App\Console\Kernel $instance */
+                        /** @var \LarabizCms\Modules\App\Console\Kernel $instance */
                         $instance->bootstrapWithoutBootingProviders();
         }
                     /**
@@ -1563,7 +1563,7 @@ namespace Illuminate\Support\Facades {
          * @static 
          */        public static function setArtisan($artisan)
         {            //Method inherited from \Illuminate\Foundation\Console\Kernel         
-                        /** @var \LarabizCom\Modules\App\Console\Kernel $instance */
+                        /** @var \LarabizCms\Modules\App\Console\Kernel $instance */
                         $instance->setArtisan($artisan);
         }
             }
@@ -1753,7 +1753,7 @@ namespace Illuminate\Support\Facades {
                     /**
          * Get the currently authenticated user.
          *
-         * @return \LarabizCom\Modules\App\Models\User|null 
+         * @return \LarabizCms\Modules\App\Models\User|null 
          * @static 
          */        public static function user()
         {
@@ -1785,7 +1785,7 @@ namespace Illuminate\Support\Facades {
          * Log the given user ID into the application without sessions or cookies.
          *
          * @param mixed $id
-         * @return \LarabizCom\Modules\App\Models\User|false 
+         * @return \LarabizCms\Modules\App\Models\User|false 
          * @static 
          */        public static function onceUsingId($id)
         {
@@ -1859,7 +1859,7 @@ namespace Illuminate\Support\Facades {
          *
          * @param mixed $id
          * @param bool $remember
-         * @return \LarabizCom\Modules\App\Models\User|false 
+         * @return \LarabizCms\Modules\App\Models\User|false 
          * @static 
          */        public static function loginUsingId($id, $remember = false)
         {
@@ -1907,7 +1907,7 @@ namespace Illuminate\Support\Facades {
          *
          * @param string $password
          * @param string $attribute
-         * @return \LarabizCom\Modules\App\Models\User|null 
+         * @return \LarabizCms\Modules\App\Models\User|null 
          * @throws \Illuminate\Auth\AuthenticationException
          * @static 
          */        public static function logoutOtherDevices($password, $attribute = 'password')
@@ -1929,7 +1929,7 @@ namespace Illuminate\Support\Facades {
                     /**
          * Get the last user we attempted to authenticate.
          *
-         * @return \LarabizCom\Modules\App\Models\User 
+         * @return \LarabizCms\Modules\App\Models\User 
          * @static 
          */        public static function getLastAttempted()
         {
@@ -2033,7 +2033,7 @@ namespace Illuminate\Support\Facades {
                     /**
          * Return the currently cached user.
          *
-         * @return \LarabizCom\Modules\App\Models\User|null 
+         * @return \LarabizCms\Modules\App\Models\User|null 
          * @static 
          */        public static function getUser()
         {
@@ -2085,7 +2085,7 @@ namespace Illuminate\Support\Facades {
                     /**
          * Determine if the current user is authenticated. If not, throw an exception.
          *
-         * @return \LarabizCom\Modules\App\Models\User 
+         * @return \LarabizCms\Modules\App\Models\User 
          * @throws \Illuminate\Auth\AuthenticationException
          * @static 
          */        public static function authenticate()

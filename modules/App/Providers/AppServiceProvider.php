@@ -24,8 +24,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        // Enable Model strict mode.
-        // See more: https://laravel.com/docs/9.x/eloquent#configuring-eloquent-strictness
+        /**
+         * Enable Model strict mode.
+         * See more: https://laravel.com/docs/9.x/eloquent#configuring-eloquent-strictness
+         */
         Model::shouldBeStrict(! $this->app->isProduction());
 
         $this->loadCustomizer(__DIR__ . '/../customizer.php');
