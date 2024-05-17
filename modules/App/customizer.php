@@ -7,11 +7,3 @@
  * @link       https://juzaweb.com
  * @license    GNU V2
  */
-
-customizer()->adminMenu('dashboard')
-    ->title('Dashboard')
-    ->icon('fas fa-home')
-    ->add();
-
-customizer()->apiDocumentation('auth/login')
-    ->tags('Auth');
