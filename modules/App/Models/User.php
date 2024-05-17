@@ -2,7 +2,7 @@
 
 namespace LarabizCom\Modules\App\Models;
 
-use LarabizCom\Core\Models\User as UserBase;
+use LarabizCms\Core\Models\User as UserBase;
 
 /**
  * LarabizCom\Modules\App\Models\User
@@ -34,6 +34,9 @@ use LarabizCom\Core\Models\User as UserBase;
  * @method static \Illuminate\Database\Eloquent\Builder|User whereRememberToken($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereUuid($value)
+ * @method static Builder|User permission(\LarabizCms\Core\Contracts\Permissions\Permission|\Illuminate\Support\Collection|array|string|int $permissions)
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \LarabizCms\Core\Models\Permissions\Permission> $permissions
+ * @property-read int|null $permissions_count
  * @mixin \Eloquent
  */
 class User extends UserBase

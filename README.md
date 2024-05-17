@@ -14,6 +14,7 @@ php artisan larabiz:install
 
 ## Usage
 
+### Customizer
 - Add admin menu
 ```php
 customizer()->adminMenu('dashboard')
@@ -35,4 +36,13 @@ customizer()->setting('title')->name('Title');
 
 // Add setting with validations
 customizer()->setting('description')->name('Description')->validations(['required', 'string', 'max:230']);
+```
+
+Add an API
+
+```php
+customizer()->api()->post('auth/login', [Controllers\Auth\LoginController::class, 'login'])
+    ->guest()
+    ->tags('Auth')
+    ->description('Login');
 ```
