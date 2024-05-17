@@ -1,6 +1,6 @@
 <?php
 
-namespace LarabizCom\Modules\App\Http\Middleware;
+namespace LarabizCms\Modules\App\Http\Middleware;
 
 use Illuminate\Foundation\Http\Middleware\TrimStrings as Middleware;
 

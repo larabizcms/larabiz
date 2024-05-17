@@ -1,6 +1,6 @@
 <?php
 
-namespace LarabizCom\Modules\App\Providers;
+namespace LarabizCms\Modules\App\Providers;
 
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Laravel\Passport\Passport;
@@ -13,7 +13,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array<class-string, class-string>
      */
     protected $policies = [
-        // 'LarabizCom\Modules\App\Models\Model' => 'LarabizCom\Modules\App\Policies\ModelPolicy',
+        // 'LarabizCms\Modules\App\Models\Model' => 'LarabizCms\Modules\App\Policies\ModelPolicy',
     ];
 
     /**

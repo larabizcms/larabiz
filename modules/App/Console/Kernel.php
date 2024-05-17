@@ -1,6 +1,6 @@
 <?php
 
-namespace LarabizCom\Modules\App\Console;
+namespace LarabizCms\Modules\App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;

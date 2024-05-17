@@ -1,6 +1,6 @@
 <?php
 
-namespace LarabizCom\Modules\App\Providers;
+namespace LarabizCms\Modules\App\Providers;
 
 use Illuminate\Database\Eloquent\Model;
 use LarabizCms\Core\Providers\ServiceProvider;

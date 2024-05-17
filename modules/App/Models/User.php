@@ -1,11 +1,11 @@
 <?php
 
-namespace LarabizCom\Modules\App\Models;
+namespace LarabizCms\Modules\App\Models;
 
 use LarabizCms\Core\Models\User as UserBase;
 
 /**
- * LarabizCom\Modules\App\Models\User
+ * LarabizCms\Modules\App\Models\User
  *
  * @property int $id
  * @property string $name
