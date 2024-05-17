@@ -1,16 +1,16 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, RouterProvider } from "react-router-dom";
 
 import Master from "./layouts/Master";
 import Home from "./views/Home";
-import NotFound from "./views/NotFound";
-import Document from "./views/api/Document";
-import Register from "./views/auth/Register";
-import Dashboard from "./views/Dashboard";
 import Auth from "./layouts/Auth";
 import ForgotPassword from "./views/auth/ForgotPassword";
 
 const Login = React.lazy(() => import("./views/auth/Login"));
+const NotFound = React.lazy(() => import("./views/NotFound"));
+const Document = React.lazy(() => import("./views/api/Document"));
+const Register = React.lazy(() => import("./views/auth/Register"));
+const Dashboard = React.lazy(() => import("./views/Dashboard"));
 
 export function Router(): React.JSX.Element {
     return (

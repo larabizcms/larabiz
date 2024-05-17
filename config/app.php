@@ -193,4 +193,7 @@ return [
         // 'ExampleClass' => LarabizCMS\Modules\App\Example\ExampleClass::class,
     ])->toArray(),
 
+    'query_cache' => [
+        'lifetime' => 3600 * 24,
+    ],
 ];
