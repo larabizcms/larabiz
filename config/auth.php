@@ -44,6 +44,8 @@ return [
         'api' => [
             'driver' => 'passport',
             'provider' => 'users',
+            'client_id' => env('PASSPORT_USER_GRANT_CLIENT_ID'),
+            'client_secret' => env('PASSPORT_USER_GRANT_CLIENT_SECRET'),
         ],
     ],
 
