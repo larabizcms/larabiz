@@ -8,9 +8,10 @@ import { IconBellRinging, IconMenu } from '@tabler/icons-react';
 
 interface ItemType {
   toggleMobileSidebar:  (event: React.MouseEvent<HTMLElement>) => void;
+  setSidebarOpen:  (event: React.MouseEvent<HTMLElement>) => void;
 }
 
-const Header = ({toggleMobileSidebar}: ItemType) => {
+const Header = ({toggleMobileSidebar, setSidebarOpen}: ItemType) => {
 
   // const lgUp = useMediaQuery((theme) => theme.breakpoints.up('lg'));
   // const lgDown = useMediaQuery((theme) => theme.breakpoints.down('lg'));
@@ -47,6 +48,19 @@ const Header = ({toggleMobileSidebar}: ItemType) => {
           <IconMenu width="20" height="20" />
         </IconButton>
 
+        <IconButton
+          color="inherit"
+          aria-label="menu"
+          onClick={setSidebarOpen}
+          sx={{
+            display: {
+              lg: "inline",
+              xs: "none",
+            },
+          }}
+        >
+          <IconMenu width="20" height="20" />
+        </IconButton>
 
         <IconButton
           size="large"
@@ -60,6 +74,7 @@ const Header = ({toggleMobileSidebar}: ItemType) => {
           </Badge>
 
         </IconButton>
+
         <Box flexGrow={1} />
         <Stack spacing={1} direction="row" alignItems="center">
           <Button variant="contained" disableElevation color="primary" >

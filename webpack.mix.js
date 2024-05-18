@@ -1,5 +1,5 @@
 const mix = require("laravel-mix");
-const path = require('path');
+//const buildPath = 'build';
 
 mix.disableNotifications();
 mix.options(
@@ -25,6 +25,9 @@ mix.options(
     }
 );
 
+// mix.setResourceRoot(`/${buildPath}`);
+// mix.setPublicPath(`public/${buildPath}`);
+
 mix.webpackConfig({
     resolve: {
         extensions: [".ts", ".tsx"],
@@ -34,16 +37,12 @@ mix.webpackConfig({
     },
     output: {
         chunkFilename: mix.inProduction() ? "js/chunks/[name].[chunkhash].js" : "js/chunks/dev/[name].js",
-        //publicPath: '/build/',
         filename: "[name].js",
-        //chunkFilename: "chunks/[name].[chunkhash].js",
         //clean: true,
     },
 });
 
-//mix.setPublicPath('public/build');
-
-mix.js("resources/js/app.tsx", "js")
+mix.js("resources/js/app.tsx", "js/app.js")
     .extract([
         'react',
         'react-dom',
@@ -53,7 +52,7 @@ mix.js("resources/js/app.tsx", "js")
     ], 'js/vendor-core.min.js')
     .extract()
     .react()
-    .postCss("resources/css/app.css", "css", [
+    .postCss("resources/css/app.css", "css/app.css", [
         //
     ]);
 

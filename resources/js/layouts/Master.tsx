@@ -8,66 +8,66 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { baselightTheme } from "../utils/theme/DefaultColors";
 
 const MainWrapper = styled("div")(() => ({
-  display: "flex",
-  minHeight: "100vh",
-  width: "100%",
+    display: "flex",
+    minHeight: "100vh",
+    width: "100%",
 }));
 
 const PageWrapper = styled("div")(() => ({
-  display: "flex",
-  flexGrow: 1,
-  paddingBottom: "60px",
-  flexDirection: "column",
-  zIndex: 1,
-  backgroundColor: "transparent",
+    display: "flex",
+    flexGrow: 1,
+    paddingBottom: "60px",
+    flexDirection: "column",
+    zIndex: 1,
+    backgroundColor: "transparent",
 }));
 
 export default function Master() {
-  const [isSidebarOpen, setSidebarOpen] = useState(true);
-  const [isMobileSidebarOpen, setMobileSidebarOpen] = useState(false);
+    const [isSidebarOpen, setSidebarOpen] = useState(false);
+    const [isMobileSidebarOpen, setMobileSidebarOpen] = useState(false);
 
-  return (
-    <ThemeProvider theme={baselightTheme}>
+    return (
+        <ThemeProvider theme={baselightTheme}>
             {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
             <CssBaseline />
-        <MainWrapper className="mainwrapper">
-        {/* ------------------------------------------- */}
-        {/* Sidebar */}
-        {/* ------------------------------------------- */}
-        <Sidebar
-            isSidebarOpen={isSidebarOpen}
-            isMobileSidebarOpen={isMobileSidebarOpen}
-            onSidebarClose={() => setMobileSidebarOpen(false)}
-        />
-        {/* ------------------------------------------- */}
-        {/* Main Wrapper */}
-        {/* ------------------------------------------- */}
-        <PageWrapper className="page-wrapper">
-            {/* ------------------------------------------- */}
-            {/* Header */}
-            {/* ------------------------------------------- */}
-            <Header toggleMobileSidebar={() => setMobileSidebarOpen(true)} />
-            {/* ------------------------------------------- */}
-            {/* PageContent */}
-            {/* ------------------------------------------- */}
-            <Container
-            sx={{
-                paddingTop: "20px",
-                maxWidth: "1200px",
-            }}
-            >
-            {/* ------------------------------------------- */}
-            {/* Page Route */}
-            {/* ------------------------------------------- */}
-            <Box sx={{ minHeight: "calc(100vh - 170px)" }}>
-                <Outlet />
-            </Box>
-            {/* ------------------------------------------- */}
-            {/* End Page */}
-            {/* ------------------------------------------- */}
-            </Container>
-        </PageWrapper>
-        </MainWrapper>
-    </ThemeProvider>
-  );
+            <MainWrapper className="mainwrapper">
+                {/* ------------------------------------------- */}
+                {/* Sidebar */}
+                {/* ------------------------------------------- */}
+                <Sidebar
+                    isSidebarOpen={isSidebarOpen}
+                    isMobileSidebarOpen={isMobileSidebarOpen}
+                    onSidebarClose={() => setMobileSidebarOpen(false)}
+                />
+                {/* ------------------------------------------- */}
+                {/* Main Wrapper */}
+                {/* ------------------------------------------- */}
+                <PageWrapper className="page-wrapper">
+                    {/* ------------------------------------------- */}
+                    {/* Header */}
+                    {/* ------------------------------------------- */}
+                    <Header toggleMobileSidebar={() => setMobileSidebarOpen(true)} setSidebarOpen={() => setSidebarOpen(!isSidebarOpen)} />
+                    {/* ------------------------------------------- */}
+                    {/* PageContent */}
+                    {/* ------------------------------------------- */}
+                    <Container
+                        sx={{
+                            paddingTop: "20px",
+                            maxWidth: "1200px",
+                        }}
+                    >
+                        {/* ------------------------------------------- */}
+                        {/* Page Route */}
+                        {/* ------------------------------------------- */}
+                        <Box sx={{ minHeight: "calc(100vh - 170px)" }}>
+                            <Outlet />
+                        </Box>
+                        {/* ------------------------------------------- */}
+                        {/* End Page */}
+                        {/* ------------------------------------------- */}
+                    </Container>
+                </PageWrapper>
+            </MainWrapper>
+        </ThemeProvider>
+    );
 }
