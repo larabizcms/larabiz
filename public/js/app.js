@@ -196,42 +196,37 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 var registerUser = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_1__.createAsyncThunk)('auth/register', /*#__PURE__*/function () {
   var _ref3 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(_ref, _ref2) {
-    var name, email, password, rejectWithValue, config;
+    var name, email, password, rejectWithValue, res;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
           name = _ref.name, email = _ref.email, password = _ref.password;
           rejectWithValue = _ref2.rejectWithValue;
           _context.prev = 2;
-          config = {
-            headers: {
-              'Content-Type': 'application/json'
-            }
-          };
-          _context.next = 6;
+          _context.next = 5;
           return _http_common__WEBPACK_IMPORTED_MODULE_0__["default"].post("/auth/register", {
             name: name,
             email: email,
             password: password
-          }, config);
-        case 6:
-          _context.next = 15;
-          break;
-        case 8:
-          _context.prev = 8;
+          });
+        case 5:
+          res = _context.sent;
+          return _context.abrupt("return", res.data);
+        case 9:
+          _context.prev = 9;
           _context.t0 = _context["catch"](2);
-          if (!(_context.t0.response && _context.t0.response.data.message)) {
-            _context.next = 14;
+          if (!(_context.t0.response && _context.t0.response.data)) {
+            _context.next = 15;
             break;
           }
-          return _context.abrupt("return", rejectWithValue(_context.t0.response.data.message));
-        case 14:
-          return _context.abrupt("return", rejectWithValue(_context.t0.message));
+          return _context.abrupt("return", rejectWithValue(_context.t0.response.data));
         case 15:
+          return _context.abrupt("return", rejectWithValue(_context.t0.message));
+        case 16:
         case "end":
           return _context.stop();
       }
-    }, _callee, null, [[2, 8]]);
+    }, _callee, null, [[2, 9]]);
   }));
   return function (_x, _x2) {
     return _ref3.apply(this, arguments);
@@ -276,9 +271,9 @@ var authSlice = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_1__.createSlice)({
       state.loading = false;
       state.success = true;
     }), builder.addCase(_authActions__WEBPACK_IMPORTED_MODULE_0__.registerUser.rejected, function (state, action) {
+      var _action$payload;
       state.loading = false;
-      console.log(action);
-      state.errors = action.payload;
+      state.errors = (_action$payload = action.payload) === null || _action$payload === void 0 ? void 0 : _action$payload.errors;
     });
   }
 });

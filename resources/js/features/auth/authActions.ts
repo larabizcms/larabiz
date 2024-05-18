@@ -1,32 +1,20 @@
-import axios from 'axios'
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import http from "../../http-common";
-
-export interface RegisterFormType {
-    name: string;
-    email: string;
-    password: string;
-}
+import { RegisterData } from '../../service/types/AuthData';
 
 export const registerUser = createAsyncThunk(
     'auth/register',
-    async ({ name, email, password }: RegisterFormType, { rejectWithValue }) => {
+    async ({ name, email, password }: RegisterData, { rejectWithValue }) => {
         try {
-            const config = {
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            }
-
-            await http.post(
+            const res = await http.post(
                 `/auth/register`,
-                { name, email, password },
-                config
+                { name, email, password }
             )
+
+            return res.data;
         } catch (error: any) {
-            // return custom error message from backend if present
-            if (error.response && error.response.data.message) {
-                return rejectWithValue(error.response.data.message)
+            if (error.response && error.response.data) {
+                return rejectWithValue(error.response.data)
             } else {
                 return rejectWithValue(error.message)
             }

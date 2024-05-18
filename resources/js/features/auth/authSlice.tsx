@@ -1,7 +1,15 @@
-import { createSlice } from '@reduxjs/toolkit'
-import { registerUser } from './authActions'
+import { createSlice } from '@reduxjs/toolkit';
+import { registerUser } from './authActions';
 
-const initialState = {
+interface AuthState {
+    loading: boolean;
+    userInfo: {}; // for user object
+    userToken: string | null; // for storing the JWT
+    errors: string[] | null;
+    success: boolean; // for monitoring the registration process.
+}
+
+const initialState: AuthState = {
     loading: false,
     userInfo: {}, // for user object
     userToken: null, // for storing the JWT
@@ -25,8 +33,7 @@ const authSlice = createSlice({
             }),
             builder.addCase(registerUser.rejected, (state, action) => {
                 state.loading = false;
-                console.log(action);
-                state.errors = action.payload as null;
+                state.errors = (action.payload as any)?.errors;
             })
     },
 })

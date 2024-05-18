@@ -141,12 +141,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _features_auth_authActions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../features/auth/authActions */ "./resources/js/features/auth/authActions.ts");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/dist/react-redux.mjs");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
-function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
-function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
-function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
-function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 
 
 
@@ -169,12 +163,12 @@ var AuthRegister = function AuthRegister(_ref) {
     }),
     loading = _useSelector.loading,
     userInfo = _useSelector.userInfo,
-    error = _useSelector.error,
+    errors = _useSelector.errors,
     success = _useSelector.success;
   var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_5__.useNavigate)();
   var dispatch = useAppDispatch();
   var _useForm = (0,react_hook_form__WEBPACK_IMPORTED_MODULE_6__.useForm)(),
-    register = _useForm.register,
+    control = _useForm.control,
     handleSubmit = _useForm.handleSubmit;
   var submitForm = function submitForm(data) {
     dispatch((0,_features_auth_authActions__WEBPACK_IMPORTED_MODULE_2__.registerUser)(data));
@@ -197,12 +191,28 @@ var AuthRegister = function AuthRegister(_ref) {
             htmlFor: "name",
             mb: "5px",
             children: "Name"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_forms_theme_elements_CustomTextField__WEBPACK_IMPORTED_MODULE_1__["default"], _objectSpread({
-            id: "name",
-            variant: "outlined",
-            fullWidth: true
-          }, register("name"))), (error === null || error === void 0 ? void 0 : error.name) && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
-            children: error.name.message
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_hook_form__WEBPACK_IMPORTED_MODULE_6__.Controller, {
+            control: control,
+            rules: {
+              required: true
+            },
+            render: function render(_ref2) {
+              var _ref2$field = _ref2.field,
+                onChange = _ref2$field.onChange,
+                onBlur = _ref2$field.onBlur,
+                value = _ref2$field.value;
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_forms_theme_elements_CustomTextField__WEBPACK_IMPORTED_MODULE_1__["default"], {
+                id: "name",
+                variant: "outlined",
+                fullWidth: true,
+                onBlur: onBlur,
+                onChange: onChange,
+                value: value
+              });
+            },
+            name: "name"
+          }), (errors === null || errors === void 0 ? void 0 : errors.name) && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+            children: errors.name[0]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_7__["default"], {
             variant: "subtitle1",
             fontWeight: 600,
@@ -211,11 +221,11 @@ var AuthRegister = function AuthRegister(_ref) {
             mb: "5px",
             mt: "25px",
             children: "Email Address"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_forms_theme_elements_CustomTextField__WEBPACK_IMPORTED_MODULE_1__["default"], _objectSpread({
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_forms_theme_elements_CustomTextField__WEBPACK_IMPORTED_MODULE_1__["default"], {
             id: "email",
             variant: "outlined",
             fullWidth: true
-          }, register("email"))), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_7__["default"], {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_7__["default"], {
             variant: "subtitle1",
             fontWeight: 600,
             component: "label",
@@ -223,12 +233,12 @@ var AuthRegister = function AuthRegister(_ref) {
             mb: "5px",
             mt: "25px",
             children: "Password"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_forms_theme_elements_CustomTextField__WEBPACK_IMPORTED_MODULE_1__["default"], _objectSpread({
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_forms_theme_elements_CustomTextField__WEBPACK_IMPORTED_MODULE_1__["default"], {
             id: "password",
             variant: "outlined",
             fullWidth: true,
             type: "password"
-          }, register("password")))]
+          })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_lab__WEBPACK_IMPORTED_MODULE_10__["default"], {
           color: "primary",
           variant: "contained",

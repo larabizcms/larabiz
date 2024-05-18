@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { Box, Typography } from '@mui/material';
-import { useForm } from 'react-hook-form'
+import { Controller, useForm } from 'react-hook-form'
 import CustomTextField from '../../../components/forms/theme-elements/CustomTextField';
 import { Stack } from '@mui/system';
 import { NavigateFunction, useNavigate } from 'react-router-dom';
 import { LoadingButton } from '@mui/lab';
-import { RegisterFormType, registerUser } from '../../../features/auth/authActions';
+import { registerUser } from '../../../features/auth/authActions';
 import { useDispatch, useSelector  } from 'react-redux';
 import type { AppDispatch } from "../../../store";
+import { RegisterData } from '../../../service/types/AuthData';
 export const useAppDispatch = () => useDispatch<AppDispatch>();
 
 interface registerType {
@@ -19,20 +20,20 @@ interface registerType {
 interface AuthState {
     loading: boolean;
     userInfo: any;
-    error: any;
+    errors: any;
     success: boolean;
 }
 
 const AuthRegister = ({ title, subtitle, subtext }: registerType) => {
-    const { loading, userInfo, error, success } = useSelector<{auth: any}, AuthState>(
+    const { loading, userInfo, errors, success } = useSelector<{auth: any}, AuthState>(
         (state) => state.auth
     );
 
     const navigate: NavigateFunction = useNavigate();
     const dispatch = useAppDispatch();
-    const { register, handleSubmit } = useForm<RegisterFormType>();
+    const { control, handleSubmit } = useForm<RegisterData>();
 
-    const submitForm = (data: RegisterFormType) => {
+    const submitForm = (data: RegisterData) => {
         dispatch(registerUser(data));
     };
 
@@ -51,26 +52,40 @@ const AuthRegister = ({ title, subtitle, subtext }: registerType) => {
                     <Stack mb={3}>
                         <Typography variant="subtitle1"
                             fontWeight={600} component="label" htmlFor='name' mb="5px">Name</Typography>
-                        <CustomTextField
-                            id="name"
-                            variant="outlined"
-                            fullWidth
-                            {...register("name")}
-                        />
-                        {error?.name && <p>{error.name.message}</p>}
+
+                        <Controller
+                                control={control}
+                                rules={{
+                                required: true,
+                                }}
+                                render={({ field: { onChange, onBlur, value } }: any) => (
+                                    <CustomTextField
+                                    id="name"
+                                    variant="outlined"
+                                    fullWidth
+                                    onBlur={onBlur}
+                                    onChange={onChange}
+                                    value={value}
+                                />
+                                )}
+                                name="name"
+                            />
+
+                        {errors?.name && <p>{errors.name[0]}</p>}
 
                         <Typography variant="subtitle1"
                             fontWeight={600} component="label" htmlFor='email' mb="5px" mt="25px">Email Address</Typography>
-                        <CustomTextField id="email" variant="outlined" fullWidth {...register("email")} />
+                        <CustomTextField id="email" variant="outlined" fullWidth />
 
                         <Typography variant="subtitle1"
                             fontWeight={600} component="label" htmlFor='password' mb="5px" mt="25px">Password</Typography>
+
                         <CustomTextField
                             id="password"
                             variant="outlined"
                             fullWidth
                             type="password"
-                            {...register("password")}
+
                         />
                     </Stack>
                     <LoadingButton
