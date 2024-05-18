@@ -29,8 +29,8 @@ return [
         'enabled' => false,
         'path' => base_path('vendor/nwidart/laravel-modules/src/Commands/stubs'),
         'files' => [
-            'routes/web' => 'Routes/web.php',
-            'routes/api' => 'Routes/api.php',
+            'routes/web' => 'routes/web.php',
+            'routes/api' => 'routes/api.php',
             // 'views/index' => 'resources/views/index.blade.php',
             // 'views/master' => 'resources/views/layouts/master.blade.php',
             'scaffold/config' => 'config/config.php',
