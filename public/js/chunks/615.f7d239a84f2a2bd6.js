@@ -1,1 +1,0 @@
-(self.webpackChunk=self.webpackChunk||[]).push([[615],{11218:(e,s,r)=>{"use strict";r.r(s),r.d(s,{default:()=>a});var t=r(87233),u=(r(56171),r(96540),r(74848));function a(){return(0,u.jsx)(t.A,{url:"https://petstore.swagger.io/v2/swagger.json"})}},42634:()=>{}}]);
