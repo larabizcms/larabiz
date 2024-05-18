@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { Box, Typography } from '@mui/material';
-
+import { useForm } from 'react-hook-form'
 import CustomTextField from '../../../components/forms/theme-elements/CustomTextField';
 import { Stack } from '@mui/system';
 import { NavigateFunction, useNavigate } from 'react-router-dom';
-import AuthService from '../../../service/Auth.service';
 import { LoadingButton } from '@mui/lab';
+import { RegisterFormType, registerUser } from '../../../features/auth/authActions';
+import { useDispatch, useSelector  } from 'react-redux';
+import type { AppDispatch } from "../../../store";
+export const useAppDispatch = () => useDispatch<AppDispatch>();
 
 interface registerType {
     title?: string;
@@ -13,25 +16,24 @@ interface registerType {
     subtext?: JSX.Element | JSX.Element[];
 }
 
+interface AuthState {
+    loading: boolean;
+    userInfo: any;
+    error: any;
+    success: boolean;
+}
+
 const AuthRegister = ({ title, subtitle, subtext }: registerType) => {
-    const [isFormSubmitting, setIsFormSubmitting] = useState<boolean>(false);
-    const [error, setError] = useState<string>();
-    const [email, setEmail] = useState<string>("");
-    const [password, setPassword] = useState<string>("");
+    const { loading, userInfo, error, success } = useSelector<{auth: any}, AuthState>(
+        (state) => state.auth
+    );
+
     const navigate: NavigateFunction = useNavigate();
+    const dispatch = useAppDispatch();
+    const { register, handleSubmit } = useForm<RegisterFormType>();
 
-    const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        setIsFormSubmitting(true);
-
-        // AuthService.register({ email: email, password: password })
-        //     .then((response) => {
-        //         navigate("/admin-cp");
-        //     })
-        //     .catch((e) => {
-        //         setError(e.response.data.message);
-        //         setIsFormSubmitting(false);
-        //     });
+    const submitForm = (data: RegisterFormType) => {
+        dispatch(registerUser(data));
     };
 
     return (
@@ -44,23 +46,22 @@ const AuthRegister = ({ title, subtitle, subtext }: registerType) => {
 
             {subtext}
 
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit(submitForm)}>
                 <Box>
                     <Stack mb={3}>
                         <Typography variant="subtitle1"
                             fontWeight={600} component="label" htmlFor='name' mb="5px">Name</Typography>
                         <CustomTextField
-                        id="name"
-                        variant="outlined"
-                        fullWidth
-                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                            setEmail(e.target.value);
-                        }}
+                            id="name"
+                            variant="outlined"
+                            fullWidth
+                            {...register("name")}
                         />
+                        {error?.name && <p>{error.name.message}</p>}
 
                         <Typography variant="subtitle1"
                             fontWeight={600} component="label" htmlFor='email' mb="5px" mt="25px">Email Address</Typography>
-                        <CustomTextField id="email" variant="outlined" fullWidth />
+                        <CustomTextField id="email" variant="outlined" fullWidth {...register("email")} />
 
                         <Typography variant="subtitle1"
                             fontWeight={600} component="label" htmlFor='password' mb="5px" mt="25px">Password</Typography>
@@ -69,9 +70,7 @@ const AuthRegister = ({ title, subtitle, subtext }: registerType) => {
                             variant="outlined"
                             fullWidth
                             type="password"
-                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                                setPassword(e.target.value);
-                            }}
+                            {...register("password")}
                         />
                     </Stack>
                     <LoadingButton
@@ -80,7 +79,7 @@ const AuthRegister = ({ title, subtitle, subtext }: registerType) => {
                         size="large"
                         fullWidth
                         type="submit"
-                        loading={isFormSubmitting}
+                        loading={loading}
                     >
                         Sign Up
                     </LoadingButton>
