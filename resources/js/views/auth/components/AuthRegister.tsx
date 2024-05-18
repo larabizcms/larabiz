@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Box, Typography } from '@mui/material';
-import { Controller, useForm } from 'react-hook-form'
-import CustomTextField from '../../../components/forms/theme-elements/CustomTextField';
+import { Controller, useForm } from 'react-hook-form';
+import CustomTextField from '~/components/forms/theme-elements/CustomTextField';
 import { Stack } from '@mui/system';
 import { NavigateFunction, useNavigate } from 'react-router-dom';
 import { LoadingButton } from '@mui/lab';
