@@ -1,6 +1,7 @@
+import React from "react";
 import SwaggerUI from "swagger-ui-react"
 import "swagger-ui-react/swagger-ui.css"
-import React from "react";
+
 // import { API } from "@stoplight/elements";
 // import '@stoplight/elements/styles.min.css';
 

@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 // mui imports
 import { ListSubheader, styled, Theme } from '@mui/material';
+import React from 'react';
 
 type NavGroup = {
   navlabel?: boolean;
