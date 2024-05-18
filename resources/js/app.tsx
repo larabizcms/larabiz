@@ -8,7 +8,6 @@ import {
 } from "react-router-dom";
 
 import Master from "./layouts/Master";
-import Home from "./views/Home";
 import Auth from "./layouts/Auth";
 import ForgotPassword from "./views/auth/ForgotPassword";
 import { LinearProgress } from "@mui/material";
