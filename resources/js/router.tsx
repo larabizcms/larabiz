@@ -23,9 +23,9 @@ export function Router(): React.JSX.Element {
             </Route>
             <Route path="/" element={<Master />}>
                 <Route path="/admin-cp" element={<Dashboard />} />
-                <Route path="/admin-cp/api/documentation" element={<Document />} />
                 <Route path="/admin-cp/:page" element={<Document />} />
             </Route>
+            <Route path="/admin-cp/api-documentation" element={<Document />} />
             <Route path="*" element={<NotFound />} />
         </Routes>
     );
