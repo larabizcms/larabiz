@@ -11,7 +11,7 @@
 |
 */
 
-$app = new \LarabizCom\Core\Application(
+$app = new \LarabizCMS\Core\Application(
     $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
 );
 
@@ -30,17 +30,17 @@ $app->useAppPath('modules/App');
 
 $app->singleton(
     Illuminate\Contracts\Http\Kernel::class,
-    LarabizCom\Modules\App\Http\Kernel::class
+    LarabizCMS\Modules\App\Http\Kernel::class
 );
 
 $app->singleton(
     Illuminate\Contracts\Console\Kernel::class,
-    LarabizCom\Modules\App\Console\Kernel::class
+    LarabizCMS\Modules\App\Console\Kernel::class
 );
 
 $app->singleton(
     Illuminate\Contracts\Debug\ExceptionHandler::class,
-    LarabizCom\Modules\App\Exceptions\Handler::class
+    LarabizCMS\Modules\App\Exceptions\Handler::class
 );
 
 /*

@@ -1,6 +1,6 @@
 <?php
 
-namespace LarabizCom\Modules\App\Providers;
+namespace LarabizCMS\Modules\App\Providers;
 
 use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\ServiceProvider;

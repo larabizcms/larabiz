@@ -1884,11 +1884,11 @@
         },
         {
             "name": "larabizcom/core",
-            "version": "dev-master",
+            "version": "dev-feature/change-namespace",
             "dist": {
                 "type": "path",
                 "url": "./packages/core",
-                "reference": "e49970b14cf5b359983ea72b5fcdde2b3d7c19b5"
+                "reference": "6d3a2d6a0e47f5b32e05ed13e98b512b0d33ec5f"
             },
             "require": {
                 "astrotomic/laravel-translatable": "^11.13",
@@ -1911,7 +1911,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "LarabizCom\\Core\\": "src"
+                    "LarabizCMS\\Core\\": "src"
                 },
                 "files": [
                     "helpers/helpers.php"
