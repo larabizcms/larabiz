@@ -17,7 +17,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _layouts_Master__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./layouts/Master */ "./resources/js/layouts/Master.tsx");
 /* harmony import */ var _layouts_Auth__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./layouts/Auth */ "./resources/js/layouts/Auth.tsx");
 /* harmony import */ var _views_auth_ForgotPassword__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./views/auth/ForgotPassword */ "./resources/js/views/auth/ForgotPassword.tsx");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/LinearProgress/LinearProgress.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -78,9 +80,7 @@ react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot(document.getElementById
   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_redux__WEBPACK_IMPORTED_MODULE_8__.Provider, {
     store: _store__WEBPACK_IMPORTED_MODULE_2__.store,
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react__WEBPACK_IMPORTED_MODULE_0__.Suspense, {
-      fallback: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-        children: "Loading..."
-      }),
+      fallback: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_9__["default"], {}),
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.RouterProvider, {
         router: router
       })

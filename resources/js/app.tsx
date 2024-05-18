@@ -11,6 +11,7 @@ import Master from "./layouts/Master";
 import Home from "./views/Home";
 import Auth from "./layouts/Auth";
 import ForgotPassword from "./views/auth/ForgotPassword";
+import { LinearProgress } from "@mui/material";
 
 const Login = React.lazy(() => import("./views/auth/Login"));
 const NotFound = React.lazy(() => import("./views/NotFound"));
@@ -66,7 +67,7 @@ const router = createBrowserRouter([
 (ReactDOM as any).createRoot(document.getElementById("app")).render(
     <React.StrictMode>
         <Provider store={store}>
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<LinearProgress />}>
                 <RouterProvider router={router} />
             </Suspense>
         </Provider>
