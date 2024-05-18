@@ -17672,26 +17672,7 @@ namespace Spatie\LaravelIgnition\Facades {
             }
     }
 
-namespace Illuminate\Support {
-            /**
-     * 
-     *
-     * @template TKey of array-key
-     * @template TValue
-     * @implements \ArrayAccess<TKey, TValue>
-     * @implements \Illuminate\Support\Enumerable<TKey, TValue>
-     */        class Collection {
-                    /**
-         * 
-         *
-         * @see \Barryvdh\Debugbar\ServiceProvider::register()
-         * @static 
-         */        public static function debug()
-        {
-                        return \Illuminate\Support\Collection::debug();
-        }
-            }
-    }
+
 
 namespace Illuminate\Http {
             /**
@@ -17750,6 +17731,49 @@ namespace Illuminate\Http {
          */        public static function hasValidSignatureWhileIgnoring($ignoreQuery = [], $absolute = true)
         {
                         return \Illuminate\Http\Request::hasValidSignatureWhileIgnoring($ignoreQuery, $absolute);
+        }
+            }
+            /**
+     * 
+     *
+     */        class JsonResponse {
+                    /**
+         * 
+         *
+         * @see \LarabizCMS\Core\Providers\LarabizServiceProvider::boot()
+         * @param mixed $value
+         * @static 
+         */        public static function appendData($value)
+        {
+                        return \Illuminate\Http\JsonResponse::appendData($value);
+        }
+            }
+    }
+
+namespace Illuminate\Routing {
+            /**
+     * 
+     *
+     */        class Route {
+                    /**
+         * 
+         *
+         * @see \LarabizCMS\Core\Providers\PermissionServiceProvider::registerMacroHelpers()
+         * @param mixed $roles
+         * @static 
+         */        public static function role($roles = [])
+        {
+                        return \Illuminate\Routing\Route::role($roles);
+        }
+                    /**
+         * 
+         *
+         * @see \LarabizCMS\Core\Providers\PermissionServiceProvider::registerMacroHelpers()
+         * @param mixed $permissions
+         * @static 
+         */        public static function permission($permissions = [])
+        {
+                        return \Illuminate\Routing\Route::permission($permissions);
         }
             }
     }

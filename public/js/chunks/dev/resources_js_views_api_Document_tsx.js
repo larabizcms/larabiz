@@ -25,6 +25,8 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 
 
 
+// import { API } from "@stoplight/elements";
+// import '@stoplight/elements/styles.min.css';
 
 var requestInterceptor = function requestInterceptor(req) {
   return _objectSpread(_objectSpread({}, req), {}, {
@@ -34,6 +36,10 @@ var requestInterceptor = function requestInterceptor(req) {
   });
 };
 function Document() {
+  // return <API
+  //     apiDescriptionUrl={process.env.MIX_APP_URL + "/api/swagger.json"}
+  //     router="hash"
+  // />;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(swagger_ui_react__WEBPACK_IMPORTED_MODULE_0__["default"], {
     url: "http://larabiz.local" + "/api/swagger.json",
     requestInterceptor: requestInterceptor

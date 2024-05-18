@@ -25,8 +25,34 @@ customizer()->adminMenu('dashboard')
 
 - Add api documentation
 ```php
-customizer()->apiDocumentation('auth/login')
-    ->tags('Auth');
+customizer()->apiDocumentation()
+    ->post('auth/login', 'Login')
+    ->tags('Auth')
+    ->requestBody([
+        'required' => true,
+        'content' => [
+            'multipart/form-data' => [
+                'schema' => [
+                    'required' => [
+                        'email',
+                        'password',
+                    ],
+                    'properties' => [
+                        'email' => [
+                            'description' => 'Email',
+                            'type' => 'string',
+                        ],
+                        'password' => [
+                            'description' => 'password',
+                            'type' => 'string',
+                            'format' => 'password',
+                        ],
+                    ],
+                    'type' => 'object',
+                ],
+            ],
+        ],
+    ]);
 ```
 
 - Add setting
@@ -45,4 +71,13 @@ customizer()->api()->post('auth/login', [Controllers\Auth\LoginController::class
     ->guest()
     ->tags('Auth')
     ->description('Login');
+```
+
+`restSuccess` Response append data
+
+```php
+return $this->restSuccess(
+    $data,
+    'Get data successfully.'
+)->appendData(['code' => 'CUSTOM_CODE']);
 ```
