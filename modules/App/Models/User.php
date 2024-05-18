@@ -1,11 +1,11 @@
 <?php
 
-namespace LarabizCms\Modules\App\Models;
+namespace LarabizCMS\Modules\App\Models;
 
-use LarabizCms\Core\Models\User as UserBase;
+use LarabizCMS\Core\Models\User as UserBase;
 
 /**
- * LarabizCms\Modules\App\Models\User
+ * LarabizCMS\Modules\App\Models\User
  *
  * @property int $id
  * @property string $name
@@ -34,8 +34,8 @@ use LarabizCms\Core\Models\User as UserBase;
  * @method static \Illuminate\Database\Eloquent\Builder|User whereRememberToken($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereUuid($value)
- * @method static Builder|User permission(\LarabizCms\Core\Contracts\Permissions\Permission|\Illuminate\Support\Collection|array|string|int $permissions)
- * @property-read \Illuminate\Database\Eloquent\Collection<int, \LarabizCms\Core\Models\Permissions\Permission> $permissions
+ * @method static Builder|User permission(\LarabizCMS\Core\Contracts\Permissions\Permission|\Illuminate\Support\Collection|array|string|int $permissions)
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \LarabizCMS\Core\Models\Permissions\Permission> $permissions
  * @property-read int|null $permissions_count
  * @mixin \Eloquent
  */

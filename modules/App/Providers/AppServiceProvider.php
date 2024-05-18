@@ -1,9 +1,9 @@
 <?php
 
-namespace LarabizCms\Modules\App\Providers;
+namespace LarabizCMS\Modules\App\Providers;
 
 use Illuminate\Database\Eloquent\Model;
-use LarabizCms\Core\Providers\ServiceProvider;
+use LarabizCMS\Core\Providers\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {

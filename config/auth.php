@@ -69,7 +69,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => LarabizCms\Modules\App\Models\User::class,
+            'model' => LarabizCMS\Modules\App\Models\User::class,
         ],
 
         // 'users' => [

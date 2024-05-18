@@ -1,8 +1,8 @@
 <?php
 
-namespace LarabizCms\Modules\App\Http\Middleware;
+namespace LarabizCMS\Modules\App\Http\Middleware;
 
-use LarabizCms\Modules\App\Providers\RouteServiceProvider;
+use LarabizCMS\Modules\App\Providers\RouteServiceProvider;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;

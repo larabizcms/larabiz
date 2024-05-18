@@ -1888,7 +1888,7 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/core",
-                "reference": "b9dc40af760ef4336eac3374d77f6749ef5210ed"
+                "reference": "6d3a2d6a0e47f5b32e05ed13e98b512b0d33ec5f"
             },
             "require": {
                 "astrotomic/laravel-translatable": "^11.13",
@@ -1911,7 +1911,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "LarabizCms\\Core\\": "src"
+                    "LarabizCMS\\Core\\": "src"
                 },
                 "files": [
                     "helpers/helpers.php"

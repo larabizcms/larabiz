@@ -1,6 +1,6 @@
 <?php
 
-namespace LarabizCms\Modules\App\Http\Middleware;
+namespace LarabizCMS\Modules\App\Http\Middleware;
 
 use Illuminate\Auth\Middleware\Authenticate as Middleware;
 
