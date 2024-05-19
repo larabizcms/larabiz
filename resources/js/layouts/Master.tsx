@@ -9,6 +9,8 @@ import { baselightTheme } from "../utils/theme/DefaultColors";
 import { useDispatch, useSelector } from "react-redux";
 import { useGetUserProfileQuery } from "~/services/auth/authService";
 import { setUser } from "~/features/auth/authSlice";
+import { getGeneralData } from "~/features/setting/settingActions";
+import { useAppDispatch } from "~/hooks/hooks";
 
 const MainWrapper = styled("div")(() => ({
     display: "flex",
@@ -28,9 +30,13 @@ const PageWrapper = styled("div")(() => ({
 export default function Master() {
     const [isSidebarOpen, setSidebarOpen] = useState(false);
     const [isMobileSidebarOpen, setMobileSidebarOpen] = useState(false);
+
     const { userToken } = useSelector((state: any) => state.auth);
+    const { generalData } = useSelector((state: any) => state.setting);
+
     const navigate: NavigateFunction = useNavigate();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
+    //const appDispatch = useAppDispatch();
 
     const { data } = useGetUserProfileQuery('userProfile', {
         pollingInterval: 900000,
@@ -41,6 +47,12 @@ export default function Master() {
             dispatch(setUser(data));
         }
     }, [data, dispatch]);
+
+    useEffect(() => {
+        if (!generalData) {
+            dispatch(getGeneralData());
+        }
+    }, [generalData, dispatch, userToken]);
 
     useEffect(() => {
         if (!userToken) {

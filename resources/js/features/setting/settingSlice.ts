@@ -1,17 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { generalData } from './settingActions';
+import { getGeneralData } from './settingActions';
 import { GeneralData } from '../types/SettingData';
 
 interface SettingState {
     loading: boolean;
     generalData: null | GeneralData;
     success: boolean;
+    error: null | string;
 }
 
 const initialState: SettingState = {
     loading: false,
     generalData: null,
     success: false,
+    error: null
 }
 
 const settingSlice = createSlice({
@@ -22,17 +24,21 @@ const settingSlice = createSlice({
     },
     extraReducers: (builder) => {
         // General
-        builder.addCase(generalData.pending, (state, action) => {
+        builder.addCase(getGeneralData.pending, (state, action) => {
             state.loading = true;
             state.generalData = null;
+            state.error = null;
         }),
-            builder.addCase(generalData.fulfilled, (state, action) => {
+            builder.addCase(getGeneralData.fulfilled, (state, { payload }) => {
                 state.loading = false;
+                state.error = null;
                 state.success = true;
-            }),
-            builder.addCase(generalData.rejected, (state, { payload }) => {
-                state.loading = false;
                 state.generalData = (payload as any).data;
+            }),
+            builder.addCase(getGeneralData.rejected, (state, { payload }) => {
+                state.loading = false;
+                state.generalData = null;
+                state.error = (payload as any)?.message;
             })
     },
 })

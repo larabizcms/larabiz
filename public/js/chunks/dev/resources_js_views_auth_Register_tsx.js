@@ -109,24 +109,6 @@ function mapErrorsToForm(res, setError) {
 
 /***/ }),
 
-/***/ "./resources/js/hooks/hooks.ts":
-/*!*************************************!*\
-  !*** ./resources/js/hooks/hooks.ts ***!
-  \*************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   useAppDispatch: () => (/* binding */ useAppDispatch)
-/* harmony export */ });
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/dist/react-redux.mjs");
-
-var useAppDispatch = function useAppDispatch() {
-  return (0,react_redux__WEBPACK_IMPORTED_MODULE_0__.useDispatch)();
-};
-
-/***/ }),
-
 /***/ "./resources/js/layouts/shared/ErrorMessage.tsx":
 /*!******************************************************!*\
   !*** ./resources/js/layouts/shared/ErrorMessage.tsx ***!

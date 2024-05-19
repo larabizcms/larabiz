@@ -20,6 +20,12 @@ export const authApi = createApi({
                 method: 'GET',
             }),
         }),
+        // getGeneralData: builder.query({
+        //     query: () => ({
+        //         url: '/admin/general',
+        //         method: 'GET',
+        //     }),
+        // }),
     }),
 });
 

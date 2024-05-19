@@ -7,7 +7,7 @@ import YearlyBreakup from '../components/dashboard/YearlyBreakup';
 import MonthlyEarnings from '../components/dashboard/MonthlyEarnings';
 import RecentTransactions from '../components/dashboard/RecentTransactions';
 import ProductPerformance from '../components/dashboard/ProductPerformance';
-import Blog from '../components/dashboard/Blog';
+//import Blog from '../components/dashboard/Blog';
 
 export default function Dashboard() {
     return (
@@ -33,9 +33,9 @@ export default function Dashboard() {
                     <Grid item xs={12} lg={8}>
                         <ProductPerformance />
                     </Grid>
-                    <Grid item xs={12}>
+                    {/* <Grid item xs={12}>
                         <Blog />
-                    </Grid>
+                    </Grid> */}
                 </Grid>
             </Box>
         </PageContainer>

@@ -11,7 +11,6 @@ import {
 } from "@mui/material";
 
 import { IconListCheck, IconMail, IconUser } from "@tabler/icons-react";
-import { useAppDispatch } from "~/hooks/hooks";
 import { logout } from "~/features/auth/authSlice";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";

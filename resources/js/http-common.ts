@@ -1,6 +1,6 @@
 import axios from "axios";
 
-let headers = {
+const headers = {
     "Content-type": "application/json",
 };
 

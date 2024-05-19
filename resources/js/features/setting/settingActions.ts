@@ -1,8 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import http from "~/http-common";
 
-export const generalData = createAsyncThunk(
-    'auth/login',
+export const getGeneralData = createAsyncThunk(
+    'admin/general',
     async ({}, { rejectWithValue }) => {
         try {
             const res = await http.get(`/admin/general`);
