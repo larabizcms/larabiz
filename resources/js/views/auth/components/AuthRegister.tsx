@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Box, Typography } from '@mui/material';
-
-import CustomTextField from '../../../components/forms/theme-elements/CustomTextField';
+import { Controller, useForm } from 'react-hook-form';
+import CustomTextField from '~/components/forms/theme-elements/CustomTextField';
 import { Stack } from '@mui/system';
 import { NavigateFunction, useNavigate } from 'react-router-dom';
-import AuthService from '../../../service/Auth.service';
 import { LoadingButton } from '@mui/lab';
+import { registerUser } from '~/features/auth/authActions';
+import { useSelector } from 'react-redux';
+import { RegisterData } from '~/service/types/AuthData';
+import { useAppDispatch } from '~/hooks/hooks';
 
 interface registerType {
     title?: string;
@@ -13,25 +16,27 @@ interface registerType {
     subtext?: JSX.Element | JSX.Element[];
 }
 
+interface AuthState {
+    loading: boolean;
+    errors: any;
+    success: boolean;
+}
+
 const AuthRegister = ({ title, subtitle, subtext }: registerType) => {
-    const [isFormSubmitting, setIsFormSubmitting] = useState<boolean>(false);
-    const [error, setError] = useState<string>();
-    const [email, setEmail] = useState<string>("");
-    const [password, setPassword] = useState<string>("");
-    const navigate: NavigateFunction = useNavigate();
+    const { loading, errors, success } = useSelector<{ auth: any }, AuthState>(
+        (state) => state.auth
+    );
 
-    const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        setIsFormSubmitting(true);
+    //const navigate: NavigateFunction = useNavigate();
+    const dispatch = useAppDispatch();
+    const { control, handleSubmit } = useForm<RegisterData>();
 
-        // AuthService.register({ email: email, password: password })
-        //     .then((response) => {
-        //         navigate("/admin-cp");
-        //     })
-        //     .catch((e) => {
-        //         setError(e.response.data.message);
-        //         setIsFormSubmitting(false);
-        //     });
+    const submitForm = (data: RegisterData) => {
+        dispatch(registerUser(data)).then((res) => {
+            if (success) {
+                //navigate("/admin-cp/login");
+            }
+        });
     };
 
     return (
@@ -44,19 +49,31 @@ const AuthRegister = ({ title, subtitle, subtext }: registerType) => {
 
             {subtext}
 
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit(submitForm)}>
                 <Box>
                     <Stack mb={3}>
                         <Typography variant="subtitle1"
                             fontWeight={600} component="label" htmlFor='name' mb="5px">Name</Typography>
-                        <CustomTextField
-                        id="name"
-                        variant="outlined"
-                        fullWidth
-                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                            setEmail(e.target.value);
-                        }}
+
+                        <Controller
+                            control={control}
+                            rules={{
+                                required: true,
+                            }}
+                            render={({ field: { onChange, onBlur, value } }: any) => (
+                                <CustomTextField
+                                    id="name"
+                                    variant="outlined"
+                                    fullWidth
+                                    onBlur={onBlur}
+                                    onChange={onChange}
+                                    value={value}
+                                />
+                            )}
+                            name="name"
                         />
+
+                        {errors?.name && <p>{errors.name[0]}</p>}
 
                         <Typography variant="subtitle1"
                             fontWeight={600} component="label" htmlFor='email' mb="5px" mt="25px">Email Address</Typography>
@@ -64,14 +81,13 @@ const AuthRegister = ({ title, subtitle, subtext }: registerType) => {
 
                         <Typography variant="subtitle1"
                             fontWeight={600} component="label" htmlFor='password' mb="5px" mt="25px">Password</Typography>
+
                         <CustomTextField
                             id="password"
                             variant="outlined"
                             fullWidth
                             type="password"
-                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                                setPassword(e.target.value);
-                            }}
+
                         />
                     </Stack>
                     <LoadingButton
@@ -80,7 +96,7 @@ const AuthRegister = ({ title, subtitle, subtext }: registerType) => {
                         size="large"
                         fullWidth
                         type="submit"
-                        loading={isFormSubmitting}
+                        loading={loading}
                     >
                         Sign Up
                     </LoadingButton>

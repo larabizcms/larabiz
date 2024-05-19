@@ -1,4 +1,5 @@
 const mix = require("laravel-mix");
+const path = require('path');
 //const buildPath = 'build';
 
 mix.disableNotifications();
@@ -32,7 +33,7 @@ mix.webpackConfig({
     resolve: {
         extensions: [".ts", ".tsx"],
         alias: {
-            //'@': path.resolve(__dirname, 'resources/js/'),
+            '~': path.resolve(__dirname, 'resources/js/'),
         },
     },
     output: {
@@ -49,6 +50,7 @@ mix.js("resources/js/app.tsx", "js/app.js")
         'react-router-dom',
         'react-redux',
         'react-dom/client',
+        'react-hook-form',
     ], 'js/vendor-core.min.js')
     .extract()
     .react()

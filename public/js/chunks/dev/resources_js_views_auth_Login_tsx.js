@@ -1,28 +1,6 @@
 "use strict";
 (self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_js_views_auth_Login_tsx"],{
 
-/***/ "./resources/js/http-common.ts":
-/*!*************************************!*\
-  !*** ./resources/js/http-common.ts ***!
-  \*************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (axios__WEBPACK_IMPORTED_MODULE_0___default().create({
-  baseURL: "http://larabiz.local" + "/api",
-  headers: {
-    "Content-type": "application/json"
-  }
-}));
-
-/***/ }),
-
 /***/ "./resources/js/service/Auth.service.ts":
 /*!**********************************************!*\
   !*** ./resources/js/service/Auth.service.ts ***!
