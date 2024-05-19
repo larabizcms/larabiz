@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { registerUser, loginUser } from './authActions';
-import { UserData } from '~/services/types/AuthData';
+import { UserData } from '~/features/types/AuthData';
 
 export interface AuthState {
     loading: boolean;
