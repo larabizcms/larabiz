@@ -13,13 +13,13 @@ const userToken = localStorage.getItem('lb_auth_token')
     ? JSON.parse(localStorage.getItem('lb_auth_token') as string)
     : null;
 
-const user = localStorage.getItem('lb_auth_user')
-    ? JSON.parse(localStorage.getItem('lb_auth_user') as string)
-    : null;
+// const user = localStorage.getItem('lb_auth_user')
+//     ? JSON.parse(localStorage.getItem('lb_auth_user') as string)
+//     : null;
 
 const initialState: AuthState = {
     loading: false,
-    user: user,
+    user: null,
     userToken: userToken,
     payload: null,
     success: false, // for monitoring the registration process.
@@ -31,11 +31,14 @@ const authSlice = createSlice({
     reducers: {
         logout: (state) => {
             localStorage.removeItem('lb_auth_token');
-            localStorage.removeItem('lb_auth_user');
+            //localStorage.removeItem('lb_auth_user');
             state.loading = false;
             state.user = null;
             state.userToken = null;
             state.payload = null;
+        },
+        setUser: (state, { payload }) => {
+            state.user = payload.data.data;
         },
     },
     extraReducers: (builder) => {
@@ -53,7 +56,7 @@ const authSlice = createSlice({
                 state.loading = false;
                 state.payload = action.payload;
             }),
-        // Login
+            // Login
             builder.addCase(loginUser.pending, (state, action) => {
                 state.loading = true;
                 state.payload = null;
@@ -72,6 +75,6 @@ const authSlice = createSlice({
     },
 })
 
-export const { logout } = authSlice.actions;
+export const { logout, setUser } = authSlice.actions;
 
 export default authSlice.reducer;

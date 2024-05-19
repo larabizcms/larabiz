@@ -6,8 +6,9 @@ import { NavigateFunction, Outlet, useNavigate } from "react-router-dom";
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import { baselightTheme } from "../utils/theme/DefaultColors";
-import { useSelector } from "react-redux";
-import NotFound from "~/views/NotFound";
+import { useDispatch, useSelector } from "react-redux";
+import { useGetUserDetailsQuery } from "~/services/auth/authService";
+import { setUser } from "~/features/auth/authSlice";
 
 const MainWrapper = styled("div")(() => ({
     display: "flex",
@@ -27,14 +28,25 @@ const PageWrapper = styled("div")(() => ({
 export default function Master() {
     const [isSidebarOpen, setSidebarOpen] = useState(false);
     const [isMobileSidebarOpen, setMobileSidebarOpen] = useState(false);
-    const { user } = useSelector((state: any) => state.auth);
+    const { userToken } = useSelector((state: any) => state.auth);
     const navigate: NavigateFunction = useNavigate();
+    const dispatch = useDispatch();
+
+    const { data } = useGetUserDetailsQuery('userDetails', {
+        pollingInterval: 900000,
+    });
 
     useEffect(() => {
-        if (!user) {
+        if (data) {
+            dispatch(setUser(data));
+        }
+    }, [data, dispatch]);
+
+    useEffect(() => {
+        if (!userToken) {
             navigate('/admin-cp/login');
         }
-    }, [navigate, user]);
+    }, [navigate, userToken]);
 
     return (
         <ThemeProvider theme={baselightTheme}>

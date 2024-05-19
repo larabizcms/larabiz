@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
     Box,
     Typography,
@@ -7,7 +7,7 @@ import {
     Stack,
     Checkbox,
 } from "@mui/material";
-import { Link, useNavigate, NavigateFunction } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { LoadingButton } from '@mui/lab';
 import { useAppDispatch } from "~/hooks/hooks";
 import { useForm } from "react-hook-form";
@@ -17,6 +17,7 @@ import { useSelector } from "react-redux";
 import { mapErrorsToForm } from "~/hooks/helper";
 import Text from "~/components/forms/Text";
 import { AuthState } from "~/features/auth/authSlice";
+import ErrorMessage from "~/layouts/shared/ErrorMessage";
 
 interface loginType {
     title?: string;
@@ -25,34 +26,16 @@ interface loginType {
 }
 
 const AuthLogin = ({ title, subtitle, subtext }: loginType) => {
-    const { loading, success, user } = useSelector<{ auth: any }, AuthState>((state) => state.auth);
-    const navigate: NavigateFunction = useNavigate();
-    const dispatch = useAppDispatch();
+    const { loading } = useSelector<{ auth: any }, AuthState>((state) => state.auth);
     const { control, setError, setValue, formState: { errors }, handleSubmit } = useForm<LoginData>();
+    const dispatch = useAppDispatch();
 
     const submitForm = (data: LoginData) => {
         dispatch(loginUser(data)).then((res: any) => {
-            if (success) {
-                // set token
-                localStorage.setItem("lb_auth_token", res.data.token);
-                //console.log(res.data.token);
-
-                // redirect
-                //navigate("/admin-cp");
-                return false;
-            }
-
             mapErrorsToForm(res, setError);
-
             setValue("password", '');
         });
     };
-
-    useEffect(() => {
-        if (user) {
-            navigate('/admin-cp')
-        }
-    }, [navigate, user]);
 
     return (
         <>
@@ -63,6 +46,8 @@ const AuthLogin = ({ title, subtitle, subtext }: loginType) => {
             ) : null}
 
             {subtext}
+
+            <ErrorMessage errors={errors}/>
 
             <form onSubmit={handleSubmit(submitForm)}>
                 <Stack>

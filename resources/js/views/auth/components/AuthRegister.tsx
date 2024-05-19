@@ -10,6 +10,7 @@ import { useAppDispatch } from '~/hooks/hooks';
 import Text from '~/components/forms/Text';
 import { mapErrorsToForm } from '~/hooks/helper';
 import { AuthState } from '~/features/auth/authSlice';
+import ErrorMessage from '~/layouts/shared/ErrorMessage';
 
 interface Props {
     title?: string;
@@ -18,9 +19,7 @@ interface Props {
 }
 
 const AuthRegister = ({ title, subtitle, subtext }: Props) => {
-    const { loading, success } = useSelector<{ auth: any }, AuthState>(
-        (state) => state.auth
-    );
+    const { loading } = useSelector<{ auth: any }, AuthState>((state) => state.auth);
 
     //const navigate: NavigateFunction = useNavigate();
     const dispatch = useAppDispatch();
@@ -28,14 +27,13 @@ const AuthRegister = ({ title, subtitle, subtext }: Props) => {
 
     const submitForm = (data: RegisterData) => {
         dispatch(registerUser(data)).then((res) => {
-            if (success) {
+            if (res.payload.success) {
                 //navigate("/admin-cp/login");
 
                 return false;
             }
 
             mapErrorsToForm(res, setError);
-
             setValue("password", '');
             setValue("password_confirmation", '');
         });
@@ -51,11 +49,7 @@ const AuthRegister = ({ title, subtitle, subtext }: Props) => {
 
             {subtext}
 
-            {errors.root ? (
-                <Typography mb={3} color="error">
-                    {errors.root.message}
-                </Typography>
-            ) : null}
+            <ErrorMessage errors={errors}/>
 
             <form onSubmit={handleSubmit(submitForm)}>
                 <Box>
@@ -64,7 +58,6 @@ const AuthRegister = ({ title, subtitle, subtext }: Props) => {
                             <Text
                                 control={control}
                                 errors={errors}
-                                //validationErrors={validationErrors}
                                 name="name"
                                 label="Name"
                                 rules={{
