@@ -14,7 +14,7 @@ export const authApi = createApi({
         },
     }),
     endpoints: (builder) => ({
-        getUserDetails: builder.query({
+        getUserProfile: builder.query({
             query: () => ({
                 url: '/profile',
                 method: 'GET',
@@ -25,4 +25,4 @@ export const authApi = createApi({
 
 // export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetUserDetailsQuery } = authApi
+export const { useGetUserProfileQuery } = authApi

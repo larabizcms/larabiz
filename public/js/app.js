@@ -211,25 +211,23 @@ var loginUser = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_1__.createAsyncThun
           });
         case 5:
           res = _context.sent;
-          console.log(res.data.data);
-          localStorage.setItem('lb_auth_user', JSON.stringify(res.data.data.user));
           localStorage.setItem('lb_auth_token', JSON.stringify(res.data.data.token));
           return _context.abrupt("return", res.data);
-        case 12:
-          _context.prev = 12;
+        case 10:
+          _context.prev = 10;
           _context.t0 = _context["catch"](2);
           if (!(_context.t0.response && _context.t0.response.data)) {
-            _context.next = 18;
+            _context.next = 16;
             break;
           }
           return _context.abrupt("return", rejectWithValue(_context.t0.response.data));
-        case 18:
+        case 16:
           return _context.abrupt("return", rejectWithValue(_context.t0.message));
-        case 19:
+        case 17:
         case "end":
           return _context.stop();
       }
-    }, _callee, null, [[2, 12]]);
+    }, _callee, null, [[2, 10]]);
   }));
   return function (_x, _x2) {
     return _ref3.apply(this, arguments);
@@ -294,11 +292,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var userToken = localStorage.getItem('lb_auth_token') ? JSON.parse(localStorage.getItem('lb_auth_token')) : null;
-
-// const user = localStorage.getItem('lb_auth_user')
-//     ? JSON.parse(localStorage.getItem('lb_auth_user') as string)
-//     : null;
-
 var initialState = {
   loading: false,
   user: null,
@@ -312,7 +305,6 @@ var authSlice = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_1__.createSlice)({
   reducers: {
     logout: function logout(state) {
       localStorage.removeItem('lb_auth_token');
-      //localStorage.removeItem('lb_auth_user');
       state.loading = false;
       state.user = null;
       state.userToken = null;
@@ -489,10 +481,10 @@ function Master() {
     userToken = _useSelector.userToken;
   var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_9__.useNavigate)();
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_8__.useDispatch)();
-  var _useGetUserDetailsQue = (0,_services_auth_authService__WEBPACK_IMPORTED_MODULE_4__.useGetUserDetailsQuery)('userDetails', {
+  var _useGetUserProfileQue = (0,_services_auth_authService__WEBPACK_IMPORTED_MODULE_4__.useGetUserProfileQuery)('userProfile', {
       pollingInterval: 900000
     }),
-    data = _useGetUserDetailsQue.data;
+    data = _useGetUserProfileQue.data;
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     if (data) {
       dispatch((0,_features_auth_authSlice__WEBPACK_IMPORTED_MODULE_5__.setUser)(data));
@@ -866,9 +858,9 @@ var Menuitems = [{
   subheader: "Utilities"
 }, {
   id: (0,lodash__WEBPACK_IMPORTED_MODULE_0__.uniqueId)(),
-  title: "Typography",
+  title: "Documentation",
   icon: _tabler_icons_react__WEBPACK_IMPORTED_MODULE_2__["default"],
-  href: "/admin-cp/login"
+  href: "/admin-cp/api-documentation"
 }, {
   id: (0,lodash__WEBPACK_IMPORTED_MODULE_0__.uniqueId)(),
   title: "Shadow",
@@ -1208,7 +1200,7 @@ var SidebarItems = function SidebarItems(_ref) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   authApi: () => (/* binding */ authApi),
-/* harmony export */   useGetUserDetailsQuery: () => (/* binding */ useGetUserDetailsQuery)
+/* harmony export */   useGetUserProfileQuery: () => (/* binding */ useGetUserProfileQuery)
 /* harmony export */ });
 /* harmony import */ var _reduxjs_toolkit_query_react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @reduxjs/toolkit/query/react */ "./node_modules/@reduxjs/toolkit/dist/query/react/rtk-query-react.modern.mjs");
 /* harmony import */ var _reduxjs_toolkit_query_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @reduxjs/toolkit/query/react */ "./node_modules/@reduxjs/toolkit/dist/query/rtk-query.modern.mjs");
@@ -1229,7 +1221,7 @@ var authApi = (0,_reduxjs_toolkit_query_react__WEBPACK_IMPORTED_MODULE_0__.creat
   }),
   endpoints: function endpoints(builder) {
     return {
-      getUserDetails: builder.query({
+      getUserProfile: builder.query({
         query: function query() {
           return {
             url: '/profile',
@@ -1243,7 +1235,7 @@ var authApi = (0,_reduxjs_toolkit_query_react__WEBPACK_IMPORTED_MODULE_0__.creat
 
 // export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-var useGetUserDetailsQuery = authApi.useGetUserDetailsQuery;
+var useGetUserProfileQuery = authApi.useGetUserProfileQuery;
 
 
 /***/ }),

@@ -27,9 +27,9 @@ const Menuitems = [
     },
     {
         id: uniqueId(),
-        title: "Typography",
+        title: "Documentation",
         icon: IconTypography,
-        href: "/admin-cp/login",
+        href: "/admin-cp/api-documentation",
     },
     {
         id: uniqueId(),

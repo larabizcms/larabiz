@@ -7,7 +7,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import { baselightTheme } from "../utils/theme/DefaultColors";
 import { useDispatch, useSelector } from "react-redux";
-import { useGetUserDetailsQuery } from "~/services/auth/authService";
+import { useGetUserProfileQuery } from "~/services/auth/authService";
 import { setUser } from "~/features/auth/authSlice";
 
 const MainWrapper = styled("div")(() => ({
@@ -32,7 +32,7 @@ export default function Master() {
     const navigate: NavigateFunction = useNavigate();
     const dispatch = useDispatch();
 
-    const { data } = useGetUserDetailsQuery('userDetails', {
+    const { data } = useGetUserProfileQuery('userProfile', {
         pollingInterval: 900000,
     });
 

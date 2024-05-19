@@ -11,9 +11,6 @@ export const loginUser = createAsyncThunk(
                 { email, password }
             );
 
-            console.log(res.data.data);
-
-            localStorage.setItem('lb_auth_user', JSON.stringify(res.data.data.user));
             localStorage.setItem('lb_auth_token', JSON.stringify(res.data.data.token));
 
             return res.data;
