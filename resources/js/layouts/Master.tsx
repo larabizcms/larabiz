@@ -1,11 +1,13 @@
 import { styled, Container, Box } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "./header/Header";
 import Sidebar from "./sidebar/Sidebar";
-import { Outlet } from "react-router-dom";
+import { NavigateFunction, Outlet, useNavigate } from "react-router-dom";
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import { baselightTheme } from "../utils/theme/DefaultColors";
+import { useSelector } from "react-redux";
+import NotFound from "~/views/NotFound";
 
 const MainWrapper = styled("div")(() => ({
     display: "flex",
@@ -25,6 +27,14 @@ const PageWrapper = styled("div")(() => ({
 export default function Master() {
     const [isSidebarOpen, setSidebarOpen] = useState(false);
     const [isMobileSidebarOpen, setMobileSidebarOpen] = useState(false);
+    const { user } = useSelector((state: any) => state.auth);
+    const navigate: NavigateFunction = useNavigate();
+
+    useEffect(() => {
+        if (!user) {
+            navigate('/admin-cp/login');
+        }
+    }, [navigate, user]);
 
     return (
         <ThemeProvider theme={baselightTheme}>

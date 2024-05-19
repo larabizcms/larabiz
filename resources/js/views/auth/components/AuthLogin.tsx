@@ -50,9 +50,9 @@ const AuthLogin = ({ title, subtitle, subtext }: loginType) => {
 
     useEffect(() => {
         if (user) {
-          navigate('/admin-cp')
+            navigate('/admin-cp')
         }
-      }, [navigate, user]);
+    }, [navigate, user]);
 
     return (
         <>
@@ -83,14 +83,14 @@ const AuthLogin = ({ title, subtitle, subtext }: loginType) => {
 
                     <Box mt="25px">
                         <Text
-                        label="Password"
-                        name="password"
-                        type="password"
-                        control={control}
-                        errors={errors}
-                        rules={{
-                            required: "Password is required",
-                        }}
+                            label="Password"
+                            name="password"
+                            type="password"
+                            control={control}
+                            errors={errors}
+                            rules={{
+                                required: "Password is required",
+                            }}
                         />
                     </Box>
 

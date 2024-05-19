@@ -25,15 +25,8 @@ const Profile = () => {
         setAnchorEl2(null);
     };
 
-    const { userToken, user } = useSelector((state: any) => state.auth)
-    //const dispatch = useAppDispatch();
+    const { user } = useSelector((state: any) => state.auth)
     const dispatch = useDispatch();
-
-    useEffect(() => {
-        if (userToken) {
-          //dispatch(getUserDetails())
-        }
-      }, [userToken, dispatch])
 
     return (
         <Box>
