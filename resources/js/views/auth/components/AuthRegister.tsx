@@ -5,7 +5,7 @@ import { Stack } from '@mui/system';
 import { LoadingButton } from '@mui/lab';
 import { registerUser } from '~/features/auth/authActions';
 import { useSelector } from 'react-redux';
-import { RegisterData } from '~/service/types/AuthData';
+import { RegisterData } from '~/services/types/AuthData';
 import { useAppDispatch } from '~/hooks/hooks';
 import Text from '~/components/forms/Text';
 import { mapErrorsToForm } from '~/hooks/helper';

@@ -12,7 +12,7 @@ const PageContainer = ({ title, description, children }: Props) => (
   <HelmetProvider>
     <div>
       <Helmet>
-        <title>{title}</title>
+        <title>{title} - {process.env.MIX_APP_NAME || "Larabiz"}</title>
         <meta name="description" content={description} />
       </Helmet>
       {children}

@@ -4,10 +4,9 @@ import {
     Typography,
     Stack,
 } from "@mui/material";
-import { Link, useNavigate, NavigateFunction } from "react-router-dom";
+import { useNavigate, NavigateFunction } from "react-router-dom";
 
 import CustomTextField from "../../../components/forms/theme-elements/CustomTextField";
-import AuthService from "../../../service/Auth.service";
 import { LoadingButton } from '@mui/lab';
 
 interface forgotPasswordType {

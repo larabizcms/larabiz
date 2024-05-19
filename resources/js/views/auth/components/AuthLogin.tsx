@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 import { LoadingButton } from '@mui/lab';
 import { useAppDispatch } from "~/hooks/hooks";
 import { useForm } from "react-hook-form";
-import { LoginData } from "~/service/types/AuthData";
+import { LoginData } from "~/services/types/AuthData";
 import { loginUser } from "~/features/auth/authActions";
 import { useSelector } from "react-redux";
 import { mapErrorsToForm } from "~/hooks/helper";

@@ -1,9 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { registerUser, loginUser } from './authActions';
+import { UserData } from '~/services/types/AuthData';
 
 export interface AuthState {
     loading: boolean;
-    user: null;
+    user: null | UserData;
     userToken: null | string;
     payload: null | {} | unknown;
     success: boolean; // for monitoring the registration process.
