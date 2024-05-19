@@ -299,15 +299,24 @@ var authSlice = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_1__.createSlice)({
   initialState: initialState,
   reducers: {},
   extraReducers: function extraReducers(builder) {
-    // register user
     builder.addCase(_authActions__WEBPACK_IMPORTED_MODULE_0__.registerUser.pending, function (state, action) {
       state.loading = true;
       state.payload = null;
     }), builder.addCase(_authActions__WEBPACK_IMPORTED_MODULE_0__.registerUser.fulfilled, function (state, action) {
       state.loading = false;
       state.success = true;
-      state.user = action.payload;
+      state.user = action.payload.user;
     }), builder.addCase(_authActions__WEBPACK_IMPORTED_MODULE_0__.registerUser.rejected, function (state, action) {
+      state.loading = false;
+      state.payload = action.payload;
+    }), builder.addCase(_authActions__WEBPACK_IMPORTED_MODULE_0__.loginUser.pending, function (state, action) {
+      state.loading = true;
+      state.payload = null;
+    }), builder.addCase(_authActions__WEBPACK_IMPORTED_MODULE_0__.loginUser.fulfilled, function (state, action) {
+      state.loading = false;
+      state.success = true;
+      state.user = action.payload.user;
+    }), builder.addCase(_authActions__WEBPACK_IMPORTED_MODULE_0__.loginUser.rejected, function (state, action) {
       state.loading = false;
       state.payload = action.payload;
     });

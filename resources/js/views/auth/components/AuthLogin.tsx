@@ -13,6 +13,11 @@ import { LoadingButton } from '@mui/lab';
 import { useAppDispatch } from "~/hooks/hooks";
 import { useForm } from "react-hook-form";
 import { LoginData } from "~/service/types/AuthData";
+import { loginUser } from "~/features/auth/authActions";
+import { useSelector } from "react-redux";
+import { mapErrorsToForm } from "~/hooks/helper";
+import Text from "~/components/forms/Text";
+import { AuthState } from "~/features/auth/authSlice";
 
 interface loginType {
     title?: string;
@@ -21,15 +26,26 @@ interface loginType {
 }
 
 const AuthLogin = ({ title, subtitle, subtext }: loginType) => {
-    const [isFormSubmitting, setIsFormSubmitting] = useState<boolean>(false);
-    const [email, setEmail] = useState<string>("");
-    const [password, setPassword] = useState<string>("");
+    const { loading, success } = useSelector<{ auth: any }, AuthState>((state) => state.auth);
     const navigate: NavigateFunction = useNavigate();
     const dispatch = useAppDispatch();
-    const { control, handleSubmit } = useForm<LoginData>();
+    const { control, setError, setValue, formState: { errors }, handleSubmit } = useForm<LoginData>();
 
     const submitForm = (data: LoginData) => {
+        dispatch(loginUser(data)).then((res: any) => {
+            if (success) {
+                // set token
+                localStorage.setItem("lb_auth_token", res.data.token);
 
+                // redirect
+                //navigate("/admin-cp");
+                return false;
+            }
+
+            mapErrorsToForm(res, setError);
+
+            setValue("password", '');
+        });
     };
 
     return (
@@ -45,42 +61,33 @@ const AuthLogin = ({ title, subtitle, subtext }: loginType) => {
             <form onSubmit={handleSubmit(submitForm)}>
                 <Stack>
                     <Box>
-                        <Typography
-                            variant="subtitle1"
-                            fontWeight={600}
-                            component="label"
-                            htmlFor="username"
-                            mb="5px"
-                        >
-                            Email
-                        </Typography>
-                        <CustomTextField
-                            variant="outlined"
-                            fullWidth type="email"
-                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                                setEmail(e.target.value);
+                        <Text
+                            label="Email"
+                            name="email"
+                            control={control} errors={errors}
+                            rules={{
+                                required: "Email is required",
+                                pattern: {
+                                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                                    message: "Invalid email address",
+                                },
                             }}
                         />
                     </Box>
+
                     <Box mt="25px">
-                        <Typography
-                            variant="subtitle1"
-                            fontWeight={600}
-                            component="label"
-                            htmlFor="password"
-                            mb="5px"
-                        >
-                            Password
-                        </Typography>
-                        <CustomTextField
-                            type="password"
-                            variant="outlined"
-                            fullWidth
-                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                                setPassword(e.target.value);
-                            }}
+                        <Text
+                        label="Password"
+                        name="password"
+                        type="password"
+                        control={control}
+                        errors={errors}
+                        rules={{
+                            required: "Password is required",
+                        }}
                         />
                     </Box>
+
                     <Stack
                         justifyContent="space-between"
                         direction="row"
@@ -112,8 +119,8 @@ const AuthLogin = ({ title, subtitle, subtext }: loginType) => {
                         size="large"
                         fullWidth
                         type="submit"
-                        disabled={isFormSubmitting}
-                        loading={isFormSubmitting}
+                        disabled={loading}
+                        loading={loading}
                     >
                         Sign In
                     </LoadingButton>

@@ -8,16 +8,13 @@ import { useSelector } from 'react-redux';
 import { RegisterData } from '~/service/types/AuthData';
 import { useAppDispatch } from '~/hooks/hooks';
 import Text from '~/components/forms/Text';
+import { mapErrorsToForm } from '~/hooks/helper';
+import { AuthState } from '~/features/auth/authSlice';
 
 interface Props {
     title?: string;
     subtitle?: JSX.Element | JSX.Element[];
     subtext?: JSX.Element | JSX.Element[];
-}
-
-interface AuthState {
-    loading: boolean;
-    success: boolean;
 }
 
 const AuthRegister = ({ title, subtitle, subtext }: Props) => {
@@ -37,19 +34,7 @@ const AuthRegister = ({ title, subtitle, subtext }: Props) => {
                 return false;
             }
 
-            if (res.payload.errors) {
-                Object.keys(res.payload.errors).forEach((key: string) => {
-                    setError(key as "name" | "email" | "password" | "password_confirmation", {
-                        type: "manual",
-                        message: res.payload.errors[key][0],
-                    });
-                });
-            } else {
-                setError('root', {
-                    type: "manual",
-                    message: res.payload.message,
-                });
-            }
+            mapErrorsToForm(res, setError);
 
             setValue("password", '');
             setValue("password_confirmation", '');

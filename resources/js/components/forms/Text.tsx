@@ -5,24 +5,19 @@ import CustomTextField from './theme-elements/CustomTextField';
 import {TextFieldProps} from '@mui/material/TextField';
 
 type Props = TextFieldProps & {
-    control: any,
-    errors: any,
+    control?: any,
+    errors?: any,
     name: string,
     id?: string,
     rules?: {},
 }
 
 export default function Text ({ ...props }: Props): React.JSX.Element {
-    const { control, errors, name, label, id, rules } = props;
+    const { control, errors, name, label, id, rules, defaultValue } = props;
 
     const inputProps = {...props};
 
     delete inputProps.label;
-
-    // if (validationErrors && validationErrors[name]) {
-    //     inputProps.error = true;
-    //     inputProps.helperText = validationErrors[name];
-    // }
 
     if (errors && errors[name]) {
         inputProps.error = true;
@@ -37,6 +32,8 @@ export default function Text ({ ...props }: Props): React.JSX.Element {
             <Controller
                 control={control}
                 rules={rules}
+                // Fix "a component is changing an uncontrolled input to be controlled..."
+                defaultValue={defaultValue || ''}
                 render={({ field: { onChange, onBlur, value } }: any) => (
                     <CustomTextField
                         id={id || name}

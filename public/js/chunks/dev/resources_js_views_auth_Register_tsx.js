@@ -37,15 +37,10 @@ function Text(_ref) {
     name = props.name,
     label = props.label,
     id = props.id,
-    rules = props.rules;
+    rules = props.rules,
+    defaultValue = props.defaultValue;
   var inputProps = _objectSpread({}, props);
   delete inputProps.label;
-
-  // if (validationErrors && validationErrors[name]) {
-  //     inputProps.error = true;
-  //     inputProps.helperText = validationErrors[name];
-  // }
-
   if (errors && errors[name]) {
     inputProps.error = true;
     inputProps.helperText = errors[name].message;
@@ -60,7 +55,10 @@ function Text(_ref) {
       children: label
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_hook_form__WEBPACK_IMPORTED_MODULE_4__.Controller, {
       control: control,
-      rules: rules,
+      rules: rules
+      // Fix "a component is changing an uncontrolled input to be controlled..."
+      ,
+      defaultValue: defaultValue || '',
       render: function render(_ref2) {
         var _ref2$field = _ref2.field,
           onChange = _ref2$field.onChange,
@@ -80,6 +78,34 @@ function Text(_ref) {
   });
 }
 ;
+
+/***/ }),
+
+/***/ "./resources/js/hooks/helper.ts":
+/*!**************************************!*\
+  !*** ./resources/js/hooks/helper.ts ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   mapErrorsToForm: () => (/* binding */ mapErrorsToForm)
+/* harmony export */ });
+function mapErrorsToForm(res, setError) {
+  if (res.payload.errors) {
+    Object.keys(res.payload.errors).forEach(function (key) {
+      setError(key, {
+        type: "manual",
+        message: res.payload.errors[key][0]
+      });
+    });
+  } else {
+    setError('root', {
+      type: "manual",
+      message: res.payload.message
+    });
+  }
+}
 
 /***/ }),
 
@@ -230,16 +256,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Typography/Typography.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Box/Box.js");
-/* harmony import */ var react_hook_form__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-hook-form */ "./node_modules/react-hook-form/dist/index.esm.mjs");
-/* harmony import */ var _mui_system__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @mui/system */ "./node_modules/@mui/system/esm/Stack/Stack.js");
-/* harmony import */ var _mui_lab__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @mui/lab */ "./node_modules/@mui/lab/LoadingButton/LoadingButton.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Typography/Typography.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Box/Box.js");
+/* harmony import */ var react_hook_form__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-hook-form */ "./node_modules/react-hook-form/dist/index.esm.mjs");
+/* harmony import */ var _mui_system__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @mui/system */ "./node_modules/@mui/system/esm/Stack/Stack.js");
+/* harmony import */ var _mui_lab__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @mui/lab */ "./node_modules/@mui/lab/LoadingButton/LoadingButton.js");
 /* harmony import */ var _features_auth_authActions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ~/features/auth/authActions */ "./resources/js/features/auth/authActions.ts");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/dist/react-redux.mjs");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/dist/react-redux.mjs");
 /* harmony import */ var _hooks_hooks__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ~/hooks/hooks */ "./resources/js/hooks/hooks.ts");
 /* harmony import */ var _components_forms_Text__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ~/components/forms/Text */ "./resources/js/components/forms/Text.tsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _hooks_helper__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ~/hooks/helper */ "./resources/js/hooks/helper.ts");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -254,7 +282,7 @@ var AuthRegister = function AuthRegister(_ref) {
   var title = _ref.title,
     subtitle = _ref.subtitle,
     subtext = _ref.subtext;
-  var _useSelector = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(function (state) {
+  var _useSelector = (0,react_redux__WEBPACK_IMPORTED_MODULE_6__.useSelector)(function (state) {
       return state.auth;
     }),
     loading = _useSelector.loading,
@@ -262,7 +290,7 @@ var AuthRegister = function AuthRegister(_ref) {
 
   //const navigate: NavigateFunction = useNavigate();
   var dispatch = (0,_hooks_hooks__WEBPACK_IMPORTED_MODULE_2__.useAppDispatch)();
-  var _useForm = (0,react_hook_form__WEBPACK_IMPORTED_MODULE_6__.useForm)(),
+  var _useForm = (0,react_hook_form__WEBPACK_IMPORTED_MODULE_7__.useForm)(),
     control = _useForm.control,
     handleSubmit = _useForm.handleSubmit,
     setError = _useForm.setError,
@@ -275,40 +303,28 @@ var AuthRegister = function AuthRegister(_ref) {
 
         return false;
       }
-      if (res.payload.errors) {
-        Object.keys(res.payload.errors).forEach(function (key) {
-          setError(key, {
-            type: "manual",
-            message: res.payload.errors[key][0]
-          });
-        });
-      } else {
-        setError('root', {
-          type: "manual",
-          message: res.payload.message
-        });
-      }
+      (0,_hooks_helper__WEBPACK_IMPORTED_MODULE_4__.mapErrorsToForm)(res, setError);
       setValue("password", '');
       setValue("password_confirmation", '');
     });
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
-    children: [title ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
+    children: [title ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], {
       fontWeight: "700",
       variant: "h2",
       mb: 1,
       children: title
-    }) : null, subtext, errors.root ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    }) : null, subtext, errors.root ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], {
       mb: 3,
       color: "error",
       children: errors.root.message
-    }) : null, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("form", {
+    }) : null, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("form", {
       onSubmit: handleSubmit(submitForm),
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_mui_system__WEBPACK_IMPORTED_MODULE_9__["default"], {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_9__["default"], {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_mui_system__WEBPACK_IMPORTED_MODULE_10__["default"], {
           mb: 3,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_forms_Text__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_9__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_forms_Text__WEBPACK_IMPORTED_MODULE_3__["default"], {
               control: control,
               errors: errors
               //validationErrors={validationErrors}
@@ -319,9 +335,9 @@ var AuthRegister = function AuthRegister(_ref) {
                 required: 'Name is required'
               }
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_9__["default"], {
             mt: "25px",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_forms_Text__WEBPACK_IMPORTED_MODULE_3__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_forms_Text__WEBPACK_IMPORTED_MODULE_3__["default"], {
               control: control,
               errors: errors,
               name: "email",
@@ -334,9 +350,9 @@ var AuthRegister = function AuthRegister(_ref) {
                 }
               }
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_9__["default"], {
             mt: "25px",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_forms_Text__WEBPACK_IMPORTED_MODULE_3__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_forms_Text__WEBPACK_IMPORTED_MODULE_3__["default"], {
               control: control,
               errors: errors,
               name: "password",
@@ -346,9 +362,9 @@ var AuthRegister = function AuthRegister(_ref) {
                 required: 'Password is required'
               }
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_9__["default"], {
             mt: "25px",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_forms_Text__WEBPACK_IMPORTED_MODULE_3__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_forms_Text__WEBPACK_IMPORTED_MODULE_3__["default"], {
               control: control,
               errors: errors,
               name: "password_confirmation",
@@ -359,7 +375,7 @@ var AuthRegister = function AuthRegister(_ref) {
               }
             })
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_lab__WEBPACK_IMPORTED_MODULE_10__["default"], {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_mui_lab__WEBPACK_IMPORTED_MODULE_11__["default"], {
           color: "primary",
           variant: "contained",
           size: "large",
