@@ -3,7 +3,7 @@ import http from "~/http-common";
 
 export const getGeneralData = createAsyncThunk(
     'admin/general',
-    async ({}, { rejectWithValue }) => {
+    async (undefined, { rejectWithValue }) => {
         try {
             const res = await http.get(`/admin/general`);
 

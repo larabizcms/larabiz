@@ -4,7 +4,7 @@ import { GeneralData } from '../types/SettingData';
 
 interface SettingState {
     loading: boolean;
-    generalData: null | GeneralData;
+    generalData: null | {};
     success: boolean;
     error: null | string;
 }

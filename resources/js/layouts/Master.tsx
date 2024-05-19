@@ -52,7 +52,7 @@ export default function Master() {
         if (!generalData) {
             dispatch(getGeneralData());
         }
-    }, [generalData, dispatch, userToken]);
+    }, [generalData, dispatch]);
 
     useEffect(() => {
         if (!userToken) {
