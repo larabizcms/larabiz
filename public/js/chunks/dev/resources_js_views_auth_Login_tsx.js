@@ -292,7 +292,8 @@ var AuthLogin = function AuthLogin(_ref) {
       return state.auth;
     }),
     loading = _useSelector.loading,
-    success = _useSelector.success;
+    success = _useSelector.success,
+    user = _useSelector.user;
   var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_7__.useNavigate)();
   var dispatch = (0,_hooks_hooks__WEBPACK_IMPORTED_MODULE_1__.useAppDispatch)();
   var _useForm = (0,react_hook_form__WEBPACK_IMPORTED_MODULE_8__.useForm)(),
@@ -306,6 +307,7 @@ var AuthLogin = function AuthLogin(_ref) {
       if (success) {
         // set token
         localStorage.setItem("lb_auth_token", res.data.token);
+        //console.log(res.data.token);
 
         // redirect
         //navigate("/admin-cp");
@@ -315,6 +317,11 @@ var AuthLogin = function AuthLogin(_ref) {
       setValue("password", '');
     });
   };
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (user) {
+      navigate('/admin-cp');
+    }
+  }, [navigate, user]);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
     children: [title ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_9__["default"], {
       fontWeight: "700",

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
     Box,
     Typography,
@@ -8,7 +8,6 @@ import {
     Checkbox,
 } from "@mui/material";
 import { Link, useNavigate, NavigateFunction } from "react-router-dom";
-import CustomTextField from "~/components/forms/theme-elements/CustomTextField";
 import { LoadingButton } from '@mui/lab';
 import { useAppDispatch } from "~/hooks/hooks";
 import { useForm } from "react-hook-form";
@@ -26,7 +25,7 @@ interface loginType {
 }
 
 const AuthLogin = ({ title, subtitle, subtext }: loginType) => {
-    const { loading, success } = useSelector<{ auth: any }, AuthState>((state) => state.auth);
+    const { loading, success, user } = useSelector<{ auth: any }, AuthState>((state) => state.auth);
     const navigate: NavigateFunction = useNavigate();
     const dispatch = useAppDispatch();
     const { control, setError, setValue, formState: { errors }, handleSubmit } = useForm<LoginData>();
@@ -36,6 +35,7 @@ const AuthLogin = ({ title, subtitle, subtext }: loginType) => {
             if (success) {
                 // set token
                 localStorage.setItem("lb_auth_token", res.data.token);
+                //console.log(res.data.token);
 
                 // redirect
                 //navigate("/admin-cp");
@@ -47,6 +47,12 @@ const AuthLogin = ({ title, subtitle, subtext }: loginType) => {
             setValue("password", '');
         });
     };
+
+    useEffect(() => {
+        if (user) {
+          navigate('/admin-cp')
+        }
+      }, [navigate, user]);
 
     return (
         <>

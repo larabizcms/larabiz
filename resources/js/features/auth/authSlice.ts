@@ -3,14 +3,24 @@ import { registerUser, loginUser } from './authActions';
 
 export interface AuthState {
     loading: boolean;
-    user: {};
+    user: null;
+    userToken: null | string;
     payload: null | {} | unknown;
     success: boolean; // for monitoring the registration process.
 }
 
+const userToken = localStorage.getItem('lb_auth_token')
+    ? JSON.parse(localStorage.getItem('lb_auth_token') as string)
+    : null;
+
+const user = localStorage.getItem('lb_auth_user')
+    ? JSON.parse(localStorage.getItem('lb_auth_user') as string)
+    : null;
+
 const initialState: AuthState = {
     loading: false,
-    user: {},
+    user: user,
+    userToken: userToken,
     payload: null,
     success: false, // for monitoring the registration process.
 }
@@ -18,8 +28,18 @@ const initialState: AuthState = {
 const authSlice = createSlice({
     name: 'auth',
     initialState,
-    reducers: {},
+    reducers: {
+        logout: (state) => {
+            localStorage.removeItem('lb_auth_token');
+            localStorage.removeItem('lb_auth_user');
+            state.loading = false;
+            state.user = null;
+            state.userToken = null;
+            state.payload = null;
+        },
+    },
     extraReducers: (builder) => {
+        // Register
         builder.addCase(registerUser.pending, (state, action) => {
             state.loading = true;
             state.payload = null;
@@ -33,14 +53,17 @@ const authSlice = createSlice({
                 state.loading = false;
                 state.payload = action.payload;
             }),
+        // Login
             builder.addCase(loginUser.pending, (state, action) => {
                 state.loading = true;
                 state.payload = null;
             }),
-            builder.addCase(loginUser.fulfilled, (state, action) => {
-                state.loading = false;
+            builder.addCase(loginUser.fulfilled, (state, { payload }) => {
+                state.loading = true;
                 state.success = true;
-                state.user = action.payload.user;
+
+                state.user = payload.data.user;
+                state.userToken = payload.data.token;
             }),
             builder.addCase(loginUser.rejected, (state, action) => {
                 state.loading = false;
@@ -49,4 +72,6 @@ const authSlice = createSlice({
     },
 })
 
-export default authSlice.reducer
+export const { logout } = authSlice.actions;
+
+export default authSlice.reducer;

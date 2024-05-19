@@ -9,7 +9,12 @@ export const loginUser = createAsyncThunk(
             const res = await http.post(
                 `/auth/login`,
                 { email, password }
-            )
+            );
+
+            console.log(res.data.data);
+
+            localStorage.setItem('lb_auth_user', JSON.stringify(res.data.data.user));
+            localStorage.setItem('lb_auth_token', JSON.stringify(res.data.data.token));
 
             return res.data;
         } catch (error: any) {

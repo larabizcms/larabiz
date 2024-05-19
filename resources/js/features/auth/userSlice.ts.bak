@@ -1,0 +1,38 @@
+import { createSlice } from '@reduxjs/toolkit'
+//import { getUserDetails, registerUser, userLogin } from './userActions'
+
+// initialize userToken from local storage
+const userToken = localStorage.getItem('lb_auth_token')
+    ? localStorage.getItem('lb_auth_token')
+    : null
+
+const initialState = {
+    loading: false,
+    user: null,
+    userToken,
+    error: null,
+    success: false,
+}
+
+const userSlice = createSlice({
+    name: 'user',
+    initialState,
+    reducers: {
+        logout: (state) => {
+            localStorage.removeItem('lb_auth_token');
+            localStorage.removeItem('lb_auth_user');
+            state.loading = false;
+            state.user = null;
+            state.userToken = null;
+            state.error = null;
+        },
+    },
+    //   extraReducers: {
+    //     // userLogin reducer ...
+    //     // registerUser reducer ...
+    //     // getUserDetails reducer ...
+    //   },
+})
+// export actions
+export const { logout } = userSlice.actions
+export default userSlice.reducer
