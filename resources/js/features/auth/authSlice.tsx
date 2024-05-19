@@ -3,16 +3,14 @@ import { registerUser } from './authActions';
 
 interface AuthState {
     loading: boolean;
-    userInfo: {}; // for user object
-    userToken: string | null; // for storing the JWT
+    user: {};
     errors: string[] | null;
     success: boolean; // for monitoring the registration process.
 }
 
 const initialState: AuthState = {
     loading: false,
-    userInfo: {}, // for user object
-    userToken: null, // for storing the JWT
+    user: {},
     errors: null,
     success: false, // for monitoring the registration process.
 }
@@ -30,6 +28,7 @@ const authSlice = createSlice({
             builder.addCase(registerUser.fulfilled, (state, action) => {
                 state.loading = false;
                 state.success = true;
+                state.user = action.payload;
             }),
             builder.addCase(registerUser.rejected, (state, action) => {
                 state.loading = false;

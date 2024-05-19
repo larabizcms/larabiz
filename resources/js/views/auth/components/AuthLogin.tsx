@@ -8,10 +8,11 @@ import {
     Checkbox,
 } from "@mui/material";
 import { Link, useNavigate, NavigateFunction } from "react-router-dom";
-
-import CustomTextField from "../../../components/forms/theme-elements/CustomTextField";
-import AuthService from "../../../service/Auth.service";
+import CustomTextField from "~/components/forms/theme-elements/CustomTextField";
 import { LoadingButton } from '@mui/lab';
+import { useAppDispatch } from "~/hooks/hooks";
+import { useForm } from "react-hook-form";
+import { LoginData } from "~/service/types/AuthData";
 
 interface loginType {
     title?: string;
@@ -21,23 +22,14 @@ interface loginType {
 
 const AuthLogin = ({ title, subtitle, subtext }: loginType) => {
     const [isFormSubmitting, setIsFormSubmitting] = useState<boolean>(false);
-    const [error, setError] = useState<string>();
     const [email, setEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
     const navigate: NavigateFunction = useNavigate();
+    const dispatch = useAppDispatch();
+    const { control, handleSubmit } = useForm<LoginData>();
 
-    const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        setIsFormSubmitting(true);
+    const submitForm = (data: LoginData) => {
 
-        AuthService.login({ email, password })
-            .then((response) => {
-                navigate("/admin-cp");
-            })
-            .catch((e) => {
-                setError(e.response.data.message);
-                setIsFormSubmitting(false);
-            });
     };
 
     return (
@@ -50,7 +42,7 @@ const AuthLogin = ({ title, subtitle, subtext }: loginType) => {
 
             {subtext}
 
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit(submitForm)}>
                 <Stack>
                     <Box>
                         <Typography

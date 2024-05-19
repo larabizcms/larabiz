@@ -5,11 +5,10 @@ import CustomTextField from '~/components/forms/theme-elements/CustomTextField';
 import { Stack } from '@mui/system';
 import { NavigateFunction, useNavigate } from 'react-router-dom';
 import { LoadingButton } from '@mui/lab';
-import { registerUser } from '../../../features/auth/authActions';
-import { useDispatch, useSelector  } from 'react-redux';
-import type { AppDispatch } from "../../../store";
-import { RegisterData } from '../../../service/types/AuthData';
-export const useAppDispatch = () => useDispatch<AppDispatch>();
+import { registerUser } from '~/features/auth/authActions';
+import { useSelector } from 'react-redux';
+import { RegisterData } from '~/service/types/AuthData';
+import { useAppDispatch } from '~/hooks/hooks';
 
 interface registerType {
     title?: string;
@@ -19,22 +18,25 @@ interface registerType {
 
 interface AuthState {
     loading: boolean;
-    userInfo: any;
     errors: any;
     success: boolean;
 }
 
 const AuthRegister = ({ title, subtitle, subtext }: registerType) => {
-    const { loading, userInfo, errors, success } = useSelector<{auth: any}, AuthState>(
+    const { loading, errors, success } = useSelector<{ auth: any }, AuthState>(
         (state) => state.auth
     );
 
-    const navigate: NavigateFunction = useNavigate();
+    //const navigate: NavigateFunction = useNavigate();
     const dispatch = useAppDispatch();
     const { control, handleSubmit } = useForm<RegisterData>();
 
     const submitForm = (data: RegisterData) => {
-        dispatch(registerUser(data));
+        dispatch(registerUser(data)).then((res) => {
+            if (success) {
+                //navigate("/admin-cp/login");
+            }
+        });
     };
 
     return (
@@ -54,12 +56,12 @@ const AuthRegister = ({ title, subtitle, subtext }: registerType) => {
                             fontWeight={600} component="label" htmlFor='name' mb="5px">Name</Typography>
 
                         <Controller
-                                control={control}
-                                rules={{
+                            control={control}
+                            rules={{
                                 required: true,
-                                }}
-                                render={({ field: { onChange, onBlur, value } }: any) => (
-                                    <CustomTextField
+                            }}
+                            render={({ field: { onChange, onBlur, value } }: any) => (
+                                <CustomTextField
                                     id="name"
                                     variant="outlined"
                                     fullWidth
@@ -67,9 +69,9 @@ const AuthRegister = ({ title, subtitle, subtext }: registerType) => {
                                     onChange={onChange}
                                     value={value}
                                 />
-                                )}
-                                name="name"
-                            />
+                            )}
+                            name="name"
+                        />
 
                         {errors?.name && <p>{errors.name[0]}</p>}
 
