@@ -4,14 +4,14 @@ import { registerUser } from './authActions';
 interface AuthState {
     loading: boolean;
     user: {};
-    errors: string[] | null;
+    payload: null|{}|unknown;
     success: boolean; // for monitoring the registration process.
 }
 
 const initialState: AuthState = {
     loading: false,
     user: {},
-    errors: null,
+    payload: null,
     success: false, // for monitoring the registration process.
 }
 
@@ -23,7 +23,7 @@ const authSlice = createSlice({
         // register user
         builder.addCase(registerUser.pending, (state, action) => {
             state.loading = true;
-            state.errors = null;
+            state.payload = null;
         }),
             builder.addCase(registerUser.fulfilled, (state, action) => {
                 state.loading = false;
@@ -32,7 +32,7 @@ const authSlice = createSlice({
             }),
             builder.addCase(registerUser.rejected, (state, action) => {
                 state.loading = false;
-                state.errors = (action.payload as any)?.errors;
+                state.payload = action.payload;
             })
     },
 })
