@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 import PageContainer from '~/components/container/PageContainer';
 import http from '~/http-common';
 import NotFound from './NotFound';
+import {Link as RouterLink} from 'react-router-dom';
 
 export default function Page({ uri }: { uri?: string }) {
     const [loading, setLoading] = useState<boolean>(true);
@@ -40,20 +41,21 @@ export default function Page({ uri }: { uri?: string }) {
     return (
         <PageContainer title={title} description={description}>
             <Breadcrumbs aria-label="breadcrumb">
-                <Link underline="none" color="inherit" href="/admin-cp">
-                    MUI
+                <Link component={RouterLink} underline="none" color="inherit" to="/admin-cp">
+                    Dashboard
                 </Link>
                 <Link
+                    component={RouterLink}
                     underline="none"
                     color="inherit"
-                    href="/admin-cp/"
+                    to="/admin-cp/"
                 >
                     Core
                 </Link>
-                <Typography color="text.primary">Breadcrumbs</Typography>
+                <Typography color="text.primary">{title}</Typography>
             </Breadcrumbs>
 
-            <h1>Page: {uri}</h1>
+            <h1>Page: {title}</h1>
         </PageContainer>
     );
 }
