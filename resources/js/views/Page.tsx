@@ -5,6 +5,7 @@ import PageContainer from '~/components/container/PageContainer';
 import http from '~/http-common';
 import NotFound from './NotFound';
 import {Link as RouterLink} from 'react-router-dom';
+import ElementBuilder from '~/layouts/ElementBuilder';
 
 export default function Page({ uri }: { uri?: string }) {
     const [loading, setLoading] = useState<boolean>(true);
@@ -12,6 +13,8 @@ export default function Page({ uri }: { uri?: string }) {
     const [description, setDescription] = useState<string>();
     const [hasError, setHasError] = useState(false);
     const location = useLocation();
+
+    const [children, setChildren] = useState<[]>();
 
     useEffect(() => {
         uri = uri ? uri : location.pathname.replace('/admin-cp/', '');
@@ -21,6 +24,7 @@ export default function Page({ uri }: { uri?: string }) {
         http.get(`/admin/pages/${uri}`).then((res) => {
             setTitle(res.data.data.title);
             setDescription(res.data.data.description);
+            setChildren(res.data.data.children);
             setLoading(false);
         }).catch(() => {
             setHasError(true);
@@ -55,7 +59,9 @@ export default function Page({ uri }: { uri?: string }) {
                 <Typography color="text.primary">{title}</Typography>
             </Breadcrumbs>
 
-            <h1>Page: {title}</h1>
+            <h1>{title}</h1>
+
+            <ElementBuilder children={children || []}></ElementBuilder>
         </PageContainer>
     );
 }
