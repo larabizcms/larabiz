@@ -33,7 +33,9 @@ interface ItemType {
 const NavItem = ({ item, level, pathDirect, onClick }: ItemType) => {
     const Icon = item.icon;
     const theme = useTheme();
-    const itemIcon = <Icon stroke={1.5} size="1.3rem" />;
+    //const itemIcon = <Icon stroke={1.5} size="1.3rem" />;
+
+    console.log(item);
 
     const ListItemStyled = styled(ListItem)(() => ({
         padding: 0,
@@ -71,7 +73,7 @@ const NavItem = ({ item, level, pathDirect, onClick }: ItemType) => {
                     target={item.external ? "_blank" : ""}
                     onClick={onClick}
                 >
-                    <ListItemIcon
+                    {/* <ListItemIcon
                         sx={{
                             minWidth: "36px",
                             p: "3px 0",
@@ -79,7 +81,7 @@ const NavItem = ({ item, level, pathDirect, onClick }: ItemType) => {
                         }}
                     >
                         {itemIcon}
-                    </ListItemIcon>
+                    </ListItemIcon> */}
                     <ListItemText>
                         <>{item.title}</>
                     </ListItemText>
