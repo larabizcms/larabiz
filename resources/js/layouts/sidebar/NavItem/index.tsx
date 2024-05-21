@@ -1,13 +1,14 @@
 import React from "react";
 // mui imports
 import {
-    ListItemIcon,
     ListItem,
     List,
     styled,
     ListItemText,
     useTheme,
     ListItemButton,
+    Icon,
+    ListItemIcon
 } from "@mui/material";
 import { Link } from "react-router-dom";
 
@@ -31,11 +32,8 @@ interface ItemType {
 }
 
 const NavItem = ({ item, level, pathDirect, onClick }: ItemType) => {
-    const Icon = item.icon;
     const theme = useTheme();
     //const itemIcon = <Icon stroke={1.5} size="1.3rem" />;
-
-    console.log(item);
 
     const ListItemStyled = styled(ListItem)(() => ({
         padding: 0,
@@ -73,15 +71,15 @@ const NavItem = ({ item, level, pathDirect, onClick }: ItemType) => {
                     target={item.external ? "_blank" : ""}
                     onClick={onClick}
                 >
-                    {/* <ListItemIcon
+                    <ListItemIcon
                         sx={{
                             minWidth: "36px",
                             p: "3px 0",
                             color: "inherit",
                         }}
                     >
-                        {itemIcon}
-                    </ListItemIcon> */}
+                        <Icon>{item.icon}</Icon>
+                    </ListItemIcon>
                     <ListItemText>
                         <>{item.title}</>
                     </ListItemText>

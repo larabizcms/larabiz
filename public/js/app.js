@@ -44,6 +44,9 @@ var Register = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().lazy(fu
 var Dashboard = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().lazy(function () {
   return Promise.all(/*! import() */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("resources_js_views_Dashboard_tsx")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/Dashboard */ "./resources/js/views/Dashboard.tsx"));
 });
+var Page = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().lazy(function () {
+  return Promise.all(/*! import() */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("resources_js_views_Page_tsx")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/Page */ "./resources/js/views/Page.tsx"));
+});
 var router = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_7__.createBrowserRouter)([{
   path: "/admin-cp",
   element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_layouts_Auth__WEBPACK_IMPORTED_MODULE_4__["default"], {}),
@@ -64,10 +67,12 @@ var router = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_7__.createBrowserRoute
   errorElement: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(NotFound, {}),
   children: [{
     path: "/admin-cp",
-    element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(Dashboard, {})
+    element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(Page, {
+      uri: 'dashboard'
+    })
   }, {
     path: "/admin-cp/:page",
-    element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(Dashboard, {})
+    element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(Page, {})
   }]
 }, {
   path: "/admin-cp/api-documentation",
@@ -1056,7 +1061,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/ListItem/ListItem.js");
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/List/List.js");
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/ListItemButton/ListItemButton.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/ListItemText/ListItemText.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/ListItemIcon/ListItemIcon.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Icon/Icon.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/ListItemText/ListItemText.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
@@ -1069,11 +1076,9 @@ var NavItem = function NavItem(_ref) {
     level = _ref.level,
     pathDirect = _ref.pathDirect,
     onClick = _ref.onClick;
-  var Icon = item.icon;
   var theme = (0,_mui_material__WEBPACK_IMPORTED_MODULE_2__["default"])();
   //const itemIcon = <Icon stroke={1.5} size="1.3rem" />;
 
-  console.log(item);
   var ListItemStyled = (0,_mui_material__WEBPACK_IMPORTED_MODULE_3__["default"])(_mui_material__WEBPACK_IMPORTED_MODULE_4__["default"])(function () {
     return {
       padding: 0,
@@ -1104,18 +1109,27 @@ var NavItem = function NavItem(_ref) {
     component: "div",
     disablePadding: true,
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(ListItemStyled, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_6__["default"], {
         component: react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Link,
         to: item.href,
         disabled: item.disabled,
         selected: pathDirect === item.href,
         target: item.external ? "_blank" : "",
         onClick: onClick,
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], {
+          sx: {
+            minWidth: "36px",
+            p: "3px 0",
+            color: "inherit"
+          },
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_9__["default"], {
+            children: item.icon
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
             children: item.title
           })
-        })
+        })]
       })
     })
   }, item.id);
@@ -1238,7 +1252,8 @@ var SidebarItems = function SidebarItems(_ref) {
       return state.setting;
     }),
     generalData = _useSelector.generalData;
-  var Menuitems = generalData === null || generalData === void 0 ? void 0 : generalData.menu_left.items;
+  var MenuItems = generalData === null || generalData === void 0 ? void 0 : generalData.menu_left.items;
+  var pathDirect = window.location.pathname;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_5__["default"], {
     sx: {
       px: 3
@@ -1249,7 +1264,7 @@ var SidebarItems = function SidebarItems(_ref) {
       },
       className: "sidebarNav",
       component: "div",
-      children: Menuitems && Menuitems.map(function (item) {
+      children: MenuItems && MenuItems.map(function (item) {
         // {/********SubHeader**********/}
         if (item.subheader) {
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_NavGroup_NavGroup__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -1261,7 +1276,7 @@ var SidebarItems = function SidebarItems(_ref) {
         } else {
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_NavItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
             item: item,
-            pathDirect: 'pathDirect',
+            pathDirect: pathDirect,
             onClick: toggleMobileSidebar
           }, item.key);
         }

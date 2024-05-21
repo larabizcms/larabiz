@@ -17,6 +17,7 @@ const NotFound = React.lazy(() => import("./views/NotFound"));
 const Document = React.lazy(() => import("./views/api/Document"));
 const Register = React.lazy(() => import("./views/auth/Register"));
 const Dashboard = React.lazy(() => import("./views/Dashboard"));
+const Page = React.lazy(() => import("./views/Page"));
 
 const router = createBrowserRouter([
     {
@@ -45,11 +46,11 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "/admin-cp",
-                element: <Dashboard />,
+                element: <Page uri={'dashboard'} />,
             },
             {
                 path: "/admin-cp/:page",
-                element: <Dashboard />,
+                element: <Page />,
             }
         ],
     },
