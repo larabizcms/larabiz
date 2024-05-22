@@ -51,6 +51,8 @@ mix.js("resources/js/app.tsx", "js/app.js")
         'react-redux',
         'react-dom/client',
         'react-hook-form',
+        '@ckeditor/ckeditor5-react',
+        '@ckeditor/ckeditor5-build-classic',
     ], 'js/vendor-core.min.js')
     .extract()
     .react()

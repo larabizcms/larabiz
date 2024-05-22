@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { TextFieldProps, Typography } from '@mui/material';
-import { Controller } from 'react-hook-form';
 
 type Props = TextFieldProps & {
     register?: Function,
