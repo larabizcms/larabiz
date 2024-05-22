@@ -4,7 +4,7 @@ import ElementBuilder from "~/layouts/ElementBuilder";
 
 type Props = {
     config: {
-        attributes: Array<any>;
+        attributes: { [k: string]: any };
         children: [];
     }
 };

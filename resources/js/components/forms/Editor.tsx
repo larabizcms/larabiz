@@ -5,9 +5,8 @@ import { TextFieldProps, Typography } from '@mui/material';
 import { Controller } from 'react-hook-form';
 
 type Props = TextFieldProps & {
-    control?: any,
-    register?: any,
-    setValue?: any,
+    register?: Function,
+    setValue?: Function,
     errors?: any,
     name: string,
     id?: string,
@@ -15,10 +14,10 @@ type Props = TextFieldProps & {
 }
 
 export default function Editor({ ...props }: Props) {
-    const { control, errors, name, label, id, rules, defaultValue } = props;
+    const { errors, name, label, id, register, setValue, defaultValue } = props;
 
     useEffect(() => {
-        //props?.register('input')
+        (register ?? (() => {}))(name);
     })
 
     return (
@@ -29,20 +28,20 @@ export default function Editor({ ...props }: Props) {
             <CKEditor
                 editor={ClassicEditor}
                 data={defaultValue as string}
-                onReady={editor => {
-                    // You can store the "editor" and use when it is needed.
-                    console.log('Editor is ready to use!', editor);
-                }}
+                // onReady={editor => {
+                //     console.log('Editor is ready to use!', editor);
+                // }}
                 onChange={(event, editor) => {
                     const data = editor.getData();
-                    //props?.setValue(data);
+                    (setValue ?? (() => {}))(data);
                     //control.set
                 }}
                 //onBlur={onBlur}
-                onFocus={(event, editor) => {
-                    console.log('Focus.', editor);
-                }}
+                // onFocus={(event, editor) => {
+                //     console.log('Focus.', editor);
+                // }}
             />
+            {errors && errors[name] && <p style={{ color: 'red' }}>{errors[name].message}</p>}
 
             {/* <Controller
                 control={control || undefined}
