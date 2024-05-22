@@ -9,29 +9,39 @@ import EditorField from "~/components/elements/forms/Editor";
 // const Box = React.lazy(() => import('@mui/material/Box'));
 // const Grid = React.lazy(() => import('@mui/material/Grid'));
 
-const Elements = (config: any, index: number) => {
+type Props = {
+    children: [],
+    register?: Function,
+    setValue?: Function,
+    control?: any,
+    errors?: any,
+}
+
+const Elements = (config: any, index: number, props: Props) => {
     switch (config.element) {
         case 'box':
-            return <Box config={config} key={index} />;
+            return <Box config={config} key={index} {...props} />;
         case 'grid':
-            return <Grid config={config} key={index} />;
+            return <Grid config={config} key={index} {...props} />;
         case 'card':
-            return <DashboardCard config={config} key={index} />;
+            return <DashboardCard config={config} key={index} {...props} />;
         case 'form':
-            return <Form config={config} key={index} />;
+            return <Form config={config} key={index} {...props} />;
         case 'text':
-            return <Typography config={config} key={index} />;
+            return <Typography config={config} key={index} {...props} />;
         case 'editor':
-            return <EditorField config={config} key={index} />;
+            return <EditorField config={config} key={index} {...props} />;
         default:
             return null;
     }
 }
 
-const ElementBuilder = ({ children }: { children: [] }): JSX.Element => {
+const ElementBuilder = (props: Props): JSX.Element => {
+    const { children } = props;
+
     return (<React.Fragment>
         {children.map((child: any, index: number) => {
-            return Elements(child, index);
+            return Elements(child, index, props);
         })}
     </React.Fragment>);
 };

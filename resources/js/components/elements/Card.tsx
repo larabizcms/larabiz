@@ -11,6 +11,6 @@ type Props = {
 
 export default function Grid({ config }: Props) {
     return <BlankCard {...config.attributes}>
-        <ElementBuilder children={config.children}/>
+        <ElementBuilder children={config.children} />
     </BlankCard>;
 }
