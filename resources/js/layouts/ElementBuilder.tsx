@@ -1,6 +1,10 @@
 import React from "react";
-import DashboardCard from "~/components/shared/DashboardCard";
-import {Box, Grid} from "@mui/material";
+import DashboardCard from "~/components/elements/DashboardCard";
+import Box from "~/components/elements/Box";
+import Grid from "~/components/elements/Grid";
+import Form from "~/components/elements/Form";
+import Typography from "~/components/elements/Typography";
+import EditorField from "~/components/elements/forms/Editor";
 
 // const Box = React.lazy(() => import('@mui/material/Box'));
 // const Grid = React.lazy(() => import('@mui/material/Grid'));
@@ -8,14 +12,20 @@ import {Box, Grid} from "@mui/material";
 const Elements = (config: any, index: number) => {
     switch (config.element) {
         case 'box':
-            return <Box {...config.attributes} key={index} />;
+            return <Box config={config} key={index} />;
         case 'grid':
-            return <Grid {...config.attributes} key={index} />;
+            return <Grid config={config} key={index} />;
         case 'card':
-            return <DashboardCard {...config.attributes} key={index} />;
+            return <DashboardCard config={config} key={index} />;
+        case 'form':
+            return <Form config={config} key={index} />;
+        case 'text':
+            return <Typography config={config} key={index} />;
+        case 'editor':
+            return <EditorField config={config} key={index} />;
+        default:
+            return null;
     }
-
-    return null;
 }
 
 const ElementBuilder = ({ children }: { children: [] }): JSX.Element => {

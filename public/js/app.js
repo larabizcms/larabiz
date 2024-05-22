@@ -41,9 +41,6 @@ var Document = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().lazy(fu
 var Register = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().lazy(function () {
   return Promise.all(/*! import() */[__webpack_require__.e("js/vendor-core.min"), __webpack_require__.e("/js/vendor"), __webpack_require__.e("resources_js_views_auth_Register_tsx")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/auth/Register */ "./resources/js/views/auth/Register.tsx"));
 });
-var Dashboard = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().lazy(function () {
-  return Promise.all(/*! import() */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("resources_js_views_Dashboard_tsx")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/Dashboard */ "./resources/js/views/Dashboard.tsx"));
-});
 var Page = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().lazy(function () {
   return Promise.all(/*! import() */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("resources_js_views_Page_tsx")]).then(__webpack_require__.bind(__webpack_require__, /*! ./views/Page */ "./resources/js/views/Page.tsx"));
 });

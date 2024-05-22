@@ -14,7 +14,21 @@ class DashboardController extends Controller
             [
                 Box::make(
                     [
-
+                        [
+                            'element' => 'text',
+                            'text' => 'Dashboard',
+                            'attributes' => [
+                                'fontWeight' => 600,
+                                'mt' => '50px'
+                            ]
+                        ],
+                        [
+                            'element' => 'editor',
+                            'attributes' => [
+                                'name' => 'editor',
+                                'label' => 'Editor',
+                            ]
+                        ]
                     ]
                 )
             ]

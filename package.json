@@ -26,6 +26,8 @@
         "@babel/preset-env": "^7.16.11",
         "@babel/preset-react": "^7.16.7",
         "@babel/preset-typescript": "^7.16.7",
+        "@ckeditor/ckeditor5-build-classic": "^41.4.2",
+        "@ckeditor/ckeditor5-react": "^6.3.0",
         "@emotion/cache": "11.11.0",
         "@emotion/react": "^11.11.4",
         "@emotion/server": "11.11.0",

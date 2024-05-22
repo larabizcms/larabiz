@@ -16,7 +16,6 @@ const Login = React.lazy(() => import("./views/auth/Login"));
 const NotFound = React.lazy(() => import("./views/NotFound"));
 const Document = React.lazy(() => import("./views/api/Document"));
 const Register = React.lazy(() => import("./views/auth/Register"));
-const Dashboard = React.lazy(() => import("./views/Dashboard"));
 const Page = React.lazy(() => import("./views/Page"));
 
 const router = createBrowserRouter([

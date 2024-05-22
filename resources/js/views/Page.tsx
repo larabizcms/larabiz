@@ -5,7 +5,8 @@ import PageContainer from '~/components/container/PageContainer';
 import http from '~/http-common';
 import NotFound from './NotFound';
 import {Link as RouterLink} from 'react-router-dom';
-import ElementBuilder from '~/layouts/ElementBuilder';
+
+const ElementBuilder = React.lazy(() => import('~/layouts/ElementBuilder'));
 
 export default function Page({ uri }: { uri?: string }) {
     const [loading, setLoading] = useState<boolean>(true);
@@ -48,6 +49,7 @@ export default function Page({ uri }: { uri?: string }) {
                 <Link component={RouterLink} underline="none" color="inherit" to="/admin-cp">
                     Dashboard
                 </Link>
+
                 <Link
                     component={RouterLink}
                     underline="none"
@@ -59,7 +61,7 @@ export default function Page({ uri }: { uri?: string }) {
                 <Typography color="text.primary">{title}</Typography>
             </Breadcrumbs>
 
-            <h1>{title}</h1>
+            {/* <h1>{title}</h1> */}
 
             <ElementBuilder children={children || []}></ElementBuilder>
         </PageContainer>
