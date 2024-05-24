@@ -7389,6 +7389,14 @@ laravel-mix@^6.0.6:
     webpackbar "^5.0.0-3"
     yargs "^17.2.1"
 
+laravel-vite-plugin@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/laravel-vite-plugin/-/laravel-vite-plugin-1.0.4.tgz#b9a516ed212aae55c19369984dc5d2f09276560c"
+  integrity sha512-dEj8Q/Fsn0kKbOQ55bl/NmyJL+dD6OxnVaM/nNByw5XV4b00ky6FzXKVuHLDr4BvSJKH1y6oaOcEG5wKpCZ5+A==
+  dependencies:
+    picocolors "^1.0.0"
+    vite-plugin-full-reload "^1.1.0"
+
 launch-editor@^2.6.0:
   version "2.6.1"
   resolved "https://registry.npmjs.org/launch-editor/-/launch-editor-2.6.1.tgz"
@@ -11094,6 +11102,14 @@ vite-jsconfig-paths@^2.0.1:
     globrex "^0.1.2"
     recrawl-sync "^2.0.3"
     tsconfig-paths "^3.9.0"
+
+vite-plugin-full-reload@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/vite-plugin-full-reload/-/vite-plugin-full-reload-1.1.0.tgz#ca6fa32631024a459ea9e5613dd4c0ff0f3b7995"
+  integrity sha512-3cObNDzX6DdfhD9E7kf6w2mNunFpD7drxyNgHLw+XwIYAgb+Xt16SEXo0Up4VH+TMf3n+DSVJZtW2POBGcBYAA==
+  dependencies:
+    picocolors "^1.0.0"
+    picomatch "^2.3.1"
 
 vite@^5.2.11:
   version "5.2.11"
