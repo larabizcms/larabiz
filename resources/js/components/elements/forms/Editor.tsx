@@ -1,5 +1,5 @@
 import React from "react";
-import Editor  from "~/components/forms/Editor";
+import Editor  from "components/forms/Editor";
 
 type Props = {
     config: {

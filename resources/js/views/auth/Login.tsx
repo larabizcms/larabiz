@@ -6,7 +6,7 @@ import PageContainer from "../../components/container/PageContainer";
 import Logo from "../../layouts/shared/logo/Logo";
 import AuthLogin from "./components/AuthLogin";
 import { useSelector } from "react-redux";
-import { AuthState } from "~/features/auth/authSlice";
+import { AuthState } from "features/auth/authSlice";
 
 const Login = () => {
     const { userToken } = useSelector<{ auth: any }, AuthState>((state) => state.auth);

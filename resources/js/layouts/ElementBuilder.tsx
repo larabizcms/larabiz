@@ -1,10 +1,10 @@
 import React from "react";
-import DashboardCard from "~/components/elements/DashboardCard";
-import Box from "~/components/elements/Box";
-import Grid from "~/components/elements/Grid";
-import Form from "~/components/elements/Form";
-import Typography from "~/components/elements/Typography";
-import EditorField from "~/components/elements/forms/Editor";
+import DashboardCard from "components/elements/DashboardCard";
+import Box from "components/elements/Box";
+import Grid from "components/elements/Grid";
+import Form from "components/elements/Form";
+import Typography from "components/elements/Typography";
+import EditorField from "components/elements/forms/Editor";
 
 // const Box = React.lazy(() => import('@mui/material/Box'));
 // const Grid = React.lazy(() => import('@mui/material/Grid'));

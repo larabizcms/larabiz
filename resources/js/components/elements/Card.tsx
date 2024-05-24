@@ -1,5 +1,5 @@
 import React from "react";
-import ElementBuilder from "~/layouts/ElementBuilder";
+import ElementBuilder from "layouts/ElementBuilder";
 import BlankCard from "../shared/BlankCard";
 
 type Props = {

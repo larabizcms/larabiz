@@ -9,15 +9,15 @@ import {
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import { LoadingButton } from '@mui/lab';
-import { useAppDispatch } from "~/hooks/hooks";
+import { useAppDispatch } from "hooks/hooks";
 import { useForm } from "react-hook-form";
-import { LoginData } from "~/features/types/AuthData";
-import { loginUser } from "~/features/auth/authActions";
+import { LoginData } from "features/types/AuthData";
+import { loginUser } from "features/auth/authActions";
 import { useSelector } from "react-redux";
-import { mapErrorsToForm } from "~/hooks/helper";
-import Text from "~/components/forms/Text";
-import { AuthState } from "~/features/auth/authSlice";
-import ErrorMessage from "~/layouts/shared/ErrorMessage";
+import { mapErrorsToForm } from "hooks/helper";
+import Text from "components/forms/Text";
+import { AuthState } from "features/auth/authSlice";
+import ErrorMessage from "layouts/shared/ErrorMessage";
 
 interface loginType {
     title?: string;

@@ -1,6 +1,6 @@
 import React from "react";
 import {Box as MuiBox} from "@mui/material";
-import ElementBuilder from "~/layouts/ElementBuilder";
+import ElementBuilder from "layouts/ElementBuilder";
 
 type Props = {
     config: {

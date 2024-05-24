@@ -1,8 +1,8 @@
 import { Typography } from "@mui/material";
 import React from "react";
 import { useForm } from "react-hook-form";
-import ElementBuilder from "~/layouts/ElementBuilder";
-import ErrorMessage from "~/layouts/shared/ErrorMessage";
+import ElementBuilder from "layouts/ElementBuilder";
+import ErrorMessage from "layouts/shared/ErrorMessage";
 
 type Props = {
     config: {

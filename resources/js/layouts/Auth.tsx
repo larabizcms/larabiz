@@ -4,8 +4,8 @@ import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import { Outlet } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { useAppDispatch } from "~/hooks/hooks";
-import { getGeneralData } from "~/features/setting/settingActions";
+import { useAppDispatch } from "hooks/hooks";
+import { getGeneralData } from "features/setting/settingActions";
 
 export default function Auth() {
     const { generalData } = useSelector((state: any) => state.setting);
