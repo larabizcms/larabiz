@@ -11,6 +11,7 @@ export default defineConfig({
         laravel({
             input: [
                 'resources/js/index.tsx',
+                'resources/css/app.css',
             ],
             refresh: true,
         }),

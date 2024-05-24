@@ -1,0 +1,1 @@
+import{j as o,P as a,L as d}from"./index-Co8Nh5w4.js";const s=({title:n,message:t})=>o.jsxs(a,{title:n||"Page Not Found",description:t||"Page Not Found",children:[o.jsx("h1",{children:n||"Page Not Found"}),o.jsxs("p",{children:[t||"Page Not Found"," ",o.jsx(d,{to:"/admin-cp",children:"Back to Dashboard"})]})]}),r=s;export{r as default};

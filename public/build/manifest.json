@@ -1,0 +1,101 @@
+{
+  "_ErrorMessage-C8FlKgbJ.js": {
+    "file": "assets/ErrorMessage-C8FlKgbJ.js",
+    "name": "ErrorMessage",
+    "imports": [
+      "resources/js/index.tsx"
+    ]
+  },
+  "_Text-DEHAzIg-.js": {
+    "file": "assets/Text-DEHAzIg-.js",
+    "name": "Text",
+    "imports": [
+      "resources/js/index.tsx",
+      "_ErrorMessage-C8FlKgbJ.js"
+    ]
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-CrJhXJFj.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/js/index.tsx": {
+    "file": "assets/index-Co8Nh5w4.js",
+    "name": "index",
+    "src": "resources/js/index.tsx",
+    "isEntry": true,
+    "dynamicImports": [
+      "resources/js/views/auth/Login.tsx",
+      "resources/js/views/NotFound.tsx",
+      "resources/js/views/api/Document.tsx",
+      "resources/js/views/auth/Register.tsx",
+      "resources/js/views/Page.tsx"
+    ]
+  },
+  "resources/js/layouts/ElementBuilder.tsx": {
+    "file": "assets/ElementBuilder-CrvQ9BVE.js",
+    "name": "ElementBuilder",
+    "src": "resources/js/layouts/ElementBuilder.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/index.tsx",
+      "_ErrorMessage-C8FlKgbJ.js"
+    ]
+  },
+  "resources/js/views/NotFound.tsx": {
+    "file": "assets/NotFound-Djj7kMmq.js",
+    "name": "NotFound",
+    "src": "resources/js/views/NotFound.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/index.tsx"
+    ]
+  },
+  "resources/js/views/Page.tsx": {
+    "file": "assets/Page-GgcY_Okg.js",
+    "name": "Page",
+    "src": "resources/js/views/Page.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/index.tsx",
+      "resources/js/views/NotFound.tsx"
+    ],
+    "dynamicImports": [
+      "resources/js/layouts/ElementBuilder.tsx"
+    ]
+  },
+  "resources/js/views/api/Document.tsx": {
+    "file": "assets/Document-BItYwKBe.js",
+    "name": "Document",
+    "src": "resources/js/views/api/Document.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/index.tsx"
+    ],
+    "css": [
+      "assets/Document-3e3Awjyw.css"
+    ]
+  },
+  "resources/js/views/auth/Login.tsx": {
+    "file": "assets/Login-BHYmf-K5.js",
+    "name": "Login",
+    "src": "resources/js/views/auth/Login.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/index.tsx",
+      "_ErrorMessage-C8FlKgbJ.js",
+      "_Text-DEHAzIg-.js"
+    ]
+  },
+  "resources/js/views/auth/Register.tsx": {
+    "file": "assets/Register-C2QeaV4a.js",
+    "name": "Register",
+    "src": "resources/js/views/auth/Register.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/index.tsx",
+      "_ErrorMessage-C8FlKgbJ.js",
+      "_Text-DEHAzIg-.js"
+    ]
+  }
+}
