@@ -19,25 +19,25 @@ const Register = React.lazy(() => import("./views/auth/Register"));
 const Page = React.lazy(() => import("./views/Page"));
 
 const routes = createBrowserRouter([
-    {
-        path: "/admin-cp",
-        element: <Auth />,
-        errorElement: <NotFound />,
-        children: [
-            {
-                path: "login",
-                element: <Login />,
-            },
-            {
-                path: "register",
-                element: <Register />,
-            },
-            {
-                path: "forgot-password",
-                element: <ForgotPassword />,
-            }
-        ],
-    },
+    // {
+    //     path: "/admin-cp",
+    //     element: <Auth />,
+    //     errorElement: <NotFound />,
+    //     children: [
+    //         {
+    //             path: "login",
+    //             element: <Login />,
+    //         },
+    //         {
+    //             path: "register",
+    //             element: <Register />,
+    //         },
+    //         {
+    //             path: "forgot-password",
+    //             element: <ForgotPassword />,
+    //         }
+    //     ],
+    // },
     {
         path: "/admin-cp",
         element: <Master />,
