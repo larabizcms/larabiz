@@ -18,7 +18,7 @@ const Document = React.lazy(() => import("./views/api/Document"));
 const Register = React.lazy(() => import("./views/auth/Register"));
 const Page = React.lazy(() => import("./views/Page"));
 
-const router = createBrowserRouter([
+const routes = createBrowserRouter([
     {
         path: "/admin-cp",
         element: <Auth />,
@@ -63,12 +63,14 @@ const router = createBrowserRouter([
     }
 ]);
 
-(ReactDOM as any).createRoot(document.getElementById("app")).render(
-    <React.StrictMode>
-        <Provider store={store}>
-            <Suspense fallback={<LinearProgress />}>
-                <RouterProvider router={router} />
-            </Suspense>
-        </Provider>
-    </React.StrictMode>
-);
+export default routes;
+
+// (ReactDOM as any).createRoot(document.getElementById("app")).render(
+//     <React.StrictMode>
+//         <Provider store={store}>
+//             <Suspense fallback={<LinearProgress />}>
+//                 <RouterProvider router={router} />
+//             </Suspense>
+//         </Provider>
+//     </React.StrictMode>
+// );

@@ -7,7 +7,10 @@
         "watch-poll": "mix watch -- --watch-options-poll=1000",
         "hot": "mix watch --hot",
         "prod": "npm run production",
-        "production": "mix --production"
+        "production": "mix --production",
+        "start": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
     },
     "devDependencies": {
         "@types/react-redux": "^7.1.33",
@@ -46,8 +49,10 @@
         "@types/react-dom": "^18.0.2",
         "@types/react-router-dom": "^5.3.3",
         "@types/swagger-ui-react": "^4.18.3",
+        "@vitejs/plugin-react": "^4.3.0",
         "apexcharts": "3.41.1",
         "eslint": "8.46.0",
+        "laravel-vite-plugin": "^1.0.4",
         "lodash": "^4.17.21",
         "react": "^18.0.0",
         "react-apexcharts": "1.4.1",
@@ -58,6 +63,9 @@
         "react-router-dom": "^6.3.0",
         "styled-components": "^6.1.11",
         "swagger-ui-react": "^5.17.7",
-        "ts-loader": "^9.2.8"
+        "ts-loader": "^9.2.8",
+        "vite": "^5.2.11",
+        "vite-jsconfig-paths": "^2.0.1",
+        "web-vitals": "^4.0.1"
     }
 }

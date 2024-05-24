@@ -1,12 +1,12 @@
 import { Breadcrumbs, LinearProgress, Link, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import PageContainer from '~/components/container/PageContainer';
-import http from '~/http-common';
+import PageContainer from 'components/container/PageContainer';
+import http from 'http-common';
 import NotFound from './NotFound';
 import {Link as RouterLink} from 'react-router-dom';
 
-const ElementBuilder = React.lazy(() => import('~/layouts/ElementBuilder'));
+const ElementBuilder = React.lazy(() => import('layouts/ElementBuilder'));
 
 export default function Page({ uri }: { uri?: string }) {
     const [loading, setLoading] = useState<boolean>(true);

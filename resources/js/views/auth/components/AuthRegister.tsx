@@ -3,14 +3,14 @@ import { Box, Typography } from '@mui/material';
 import { useForm } from 'react-hook-form';
 import { Stack } from '@mui/system';
 import { LoadingButton } from '@mui/lab';
-import { registerUser } from '~/features/auth/authActions';
+import { registerUser } from 'features/auth/authActions';
 import { useSelector } from 'react-redux';
-import { RegisterData } from '~/features/types/AuthData';
-import { useAppDispatch } from '~/hooks/hooks';
-import Text from '~/components/forms/Text';
-import { mapErrorsToForm } from '~/hooks/helper';
-import { AuthState } from '~/features/auth/authSlice';
-import ErrorMessage from '~/layouts/shared/ErrorMessage';
+import { RegisterData } from 'features/types/AuthData';
+import { useAppDispatch } from 'hooks/hooks';
+import Text from 'components/forms/Text';
+import { mapErrorsToForm } from 'hooks/helper';
+import { AuthState } from 'features/auth/authSlice';
+import ErrorMessage from 'layouts/shared/ErrorMessage';
 
 interface Props {
     title?: string;

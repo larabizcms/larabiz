@@ -35,7 +35,7 @@ export default function Document(): React.JSX.Element {
     //     router="hash"
     // />;
     return <SwaggerUI
-        url={process.env.MIX_APP_URL + "/api/swagger.json"}
+        url={"/api/swagger.json"}
         requestInterceptor={requestInterceptor}
     />;
 }

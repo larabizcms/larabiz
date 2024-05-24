@@ -7,10 +7,10 @@ import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import { baselightTheme } from "../utils/theme/DefaultColors";
 import { useDispatch, useSelector } from "react-redux";
-import { useGetUserProfileQuery } from "~/services/auth/authService";
-import { setUser } from "~/features/auth/authSlice";
-import { getGeneralData } from "~/features/setting/settingActions";
-import { useAppDispatch } from "~/hooks/hooks";
+import { useGetUserProfileQuery } from "services/auth/authService";
+import { setUser } from "features/auth/authSlice";
+import { getGeneralData } from "features/setting/settingActions";
+import { useAppDispatch } from "hooks/hooks";
 
 const MainWrapper = styled("div")(() => ({
     display: "flex",
@@ -52,7 +52,7 @@ export default function Master() {
         if (!generalData) {
             dispatch(getGeneralData());
         }
-    }, [generalData, dispatch]);
+    }, []);
 
     useEffect(() => {
         if (!userToken) {
