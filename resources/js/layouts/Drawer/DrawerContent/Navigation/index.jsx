@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 
 // project import
 import NavGroup from './NavGroup';
-import menuItem from 'menu-items';
+import menuItem from '@/menu-items';
 
 // ==============================|| DRAWER CONTENT - NAVIGATION ||============================== //
 

@@ -15,7 +15,7 @@
         "ext-xmlwriter": "*",
         "ext-zip": "*",
         "guzzlehttp/guzzle": "^7.8",
-        "larabizcom/core": "@dev",
+        "larabizcms/core": "@dev",
         "laravel/framework": "^9.52",
         "laravel/tinker": "^2.8"
     },

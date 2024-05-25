@@ -1,10 +1,10 @@
 import React from "react";
-import DashboardCard from "components/elements/DashboardCard";
-import Box from "components/elements/Box";
-import Grid from "components/elements/Grid";
-import Form from "components/elements/Form";
-import Typography from "components/elements/Typography";
-import EditorField from "components/elements/forms/Editor";
+//import DashboardCard from "@larabiz/components/elements/DashboardCard";
+import Box from "@larabiz/components/elements/Box";
+import Grid from "@larabiz/components/elements/Grid";
+import Form from "@larabiz/components/elements/Form";
+import Typography from "@larabiz/components/elements/Typography";
+import EditorField from "@larabiz/components/elements/forms/Editor";
 
 // const Box = React.lazy(() => import('@mui/material/Box'));
 // const Grid = React.lazy(() => import('@mui/material/Grid'));
@@ -23,8 +23,8 @@ const Elements = (config: any, index: number, props: Props) => {
             return <Box config={config} key={index} {...props} />;
         case 'grid':
             return <Grid config={config} key={index} {...props} />;
-        case 'card':
-            return <DashboardCard config={config} key={index} {...props} />;
+        // case 'card':
+        //     return <DashboardCard config={config} key={index} {...props} />;
         case 'form':
             return <Form config={config} key={index} {...props} />;
         case 'text':

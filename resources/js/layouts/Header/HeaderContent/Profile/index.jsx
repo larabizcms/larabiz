@@ -20,15 +20,15 @@ import Box from '@mui/material/Box';
 // project import
 import ProfileTab from './ProfileTab';
 import SettingTab from './SettingTab';
-import Avatar from 'components/@extended/Avatar';
-import MainCard from 'components/MainCard';
-import Transitions from 'components/@extended/Transitions';
+import Avatar from '@/components/@extended/Avatar';
+import MainCard from '@/components/MainCard';
+import Transitions from '@/components/@extended/Transitions';
 
 // assets
 import LogoutOutlined from '@ant-design/icons/LogoutOutlined';
 import SettingOutlined from '@ant-design/icons/SettingOutlined';
 import UserOutlined from '@ant-design/icons/UserOutlined';
-import avatar1 from 'assets/images/users/avatar-1.png';
+import avatar1 from '@/assets/images/users/avatar-1.png';
 
 // tab panel wrapper
 function TabPanel({ children, value, index, ...other }) {

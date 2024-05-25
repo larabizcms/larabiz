@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import PageContainer from "components/container/PageContainer";
+import PageContainer from "@/components/container/PageContainer";
 
 const NotFound = ({ title, message }: { title?: string, message?: string }): JSX.Element => {
     return (

@@ -20,8 +20,8 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 
 // project import
-import MainCard from 'components/MainCard';
-import Transitions from 'components/@extended/Transitions';
+import MainCard from '@/components/MainCard';
+import Transitions from '@/components/@extended/Transitions';
 
 // assets
 import BellOutlined from '@ant-design/icons/BellOutlined';

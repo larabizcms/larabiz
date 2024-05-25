@@ -4,8 +4,8 @@ import { store } from './store';
 import { Provider } from 'react-redux';
 import { LinearProgress } from "@mui/material";
 import router from './routes';
-import ThemeCustomization from 'themes';
-import ScrollTop from 'components/ScrollTop';
+import ThemeCustomization from '@/themes';
+import ScrollTop from '@/components/ScrollTop';
 
 
 export default function App() {

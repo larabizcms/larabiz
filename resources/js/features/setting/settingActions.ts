@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import http from "http-common";
+import http from '@/http-common';
 
 export const getGeneralData = createAsyncThunk(
     'admin/general',

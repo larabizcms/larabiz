@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Grid, Box, Card, Stack, Typography } from "@mui/material";
 // components
-import PageContainer from "../../components/container/PageContainer";
-import Logo from "../../layouts/shared/logo/Logo";
+import PageContainer from "@/components/container/PageContainer";
+import Logo from "@/layouts/shared/logo/Logo";
 import AuthForgotPassword from "./components/AuthForgotPassword";
 
 const ForgotPassword = () => {

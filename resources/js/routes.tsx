@@ -1,16 +1,9 @@
 import React, { Suspense } from "react";
-import ReactDOM from "react-dom/client";
-import { store } from './store';
-import { Provider } from 'react-redux';
 import {
-    createBrowserRouter,
-    RouterProvider,
+    createBrowserRouter
 } from "react-router-dom";
 
-import Master from "./layouts/Master";
-import Auth from "./layouts/Auth";
-import ForgotPassword from "./views/auth/ForgotPassword";
-import { LinearProgress } from "@mui/material";
+import Master from "@/layouts/Master";
 
 const Login = React.lazy(() => import("./views/auth/Login"));
 const NotFound = React.lazy(() => import("./views/NotFound"));

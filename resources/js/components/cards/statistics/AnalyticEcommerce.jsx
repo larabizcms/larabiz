@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 
 // project import
-import MainCard from 'components/MainCard';
+import MainCard from '@/components/MainCard';
 
 // assets
 import RiseOutlined from '@ant-design/icons/RiseOutlined';

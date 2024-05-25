@@ -8,7 +8,7 @@ import Chip from '@mui/material/Chip';
 
 // project import
 import Logo from './LogoMain';
-import config from 'config';
+import config from '@/config';
 
 // ==============================|| MAIN LOGO ||============================== //
 
