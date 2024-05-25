@@ -20,7 +20,7 @@
         },
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
-        // "strict": true,
+        "strict": true,
         "allowSyntheticDefaultImports": true,
         "skipLibCheck": true
     },
