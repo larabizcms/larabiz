@@ -8,7 +8,7 @@ export default defineConfig((mode) => {
         plugins: [
             laravel({
                 input: [
-                    'resources/js/index.jsx',
+                    'resources/js/index.tsx',
                     'resources/css/app.css',
                 ],
                 refresh: true,

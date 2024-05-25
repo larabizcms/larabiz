@@ -21,7 +21,7 @@ import { Formik } from 'formik';
 
 // project import
 import AnimateButton from '@/components/@extended/AnimateButton';
-import { strengthColor, strengthIndicator } from 'utils/password-strength';
+import { strengthColor, strengthIndicator } from '@/utils/password-strength';
 
 // assets
 import EyeOutlined from '@ant-design/icons/EyeOutlined';
