@@ -31,7 +31,7 @@ export default function Master() {
     }, [downXL]);
 
     const { userToken } = useSelector((state: any) => state.auth);
-    const { generalData } = useSelector((state: any) => state.setting);
+    const { setting } = useSelector((state: any) => state.setting);
 
     const navigate: NavigateFunction = useNavigate();
     const dispatch = useAppDispatch();
@@ -47,7 +47,7 @@ export default function Master() {
     }, [data, dispatch]);
 
     useEffect(() => {
-        if (!generalData) {
+        if (!setting) {
             dispatch(getGeneralData());
         }
     }, []);

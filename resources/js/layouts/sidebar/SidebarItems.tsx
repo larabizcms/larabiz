@@ -5,8 +5,8 @@ import NavGroup from "./NavGroup/NavGroup";
 import { useSelector } from "react-redux";
 
 const SidebarItems = ({ toggleMobileSidebar }: any) => {
-    const { generalData } = useSelector((state: any) => state.setting);
-    const MenuItems = generalData?.menu_left.items;
+    const { setting } = useSelector((state: any) => state.setting);
+    const MenuItems = setting?.menu_left.items;
     const pathDirect = window.location.pathname;
 
     return (

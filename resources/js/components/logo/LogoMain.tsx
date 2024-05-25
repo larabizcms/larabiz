@@ -10,7 +10,7 @@ import React from 'react';
  */
 
 const Logo = () => {
-  const theme = useTheme();
+  const theme = useTheme<any>();
 
   return (
     /**

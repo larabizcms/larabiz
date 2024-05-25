@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { forwardRef } from 'react';
 import React from 'react';
 // material-ui
@@ -32,8 +31,8 @@ function MainCard(
     }: {
         border?: boolean,
         boxShadow?: boolean,
-        children: any, // Specify the type of the children prop
         content?: boolean,
+        children?: React.ReactNode,
         contentSX?: any,
         darkTitle?: boolean,
         elevation?: number,
@@ -44,7 +43,7 @@ function MainCard(
         [key: string]: any
     },
     ref: any
-) {
+): React.ReactNode {
     const theme = useTheme<any>();
     boxShadow = theme.palette.mode === 'dark' ? boxShadow || true : boxShadow;
 
@@ -81,4 +80,22 @@ function MainCard(
     );
 }
 
-export default MainCard;
+export default forwardRef(MainCard);
+
+// MainCard.propTypes = {
+//     border: PropTypes.bool,
+//     boxShadow: PropTypes.bool,
+//     children: PropTypes.any,
+//     subheader: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+//     content: PropTypes.bool,
+//     contentSX: PropTypes.object,
+//     darkTitle: PropTypes.bool,
+//     divider: PropTypes.bool,
+//     elevation: PropTypes.number,
+//     secondary: PropTypes.any,
+//     shadow: PropTypes.string,
+//     sx: PropTypes.object,
+//     title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+//     modal: PropTypes.bool,
+//     others: PropTypes.any
+// };

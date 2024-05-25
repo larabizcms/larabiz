@@ -5,14 +5,14 @@ import { useAppDispatch } from "@/hooks/hooks";
 import { getGeneralData } from "@/features/setting/settingActions";
 
 export default function MinimalLayout() {
-    const { generalData } = useSelector((state: any) => state.setting);
+    const { setting } = useSelector((state: any) => state.setting);
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        if (!generalData) {
+        if (!setting) {
             dispatch(getGeneralData());
         }
-    }, [generalData, dispatch]);
+    }, [setting, dispatch]);
 
   return (
     <>

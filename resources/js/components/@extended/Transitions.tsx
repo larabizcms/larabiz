@@ -105,17 +105,17 @@ function transitions({ children, position = 'top-left', type = 'grow', direction
     );
 }
 
-export default forwardRef(transitions as any);
+export default forwardRef(transitions);
 
 function popupTransition(props: React.JSX.IntrinsicAttributes & ZoomProps, ref: React.Ref<unknown> | undefined) {
     return <Zoom ref={ref} timeout={200} {...props} />;
 }
 export const PopupTransition = forwardRef(popupTransition);
 
-transitions.propTypes = {
-    children: PropTypes.node,
-    position: PropTypes.string,
-    type: PropTypes.string,
-    direction: PropTypes.oneOf(['up', 'right', 'left', 'down']),
-    others: PropTypes.any
-};
+// transitions.propTypes = {
+//     children: PropTypes.node,
+//     position: PropTypes.string,
+//     type: PropTypes.string,
+//     direction: PropTypes.oneOf(['up', 'right', 'left', 'down']),
+//     others: PropTypes.any
+// };
