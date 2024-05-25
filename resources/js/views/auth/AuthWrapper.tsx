@@ -13,8 +13,6 @@ import AuthCard from './AuthCard';
 import AuthBackground from '@/assets/images/auth/AuthBackground';
 import React from 'react';
 
-// ==============================|| AUTHENTICATION - WRAPPER ||============================== //
-
 export default function AuthWrapper({ children }: any) {
   return (
     <Box sx={{ minHeight: '100vh' }}>
