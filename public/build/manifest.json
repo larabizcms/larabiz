@@ -1,20 +1,20 @@
 {
-  "_ErrorMessage-ClJGeSoy.js": {
-    "file": "assets/ErrorMessage-ClJGeSoy.js",
+  "_ErrorMessage-DKzLhkan.js": {
+    "file": "assets/ErrorMessage-DKzLhkan.js",
     "name": "ErrorMessage",
     "imports": [
       "resources/js/index.tsx"
     ]
   },
-  "_EyeInvisibleOutlined-DRRCcH-O.js": {
-    "file": "assets/EyeInvisibleOutlined-DRRCcH-O.js",
+  "_EyeInvisibleOutlined-DLS2RFZb.js": {
+    "file": "assets/EyeInvisibleOutlined-DLS2RFZb.js",
     "name": "EyeInvisibleOutlined",
     "imports": [
       "resources/js/index.tsx"
     ]
   },
-  "_NotFound-BOsxWdQ4.js": {
-    "file": "assets/NotFound-BOsxWdQ4.js",
+  "_NotFound-Bbz6fTzM.js": {
+    "file": "assets/NotFound-Bbz6fTzM.js",
     "name": "NotFound",
     "isDynamicEntry": true,
     "imports": [
@@ -629,6 +629,46 @@
     "file": "assets/roboto-vietnamese-700-normal-SekShQfT.woff2",
     "src": "node_modules/@fontsource/roboto/files/roboto-vietnamese-700-normal.woff2"
   },
+  "node_modules/material-icons/iconfont/material-icons-outlined.woff": {
+    "file": "assets/material-icons-outlined-BpWbwl2n.woff",
+    "src": "node_modules/material-icons/iconfont/material-icons-outlined.woff"
+  },
+  "node_modules/material-icons/iconfont/material-icons-outlined.woff2": {
+    "file": "assets/material-icons-outlined-DZhiGvEA.woff2",
+    "src": "node_modules/material-icons/iconfont/material-icons-outlined.woff2"
+  },
+  "node_modules/material-icons/iconfont/material-icons-round.woff": {
+    "file": "assets/material-icons-round-BDlwx-sv.woff",
+    "src": "node_modules/material-icons/iconfont/material-icons-round.woff"
+  },
+  "node_modules/material-icons/iconfont/material-icons-round.woff2": {
+    "file": "assets/material-icons-round-DrirKXBx.woff2",
+    "src": "node_modules/material-icons/iconfont/material-icons-round.woff2"
+  },
+  "node_modules/material-icons/iconfont/material-icons-sharp.woff": {
+    "file": "assets/material-icons-sharp-CH1KkVu7.woff",
+    "src": "node_modules/material-icons/iconfont/material-icons-sharp.woff"
+  },
+  "node_modules/material-icons/iconfont/material-icons-sharp.woff2": {
+    "file": "assets/material-icons-sharp-gidztirS.woff2",
+    "src": "node_modules/material-icons/iconfont/material-icons-sharp.woff2"
+  },
+  "node_modules/material-icons/iconfont/material-icons-two-tone.woff": {
+    "file": "assets/material-icons-two-tone-B7wz7mED.woff",
+    "src": "node_modules/material-icons/iconfont/material-icons-two-tone.woff"
+  },
+  "node_modules/material-icons/iconfont/material-icons-two-tone.woff2": {
+    "file": "assets/material-icons-two-tone-DuNIpaEj.woff2",
+    "src": "node_modules/material-icons/iconfont/material-icons-two-tone.woff2"
+  },
+  "node_modules/material-icons/iconfont/material-icons.woff": {
+    "file": "assets/material-icons-Dr0goTwe.woff",
+    "src": "node_modules/material-icons/iconfont/material-icons.woff"
+  },
+  "node_modules/material-icons/iconfont/material-icons.woff2": {
+    "file": "assets/material-icons-kAwBdRge.woff2",
+    "src": "node_modules/material-icons/iconfont/material-icons.woff2"
+  },
   "node_modules/slick-carousel/slick/ajax-loader.gif": {
     "file": "assets/ajax-loader-BcnMEykj.gif",
     "src": "node_modules/slick-carousel/slick/ajax-loader.gif"
@@ -650,7 +690,7 @@
     "src": "node_modules/slick-carousel/slick/fonts/slick.woff"
   },
   "node_modules/swagger-ui-react/index.mjs": {
-    "file": "assets/index-BIvHHh1S.js",
+    "file": "assets/index-DivkDDDw.js",
     "name": "index",
     "src": "node_modules/swagger-ui-react/index.mjs",
     "isDynamicEntry": true,
@@ -659,7 +699,7 @@
     ]
   },
   "resources/css/app.css": {
-    "file": "assets/app-DXPnTR-P.css",
+    "file": "assets/app-DJFTfkZo.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
@@ -668,13 +708,13 @@
     "src": "resources/js/assets/images/users/avatar-1.png"
   },
   "resources/js/index.tsx": {
-    "file": "assets/index-DqrwtUFT.js",
+    "file": "assets/index-YOsYXykV.js",
     "name": "index",
     "src": "resources/js/index.tsx",
     "isEntry": true,
     "dynamicImports": [
       "resources/js/views/auth/Login.tsx",
-      "_NotFound-BOsxWdQ4.js",
+      "_NotFound-Bbz6fTzM.js",
       "resources/js/views/api/Document.tsx",
       "resources/js/views/auth/Register.tsx",
       "resources/js/views/Page.tsx"
@@ -684,30 +724,30 @@
     ]
   },
   "resources/js/layouts/ElementBuilder.tsx": {
-    "file": "assets/ElementBuilder-zcDcfvjq.js",
+    "file": "assets/ElementBuilder-dgxnnoZ_.js",
     "name": "ElementBuilder",
     "src": "resources/js/layouts/ElementBuilder.tsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/index.tsx",
-      "_ErrorMessage-ClJGeSoy.js"
+      "_ErrorMessage-DKzLhkan.js"
     ]
   },
   "resources/js/views/Page.tsx": {
-    "file": "assets/Page-DAcUpAiV.js",
+    "file": "assets/Page-CX9mYWFF.js",
     "name": "Page",
     "src": "resources/js/views/Page.tsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/index.tsx",
-      "_NotFound-BOsxWdQ4.js"
+      "_NotFound-Bbz6fTzM.js"
     ],
     "dynamicImports": [
       "resources/js/layouts/ElementBuilder.tsx"
     ]
   },
   "resources/js/views/api/Document.tsx": {
-    "file": "assets/Document-AP3GIZID.js",
+    "file": "assets/Document-lXap7_pa.js",
     "name": "Document",
     "src": "resources/js/views/api/Document.tsx",
     "isDynamicEntry": true,
@@ -722,24 +762,24 @@
     ]
   },
   "resources/js/views/auth/Login.tsx": {
-    "file": "assets/Login-ntWmW1bQ.js",
+    "file": "assets/Login-BOYcmhQg.js",
     "name": "Login",
     "src": "resources/js/views/auth/Login.tsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/index.tsx",
-      "_EyeInvisibleOutlined-DRRCcH-O.js",
-      "_ErrorMessage-ClJGeSoy.js"
+      "_EyeInvisibleOutlined-DLS2RFZb.js",
+      "_ErrorMessage-DKzLhkan.js"
     ]
   },
   "resources/js/views/auth/Register.tsx": {
-    "file": "assets/Register-BYzPcotD.js",
+    "file": "assets/Register-BbdyTGFo.js",
     "name": "Register",
     "src": "resources/js/views/auth/Register.tsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/index.tsx",
-      "_EyeInvisibleOutlined-DRRCcH-O.js"
+      "_EyeInvisibleOutlined-DLS2RFZb.js"
     ]
   }
 }
