@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, NavigateFunction, useNavigate } from 'react-router-dom';
 
 // material-ui
 import Grid from '@mui/material/Grid';
@@ -8,11 +8,20 @@ import Typography from '@mui/material/Typography';
 // project import
 import AuthWrapper from './AuthWrapper';
 import AuthLogin from './components/AuthLogin';
-import React from 'react';
-
-// ================================|| LOGIN ||================================ //
+import React, { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { AuthState } from '@/features/auth/authSlice';
 
 export default function Login() {
+    const { userToken } = useSelector<{ auth: any }, AuthState>((state) => state.auth);
+    const navigate: NavigateFunction = useNavigate();
+
+    useEffect(() => {
+        if (userToken) {
+            navigate('/admin-cp')
+        }
+    }, [navigate, userToken]);
+
     return (
         <AuthWrapper>
             <Grid container spacing={3}>

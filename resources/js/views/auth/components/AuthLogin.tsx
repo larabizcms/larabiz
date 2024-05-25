@@ -3,22 +3,12 @@ import { Link as RouterLink } from 'react-router-dom';
 
 // material-ui
 import Button from '@mui/material/Button';
-import Checkbox from '@mui/material/Checkbox';
 import Divider from '@mui/material/Divider';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import FormHelperText from '@mui/material/FormHelperText';
 import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import InputAdornment from '@mui/material/InputAdornment';
 import IconButton from '@mui/material/IconButton';
-import InputLabel from '@mui/material/InputLabel';
-import OutlinedInput from '@mui/material/OutlinedInput';
-import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-
-// third party
-import * as Yup from 'yup';
-import { Formik } from 'formik';
 
 // project import
 import AnimateButton from '@/components/@extended/AnimateButton';
@@ -26,10 +16,22 @@ import AnimateButton from '@/components/@extended/AnimateButton';
 // assets
 import EyeOutlined from '@ant-design/icons/EyeOutlined';
 import EyeInvisibleOutlined from '@ant-design/icons/EyeInvisibleOutlined';
+import { useAppDispatch } from '@/hooks/hooks';
+import { useSelector } from 'react-redux';
+import { useForm } from 'react-hook-form';
+import { AuthState } from '@/features/auth/authSlice';
+import { LoginData } from '@/features/types/AuthData';
+import { mapErrorsToForm } from '@/hooks/helper';
+import { loginUser } from '@/features/auth/authActions';
+import Text from '@larabiz/components/forms/Text';
+import ErrorMessage from '@/layouts/shared/ErrorMessage';
+import Checkbox from '@larabiz/components/forms/Checkbox';
 //import FirebaseSocial from './FirebaseSocial';
 
 export default function AuthLogin() {
-    const [checked, setChecked] = React.useState(false);
+    const { loading } = useSelector<{ auth: any }, AuthState>((state) => state.auth);
+    const { control, setError, setValue, formState: { errors }, handleSubmit } = useForm<LoginData>();
+    const dispatch = useAppDispatch();
 
     const [showPassword, setShowPassword] = React.useState(false);
     const handleClickShowPassword = () => {
@@ -40,93 +42,80 @@ export default function AuthLogin() {
         event.preventDefault();
     };
 
+    const submitForm = (data: LoginData) => {
+        dispatch(loginUser(data)).then((res: any) => {
+            mapErrorsToForm(res, setError);
+            setValue("password", '');
+        });
+    };
+
     return (
         <>
-            <form noValidate>
+            <form noValidate onSubmit={handleSubmit(submitForm)}>
                 <Grid container spacing={3}>
-                    <Grid item xs={12}>
-                        <Stack spacing={1}>
-                            <InputLabel htmlFor="email-login">Email Address</InputLabel>
-                            <OutlinedInput
-                                id="email-login"
-                                type="email"
-                                // value={values.email}
-                                // name="email"
-                                // onBlur={handleBlur}
-                                // onChange={handleChange}
-                                placeholder="Enter email address"
-                                fullWidth
-                                //error={Boolean(touched.email && errors.email)}
-                            />
-                        </Stack>
-                        {/* {touched.email && errors.email && (
-                            <FormHelperText error id="standard-weight-helper-text-email-login">
-                                {errors.email}
-                            </FormHelperText>
-                        )} */}
-                    </Grid>
-                    <Grid item xs={12}>
-                        <Stack spacing={1}>
-                            <InputLabel htmlFor="password-login">Password</InputLabel>
-                            <OutlinedInput
-                                fullWidth
-                                //error={Boolean(touched.password && errors.password)}
-                                id="-password-login"
-                                type={showPassword ? 'text' : 'password'}
-                                //value={values.password}
-                                name="password"
-                                // onBlur={handleBlur}
-                                // onChange={handleChange}
-                                endAdornment={
-                                    <InputAdornment position="end">
-                                        <IconButton
-                                            aria-label="toggle password visibility"
-                                            onClick={handleClickShowPassword}
-                                            onMouseDown={handleMouseDownPassword}
-                                            edge="end"
-                                            color="secondary"
-                                        >
-                                            {showPassword ? <EyeOutlined /> : <EyeInvisibleOutlined />}
-                                        </IconButton>
-                                    </InputAdornment>
-                                }
-                                placeholder="Enter password"
-                            />
-                        </Stack>
-                        {/* {touched.password && errors.password && (
-                            <FormHelperText error id="standard-weight-helper-text-password-login">
-                                {errors.password}
-                            </FormHelperText>
-                        )} */}
-                    </Grid>
+                    <Text
+                        label="Email"
+                        name="email"
+                        type="email"
+                        control={control}
+                        errors={errors}
+                        rules={{
+                            required: "Email is required",
+                            pattern: {
+                                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                                message: "Invalid email address",
+                            },
+                        }}
+                        placeholder='Enter email address'
+                    />
 
-                    <Grid item xs={12} sx={{ mt: -1 }}>
-                        <Stack direction="row" justifyContent="space-between" alignItems="center" spacing={2}>
-                            <FormControlLabel
-                                control={
-                                    <Checkbox
-                                        checked={checked}
-                                        onChange={(event) => setChecked(event.target.checked)}
-                                        name="checked"
-                                        color="primary"
-                                        size="small"
-                                    />
-                                }
-                                label={<Typography variant="h6">Keep me sign in</Typography>}
-                            />
+                    <Text
+                        fullWidth
+                        label="Password"
+                        type={showPassword ? 'text' : 'password'}
+                        control={control}
+                        errors={errors}
+                        name="password"
+                        endAdornment={
+                            <InputAdornment position="end">
+                                <IconButton
+                                    aria-label="toggle password visibility"
+                                    onClick={handleClickShowPassword}
+                                    onMouseDown={handleMouseDownPassword}
+                                    edge="end"
+                                    color="secondary"
+                                >
+                                    {showPassword ? <EyeOutlined /> : <EyeInvisibleOutlined />}
+                                </IconButton>
+                            </InputAdornment>
+                        }
+                        placeholder="Enter password"
+                        rules={{
+                            required: "Password is required",
+                        }}
+                    />
+
+                    <Checkbox
+                        control={control}
+                        errors={errors}
+                        name="remember"
+                        label="Keep me sign in"
+                        color="primary"
+                        size="small"
+                        after={
                             <Link variant="h6" component={RouterLink} color="text.primary" to={'/admin-cp/forgot-password'}>
                                 Forgot Password?
                             </Link>
-                        </Stack>
-                    </Grid>
-                    {/* {errors.submit && (
-                        <Grid item xs={12}>
-                            <FormHelperText error>{errors.submit}</FormHelperText>
-                        </Grid>
-                    )} */}
+                        }
+                    />
+
+                    <ErrorMessage errors={errors} />
+
                     <Grid item xs={12}>
                         <AnimateButton>
-                            <Button disableElevation fullWidth size="large" type="submit" variant="contained" color="primary">
+                            <Button disableElevation
+                                disabled={loading}
+                                fullWidth size="large" type="submit" variant="contained" color="primary">
                                 Login
                             </Button>
                         </AnimateButton>

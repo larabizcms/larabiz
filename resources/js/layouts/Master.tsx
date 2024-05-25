@@ -1,6 +1,6 @@
 import React from 'react';
 import { useEffect } from 'react';
-import { Outlet } from 'react-router-dom';
+import { NavigateFunction, Outlet, useNavigate } from 'react-router-dom';
 
 // material-ui
 import useMediaQuery from '@mui/material/useMediaQuery';
@@ -15,6 +15,11 @@ import Loader from '@/components/Loader';
 import Breadcrumbs from '@/components/@extended/Breadcrumbs';
 
 import { handlerDrawerOpen, useGetMenuMaster } from '@/api/menu';
+import { useSelector } from 'react-redux';
+import { useAppDispatch } from '@/hooks/hooks';
+import { setUser } from '@/features/auth/authSlice';
+import { useGetUserProfileQuery } from '@/services/auth/authService';
+import { getGeneralData } from '@/features/setting/settingActions';
 
 export default function Master() {
     const { menuMasterLoading } = useGetMenuMaster();
@@ -24,6 +29,35 @@ export default function Master() {
         handlerDrawerOpen(!downXL);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [downXL]);
+
+    const { userToken } = useSelector((state: any) => state.auth);
+    const { generalData } = useSelector((state: any) => state.setting);
+
+    const navigate: NavigateFunction = useNavigate();
+    const dispatch = useAppDispatch();
+    //const appDispatch = useAppDispatch();
+
+    const { data } = useGetUserProfileQuery('userProfile', {
+        pollingInterval: 900000,
+    });
+
+    useEffect(() => {
+        if (data) {
+            dispatch(setUser(data));
+        }
+    }, [data, dispatch]);
+
+    useEffect(() => {
+        if (!generalData) {
+            dispatch(getGeneralData());
+        }
+    }, []);
+
+    useEffect(() => {
+        if (!userToken) {
+            navigate('/admin-cp/login');
+        }
+    }, [navigate, userToken]);
 
     if (menuMasterLoading) return <Loader />;
 
