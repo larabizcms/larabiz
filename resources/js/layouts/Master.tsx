@@ -14,7 +14,7 @@ import navigation from '@/menu-items';
 import Loader from '@/components/Loader';
 import Breadcrumbs from '@/components/@extended/Breadcrumbs';
 
-import { handlerDrawerOpen, useGetMenuMaster } from '@/api/menu';
+import { handlerDrawerOpen, useGetMenuMaster } from '@/hooks/menu';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from '@/hooks/hooks';
 import { setUser } from '@/features/auth/authSlice';

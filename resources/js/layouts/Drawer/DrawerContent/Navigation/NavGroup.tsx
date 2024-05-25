@@ -6,7 +6,7 @@ import Box from '@mui/material/Box';
 import React from 'react';
 // project import
 import NavItem from './NavItem';
-import { useGetMenuMaster } from '@/api/menu';
+import { useGetMenuMaster } from '@/hooks/menu';
 
 export default function NavGroup({ item }: any) {
     const { menuMaster } = useGetMenuMaster();

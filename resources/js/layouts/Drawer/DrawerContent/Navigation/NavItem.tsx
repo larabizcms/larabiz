@@ -12,7 +12,7 @@ import Typography from '@mui/material/Typography';
 import {Icon} from '@mui/material'
 
 // project import
-import { handlerActiveItem, useGetMenuMaster } from '@/api/menu';
+import { handlerActiveItem, useGetMenuMaster } from '@/hooks/menu';
 import { ListItemIcon } from '@mui/material';
 
 export default function NavItem({ item, level }: any) {
