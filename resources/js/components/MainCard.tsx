@@ -81,22 +81,4 @@ function MainCard(
     );
 }
 
-export default forwardRef(MainCard as any);
-
-MainCard.propTypes = {
-    border: PropTypes.bool,
-    boxShadow: PropTypes.bool,
-    children: PropTypes.node,
-    subheader: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-    content: PropTypes.bool,
-    contentSX: PropTypes.object,
-    darkTitle: PropTypes.bool,
-    divider: PropTypes.bool,
-    elevation: PropTypes.number,
-    secondary: PropTypes.any,
-    shadow: PropTypes.string,
-    sx: PropTypes.object,
-    title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-    modal: PropTypes.bool,
-    others: PropTypes.any
-};
+export default MainCard;

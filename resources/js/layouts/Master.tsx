@@ -35,7 +35,6 @@ export default function Master() {
 
     const navigate: NavigateFunction = useNavigate();
     const dispatch = useAppDispatch();
-    //const appDispatch = useAppDispatch();
 
     const { data } = useGetUserProfileQuery('userProfile', {
         pollingInterval: 900000,
