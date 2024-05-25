@@ -10,10 +10,11 @@ import Palette from './palette';
 import Typography from './typography';
 import CustomShadows from './shadows';
 import componentsOverride from './overrides';
+import React from 'react';
 
 // ==============================|| DEFAULT THEME - MAIN  ||============================== //
 
-export default function ThemeCustomization({ children }) {
+export default function ThemeCustomization({ children }: { children: React.ReactNode }) {
   const theme = Palette('light', 'default');
 
   // eslint-disable-next-line react-hooks/exhaustive-deps

@@ -20,7 +20,7 @@ import Typography from './Typography';
 
 // ==============================|| OVERRIDES - MAIN ||============================== //
 
-export default function ComponentsOverrides(theme) {
+export default function ComponentsOverrides(theme: any) {
   return merge(
     Button(theme),
     Badge(theme),
