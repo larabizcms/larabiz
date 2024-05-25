@@ -45,7 +45,7 @@ export default function Page({ uri }: { uri?: string }) {
 
     return (
         <PageContainer title={title} description={description}>
-            <Breadcrumbs aria-label="breadcrumb">
+            {/* <Breadcrumbs aria-label="breadcrumb">
                 <Link component={RouterLink} underline="none" color="inherit" to="/admin-cp">
                     Dashboard
                 </Link>
@@ -59,7 +59,7 @@ export default function Page({ uri }: { uri?: string }) {
                     Core
                 </Link>
                 <Typography color="text.primary">{title}</Typography>
-            </Breadcrumbs>
+            </Breadcrumbs> */}
 
             {/* <h1>{title}</h1> */}
 

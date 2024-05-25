@@ -16,28 +16,27 @@ import Breadcrumbs from '@/components/@extended/Breadcrumbs';
 
 import { handlerDrawerOpen, useGetMenuMaster } from '@/api/menu';
 
-// ==============================|| MAIN LAYOUT ||============================== //
-
 export default function Master() {
-  const { menuMasterLoading } = useGetMenuMaster();
-  const downXL = useMediaQuery((theme) => theme.breakpoints.down('xl'));
+    const { menuMasterLoading } = useGetMenuMaster();
+    const downXL = useMediaQuery((theme: any) => theme.breakpoints.down('xl'));
 
-  useEffect(() => {
-    handlerDrawerOpen(!downXL);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [downXL]);
+    useEffect(() => {
+        handlerDrawerOpen(!downXL);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [downXL]);
 
-  if (menuMasterLoading) return <Loader />;
+    if (menuMasterLoading) return <Loader />;
 
-  return (
-    <Box sx={{ display: 'flex', width: '100%' }}>
-      <Header />
-      <Drawer />
-      <Box component="main" sx={{ width: 'calc(100% - 260px)', flexGrow: 1, p: { xs: 2, sm: 3 } }}>
-        <Toolbar />
-        <Breadcrumbs navigation={navigation} title />
-        <Outlet />
-      </Box>
-    </Box>
-  );
+    return (
+        <Box sx={{ display: 'flex', width: '100%' }}>
+            <Header />
+            <Drawer />
+            <Box component="main" sx={{ width: 'calc(100% - 260px)', flexGrow: 1, p: { xs: 2, sm: 3 } }}>
+                <Toolbar />
+                <Breadcrumbs navigation={navigation} title />
+
+                <Outlet />
+            </Box>
+        </Box>
+    );
 }

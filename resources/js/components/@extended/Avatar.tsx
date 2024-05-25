@@ -39,8 +39,6 @@ function getColorStyle({ theme, color, type }: any) {
     }
 }
 
-// ==============================|| AVATAR - SIZE STYLE ||============================== //
-
 function getSizeStyle(size: any) {
     switch (size) {
         case 'badge':
