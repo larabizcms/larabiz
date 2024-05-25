@@ -16,7 +16,7 @@ import FallOutlined from '@ant-design/icons/FallOutlined';
 
 const iconSX = { fontSize: '0.75rem', color: 'inherit', marginLeft: 0, marginRight: 0 };
 
-export default function AnalyticEcommerce({ color = 'primary', title, count, percentage, isLoss, extra }) {
+export default function AnalyticEcommerce({ color = 'primary', title, count, percentage, isLoss, extra }: any) {
   return (
     <MainCard contentSX={{ p: 2.25 }}>
       <Stack spacing={0.5}>

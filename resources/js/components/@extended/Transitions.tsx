@@ -105,7 +105,7 @@ function transitions({ children, position = 'top-left', type = 'grow', direction
     );
 }
 
-export default forwardRef(transitions);
+export default forwardRef(transitions as any);
 
 function popupTransition(props: React.JSX.IntrinsicAttributes & ZoomProps, ref: React.Ref<unknown> | undefined) {
     return <Zoom ref={ref} timeout={200} {...props} />;

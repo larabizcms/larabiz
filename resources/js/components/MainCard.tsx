@@ -32,9 +32,9 @@ function MainCard(
   }: {
     border?: boolean,
     boxShadow?: boolean,
-    children: React.ReactNode, // Specify the type of the children prop
+    children: any, // Specify the type of the children prop
     content?: boolean,
-    contentSX?: object,
+    contentSX?: any,
     darkTitle?: boolean,
     elevation?: number,
     secondary?: any,
