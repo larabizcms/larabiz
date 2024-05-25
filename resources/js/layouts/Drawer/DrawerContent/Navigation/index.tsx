@@ -13,10 +13,10 @@ export default function Navigation() {
     const navGroups = MenuItems.map((item: any) => {
         switch (item.type) {
             case 'group':
-                return <NavGroup key={item.id} item={item} />;
+                return <NavGroup key={item.key} item={item} />;
             default:
                 return (
-                    <Typography key={item.id} variant="h6" color="error" align="center">
+                    <Typography key={item.key} variant="h6" color="error" align="center">
                         Fix - Navigation Group
                     </Typography>
                 );

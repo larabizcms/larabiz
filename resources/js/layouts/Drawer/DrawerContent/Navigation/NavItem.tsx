@@ -41,11 +41,11 @@ export default function NavItem({ item, level }: any) {
     const itemIcon = item.icon ? <Icon style={{ fontSize: drawerOpen ? '1rem' : '1.25rem' }} /> : false;
 
     const { pathname } = useLocation();
-    const isSelected = !!matchPath({ path: item.url, end: false }, pathname) || openItem === item.id;
+    const isSelected = !!matchPath({ path: item.url, end: false }, pathname) || openItem === item.key;
 
     // active menu item on page load
     useEffect(() => {
-        if (pathname === item.url) handlerActiveItem(item.id);
+        if (pathname === item.url) handlerActiveItem(item.key);
         // eslint-disable-next-line
     }, [pathname]);
 
@@ -56,7 +56,7 @@ export default function NavItem({ item, level }: any) {
         <ListItemButton
             {...listItemProps}
             disabled={item.disabled}
-            onClick={() => handlerActiveItem(item.id)}
+            onClick={() => handlerActiveItem(item.key)}
             selected={isSelected}
             sx={{
                 zIndex: 1201,
@@ -89,7 +89,7 @@ export default function NavItem({ item, level }: any) {
                 })
             }}
         >
-            {itemIcon && (
+            {/* {itemIcon && (
                 <ListItemIcon
                     sx={{
                         minWidth: 28,
@@ -115,7 +115,7 @@ export default function NavItem({ item, level }: any) {
                 >
                     {itemIcon}
                 </ListItemIcon>
-            )}
+            )} */}
             {(drawerOpen || (!drawerOpen && level !== 1)) && (
                 <ListItemText
                     primary={

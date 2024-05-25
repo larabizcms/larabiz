@@ -40,9 +40,9 @@ export default function Breadcrumbs({ navigation, title, ...others }: { navigati
     });
 
     // only used for component demo breadcrumbs
-    if (location.pathname === '/breadcrumbs') {
-        location.pathname = '/dashboard/analytics';
-    }
+    // if (location.pathname === '/breadcrumbs') {
+    //     location.pathname = '/dashboard/analytics';
+    // }
 
     let mainContent;
     let itemContent;
