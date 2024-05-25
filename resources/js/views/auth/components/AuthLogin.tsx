@@ -1,126 +1,165 @@
-import React from "react";
-import {
-    Box,
-    Typography,
-    FormGroup,
-    FormControlLabel,
-    Stack,
-    Checkbox,
-} from "@mui/material";
-import { Link } from "react-router-dom";
-import { LoadingButton } from '@mui/lab';
-import { useAppDispatch } from "@/hooks/hooks";
-import { useForm } from "react-hook-form";
-import { LoginData } from "@/features/types/AuthData";
-import { loginUser } from "@/features/auth/authActions";
-import { useSelector } from "react-redux";
-import { mapErrorsToForm } from "@/hooks/helper";
-import Text from "@larabiz/components/forms/Text";
-import { AuthState } from "@/features/auth/authSlice";
-import ErrorMessage from "@/layouts/shared/ErrorMessage";
+import PropTypes from 'prop-types';
+import React from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 
-interface loginType {
-    title?: string;
-    subtitle?: JSX.Element | JSX.Element[];
-    subtext?: JSX.Element | JSX.Element[];
-}
+// material-ui
+import Button from '@mui/material/Button';
+import Checkbox from '@mui/material/Checkbox';
+import Divider from '@mui/material/Divider';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormHelperText from '@mui/material/FormHelperText';
+import Grid from '@mui/material/Grid';
+import Link from '@mui/material/Link';
+import InputAdornment from '@mui/material/InputAdornment';
+import IconButton from '@mui/material/IconButton';
+import InputLabel from '@mui/material/InputLabel';
+import OutlinedInput from '@mui/material/OutlinedInput';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
 
-const AuthLogin = ({ title, subtitle, subtext }: loginType) => {
-    const { loading } = useSelector<{ auth: any }, AuthState>((state) => state.auth);
-    const { control, setError, setValue, formState: { errors }, handleSubmit } = useForm<LoginData>();
-    const dispatch = useAppDispatch();
+// third party
+import * as Yup from 'yup';
+import { Formik } from 'formik';
 
-    const submitForm = (data: LoginData) => {
-        dispatch(loginUser(data)).then((res: any) => {
-            mapErrorsToForm(res, setError);
-            setValue("password", '');
-        });
-    };
+// project import
+import AnimateButton from '@/components/@extended/AnimateButton';
 
-    return (
-        <>
-            {title ? (
-                <Typography fontWeight="700" variant="h2" mb={1}>
-                    {title}
-                </Typography>
-            ) : null}
+// assets
+import EyeOutlined from '@ant-design/icons/EyeOutlined';
+import EyeInvisibleOutlined from '@ant-design/icons/EyeInvisibleOutlined';
+//import FirebaseSocial from './FirebaseSocial';
 
-            {subtext}
+// ============================|| JWT - LOGIN ||============================ //
 
-            <ErrorMessage errors={errors}/>
+export default function AuthLogin({ isDemo = false }) {
+  const [checked, setChecked] = React.useState(false);
 
-            <form onSubmit={handleSubmit(submitForm)}>
-                <Stack>
-                    <Box>
-                        <Text
-                            label="Email"
-                            name="email"
-                            control={control} errors={errors}
-                            rules={{
-                                required: "Email is required",
-                                pattern: {
-                                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                                    message: "Invalid email address",
-                                },
-                            }}
-                        />
-                    </Box>
+  const [showPassword, setShowPassword] = React.useState(false);
+  const handleClickShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
 
-                    <Box mt="25px">
-                        <Text
-                            label="Password"
-                            name="password"
-                            type="password"
-                            control={control}
-                            errors={errors}
-                            rules={{
-                                required: "Password is required",
-                            }}
-                        />
-                    </Box>
+  const handleMouseDownPassword = (event: any) => {
+    event.preventDefault();
+  };
 
-                    <Stack
-                        justifyContent="space-between"
-                        direction="row"
-                        alignItems="center"
-                        my={2}
-                    >
-                        <FormGroup>
-                            <FormControlLabel
-                                control={<Checkbox defaultChecked />}
-                                label="Remeber this Device"
-                            />
-                        </FormGroup>
-                        <Typography
-                            fontWeight="500"
-                            sx={{
-                                textDecoration: "none",
-                                color: "primary.main",
-                            }}
-                        >
-                            <Link to={'/admin-cp/forgot-password'}>Forgot Password ?</Link>
-                        </Typography>
-                    </Stack>
+  return (
+    <>
+      <Formik
+        initialValues={{
+          email: '',
+          password: '',
+          submit: null
+        }}
+        validationSchema={Yup.object().shape({
+          email: Yup.string().email('Must be a valid email').max(255).required('Email is required'),
+          password: Yup.string().max(255).required('Password is required')
+        })}
+      >
+        {({ errors, handleBlur, handleChange, handleSubmit, isSubmitting, touched, values }) => (
+          <form noValidate onSubmit={handleSubmit}>
+            <Grid container spacing={3}>
+              <Grid item xs={12}>
+                <Stack spacing={1}>
+                  <InputLabel htmlFor="email-login">Email Address</InputLabel>
+                  <OutlinedInput
+                    id="email-login"
+                    type="email"
+                    value={values.email}
+                    name="email"
+                    onBlur={handleBlur}
+                    onChange={handleChange}
+                    placeholder="Enter email address"
+                    fullWidth
+                    error={Boolean(touched.email && errors.email)}
+                  />
                 </Stack>
+                {touched.email && errors.email && (
+                  <FormHelperText error id="standard-weight-helper-text-email-login">
+                    {errors.email}
+                  </FormHelperText>
+                )}
+              </Grid>
+              <Grid item xs={12}>
+                <Stack spacing={1}>
+                  <InputLabel htmlFor="password-login">Password</InputLabel>
+                  <OutlinedInput
+                    fullWidth
+                    error={Boolean(touched.password && errors.password)}
+                    id="-password-login"
+                    type={showPassword ? 'text' : 'password'}
+                    value={values.password}
+                    name="password"
+                    onBlur={handleBlur}
+                    onChange={handleChange}
+                    endAdornment={
+                      <InputAdornment position="end">
+                        <IconButton
+                          aria-label="toggle password visibility"
+                          onClick={handleClickShowPassword}
+                          onMouseDown={handleMouseDownPassword}
+                          edge="end"
+                          color="secondary"
+                        >
+                          {showPassword ? <EyeOutlined /> : <EyeInvisibleOutlined />}
+                        </IconButton>
+                      </InputAdornment>
+                    }
+                    placeholder="Enter password"
+                  />
+                </Stack>
+                {touched.password && errors.password && (
+                  <FormHelperText error id="standard-weight-helper-text-password-login">
+                    {errors.password}
+                  </FormHelperText>
+                )}
+              </Grid>
 
-                <Box>
-                    <LoadingButton
+              <Grid item xs={12} sx={{ mt: -1 }}>
+                <Stack direction="row" justifyContent="space-between" alignItems="center" spacing={2}>
+                  <FormControlLabel
+                    control={
+                      <Checkbox
+                        checked={checked}
+                        onChange={(event) => setChecked(event.target.checked)}
+                        name="checked"
                         color="primary"
-                        variant="contained"
-                        size="large"
-                        fullWidth
-                        type="submit"
-                        disabled={loading}
-                        loading={loading}
-                    >
-                        Sign In
-                    </LoadingButton>
-                </Box>
-
-            </form>
-            {subtitle}
-        </>
-    );
+                        size="small"
+                      />
+                    }
+                    label={<Typography variant="h6">Keep me sign in</Typography>}
+                  />
+                  <Link variant="h6" component={RouterLink} color="text.primary">
+                    Forgot Password?
+                  </Link>
+                </Stack>
+              </Grid>
+              {errors.submit && (
+                <Grid item xs={12}>
+                  <FormHelperText error>{errors.submit}</FormHelperText>
+                </Grid>
+              )}
+              <Grid item xs={12}>
+                <AnimateButton>
+                  <Button disableElevation disabled={isSubmitting} fullWidth size="large" type="submit" variant="contained" color="primary">
+                    Login
+                  </Button>
+                </AnimateButton>
+              </Grid>
+              <Grid item xs={12}>
+                <Divider>
+                  <Typography variant="caption"> Login with</Typography>
+                </Divider>
+              </Grid>
+              {/* <Grid item xs={12}>
+                <FirebaseSocial />
+              </Grid> */}
+            </Grid>
+          </form>
+        )}
+      </Formik>
+    </>
+  );
 }
 
-export default AuthLogin;
+AuthLogin.propTypes = { isDemo: PropTypes.bool };

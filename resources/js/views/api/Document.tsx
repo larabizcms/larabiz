@@ -1,12 +1,14 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { NavigateFunction, useNavigate } from "react-router-dom";
-import SwaggerUI from "swagger-ui-react";
+//import SwaggerUI from "swagger-ui-react";
 import "swagger-ui-react/swagger-ui.css";
 
 interface Request {
     [k: string]: any;
 }
+
+const SwaggerUI = React.lazy(() => import("swagger-ui-react"));
 
 const requestInterceptor = (req: Request) => (
     {

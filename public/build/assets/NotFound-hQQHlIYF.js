@@ -1,1 +1,0 @@
-import{j as o,L as r}from"./index-BjNVD40d.js";import{P as a}from"./PageContainer-CsRGtVwS.js";const d=({title:n,message:t})=>o.jsxs(a,{title:n||"Page Not Found",description:t||"Page Not Found",children:[o.jsx("h1",{children:n||"Page Not Found"}),o.jsxs("p",{children:[t||"Page Not Found"," ",o.jsx(r,{to:"/admin-cp",children:"Back to Dashboard"})]})]}),i=d;export{i as default};

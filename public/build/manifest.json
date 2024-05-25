@@ -1,24 +1,24 @@
 {
-  "_ErrorMessage-UyXsXi_h.js": {
-    "file": "assets/ErrorMessage-UyXsXi_h.js",
+  "_ErrorMessage-CI74gT2u.js": {
+    "file": "assets/ErrorMessage-CI74gT2u.js",
     "name": "ErrorMessage",
     "imports": [
       "resources/js/index.jsx"
     ]
   },
-  "_PageContainer-CsRGtVwS.js": {
-    "file": "assets/PageContainer-CsRGtVwS.js",
+  "_PageContainer-DTWTceSH.js": {
+    "file": "assets/PageContainer-DTWTceSH.js",
     "name": "PageContainer",
     "imports": [
       "resources/js/index.jsx"
     ]
   },
-  "_Text-C9vMBEC3.js": {
-    "file": "assets/Text-C9vMBEC3.js",
+  "_Text-BCS8NtjU.js": {
+    "file": "assets/Text-BCS8NtjU.js",
     "name": "Text",
     "imports": [
       "resources/js/index.jsx",
-      "_ErrorMessage-UyXsXi_h.js"
+      "_ErrorMessage-CI74gT2u.js"
     ]
   },
   "node_modules/@fontsource/inter/files/inter-cyrillic-400-normal.woff": {
@@ -649,6 +649,15 @@
     "file": "assets/slick-BlUtDIuC.woff",
     "src": "node_modules/slick-carousel/slick/fonts/slick.woff"
   },
+  "node_modules/swagger-ui-react/index.mjs": {
+    "file": "assets/index-GThBUmZ7.js",
+    "name": "index",
+    "src": "node_modules/swagger-ui-react/index.mjs",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/index.jsx"
+    ]
+  },
   "resources/css/app.css": {
     "file": "assets/app-DXPnTR-P.css",
     "src": "resources/css/app.css",
@@ -663,7 +672,7 @@
     "src": "resources/js/assets/images/users/avatar-group.png"
   },
   "resources/js/index.jsx": {
-    "file": "assets/index-BjNVD40d.js",
+    "file": "assets/index-C-SfiTro.js",
     "name": "index",
     "src": "resources/js/index.jsx",
     "isEntry": true,
@@ -680,33 +689,33 @@
     ]
   },
   "resources/js/layouts/ElementBuilder.tsx": {
-    "file": "assets/ElementBuilder-iT-szkle.js",
+    "file": "assets/ElementBuilder-4RopawBC.js",
     "name": "ElementBuilder",
     "src": "resources/js/layouts/ElementBuilder.tsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/index.jsx",
-      "_ErrorMessage-UyXsXi_h.js"
+      "_ErrorMessage-CI74gT2u.js"
     ]
   },
   "resources/js/views/NotFound.tsx": {
-    "file": "assets/NotFound-hQQHlIYF.js",
+    "file": "assets/NotFound-euhg4xHt.js",
     "name": "NotFound",
     "src": "resources/js/views/NotFound.tsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/index.jsx",
-      "_PageContainer-CsRGtVwS.js"
+      "_PageContainer-DTWTceSH.js"
     ]
   },
   "resources/js/views/Page.tsx": {
-    "file": "assets/Page-CeCF7gTL.js",
+    "file": "assets/Page-B7tbaEvD.js",
     "name": "Page",
     "src": "resources/js/views/Page.tsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/index.jsx",
-      "_PageContainer-CsRGtVwS.js",
+      "_PageContainer-DTWTceSH.js",
       "resources/js/views/NotFound.tsx"
     ],
     "dynamicImports": [
@@ -714,39 +723,42 @@
     ]
   },
   "resources/js/views/api/Document.tsx": {
-    "file": "assets/Document-CvCvL5CH.js",
+    "file": "assets/Document-B85uUCu8.js",
     "name": "Document",
     "src": "resources/js/views/api/Document.tsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/index.jsx"
     ],
+    "dynamicImports": [
+      "node_modules/swagger-ui-react/index.mjs"
+    ],
     "css": [
       "assets/Document-3e3Awjyw.css"
     ]
   },
   "resources/js/views/auth/Login.tsx": {
-    "file": "assets/Login-CC4q6pbg.js",
+    "file": "assets/Login-BLflth0a.js",
     "name": "Login",
     "src": "resources/js/views/auth/Login.tsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/index.jsx",
-      "_PageContainer-CsRGtVwS.js",
-      "_Text-C9vMBEC3.js",
-      "_ErrorMessage-UyXsXi_h.js"
+      "_PageContainer-DTWTceSH.js",
+      "_Text-BCS8NtjU.js",
+      "_ErrorMessage-CI74gT2u.js"
     ]
   },
   "resources/js/views/auth/Register.tsx": {
-    "file": "assets/Register-CoolAS3L.js",
+    "file": "assets/Register-B6xZVfUF.js",
     "name": "Register",
     "src": "resources/js/views/auth/Register.tsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/index.jsx",
-      "_PageContainer-CsRGtVwS.js",
-      "_Text-C9vMBEC3.js",
-      "_ErrorMessage-UyXsXi_h.js"
+      "_PageContainer-DTWTceSH.js",
+      "_Text-BCS8NtjU.js",
+      "_ErrorMessage-CI74gT2u.js"
     ]
   }
 }

@@ -22,15 +22,14 @@
         "forceConsistentCasingInFileNames": true,
         "strict": true,
         "allowSyntheticDefaultImports": true,
-        "skipLibCheck": true
+        "skipLibCheck": true,
+        "types": ["vite/client"]
     },
     "include": [
         "vite.config.mjs",
         "resources/js/**/*.ts",
         "resources/js/**/*.tsx",
-        "resources/js/**/*.jsx",
         "vendor/larabizcms/core/resources/js/**/*.ts",
-        "vendor/larabizcms/core/resources/js/**/*.jsx",
         "vendor/larabizcms/core/resources/js/**/*.tsx",
     ]
 }
