@@ -29,10 +29,23 @@ function MainCard(
     sx = {},
     title,
     ...others
+  }: {
+    border?: boolean,
+    boxShadow?: boolean,
+    children: React.ReactNode, // Specify the type of the children prop
+    content?: boolean,
+    contentSX?: object,
+    darkTitle?: boolean,
+    elevation?: number,
+    secondary?: any,
+    shadow?: string,
+    sx?: object,
+    title?: React.ReactNode,
+    [key: string]: any
   },
-  ref
+  ref: any
 ) {
-  const theme = useTheme();
+  const theme = useTheme<any>();
   boxShadow = theme.palette.mode === 'dark' ? boxShadow || true : boxShadow;
 
   return (
@@ -68,7 +81,7 @@ function MainCard(
   );
 }
 
-export default forwardRef(MainCard);
+export default forwardRef(MainCard as any);
 
 MainCard.propTypes = {
   border: PropTypes.bool,

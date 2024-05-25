@@ -5,8 +5,6 @@ import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
 import React from 'react';
 
-// ==============================|| FOOTER - AUTHENTICATION ||============================== //
-
 export default function AuthFooter() {
   return (
     <Container maxWidth="xl">

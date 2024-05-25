@@ -13,7 +13,6 @@ import MainCard from '@/components/MainCard';
 // assets
 import RiseOutlined from '@ant-design/icons/RiseOutlined';
 import FallOutlined from '@ant-design/icons/FallOutlined';
-import React from 'react';
 
 const iconSX = { fontSize: '0.75rem', color: 'inherit', marginLeft: 0, marginRight: 0 };
 

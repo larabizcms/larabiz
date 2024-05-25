@@ -9,8 +9,6 @@ import React from 'react';
  *
  */
 
-// ==============================|| LOGO SVG ||============================== //
-
 const Logo = () => {
   const theme = useTheme();
 

@@ -7,7 +7,7 @@ import React from 'react';
 // project import
 import getColors from '@/utils/getColors';
 
-function getColorStyle({ theme, color, type }) {
+function getColorStyle({ theme, color, type }: any) {
   const colors = getColors(theme, color);
   const { lighter, light, main, contrastText } = colors;
 
@@ -41,7 +41,7 @@ function getColorStyle({ theme, color, type }) {
 
 // ==============================|| AVATAR - SIZE STYLE ||============================== //
 
-function getSizeStyle(size) {
+function getSizeStyle(size: any) {
   switch (size) {
     case 'badge':
       return {
@@ -85,7 +85,7 @@ function getSizeStyle(size) {
 }
 
 const AvatarStyle = styled(MuiAvatar, { shouldForwardProp: (prop) => prop !== 'color' && prop !== 'type' && prop !== 'size' })(
-  ({ theme, color, type, size }) => ({
+  ({ theme, color, type, size }: any) => ({
     ...getSizeStyle(size),
     ...getColorStyle({ theme, color, type }),
     ...(size === 'badge' && {
@@ -94,7 +94,7 @@ const AvatarStyle = styled(MuiAvatar, { shouldForwardProp: (prop) => prop !== 'c
   })
 );
 
-export default function Avatar({ children, color = 'primary', type, size = 'md', ...others }) {
+export default function Avatar({ children, color = 'primary', type, size = 'md', ...others }: any) {
   const theme = useTheme();
 
   return (
