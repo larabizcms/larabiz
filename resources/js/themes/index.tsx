@@ -15,7 +15,7 @@ import React from 'react';
 // ==============================|| DEFAULT THEME - MAIN  ||============================== //
 
 export default function ThemeCustomization({ children }: { children: React.ReactNode }) {
-  const theme = Palette('light', 'default');
+  const theme = Palette('light', 'default') as any;
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const themeTypography = Typography(`'Public Sans', sans-serif`);
@@ -47,7 +47,7 @@ export default function ThemeCustomization({ children }: { children: React.React
     [theme, themeTypography, themeCustomShadows]
   );
 
-  const themes = createTheme(themeOptions);
+  const themes = createTheme(themeOptions as any);
   themes.components = componentsOverride(themes);
 
   return (
