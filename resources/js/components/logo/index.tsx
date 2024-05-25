@@ -10,20 +10,18 @@ import Chip from '@mui/material/Chip';
 import Logo from './LogoMain';
 import config from '@/config';
 
-// ==============================|| MAIN LOGO ||============================== //
-
 const LogoSection = ({ sx, to }: { sx?: any; to?: string }) => {
   return (
     <ButtonBase disableRipple component={Link} to={!to ? config.defaultPath : to} sx={sx}>
       <Stack direction="row" spacing={1} alignItems="center">
         <Logo />
-        <Chip
+        {/* <Chip
           label={import.meta.env.VITE_APP_VERSION}
           variant="outlined"
           size="small"
           color="secondary"
           sx={{ mt: 0.5, ml: 1, fontSize: '0.725rem', height: 20, '& .MuiChip-label': { px: 0.5 } }}
-        />
+        /> */}
       </Stack>
     </ButtonBase>
   );

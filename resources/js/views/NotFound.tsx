@@ -8,7 +8,7 @@ const NotFound = ({ title, message }: { title?: string, message?: string }): JSX
             <h1>{title || 'Page Not Found'}</h1>
             <p>
                 {message || 'Page Not Found'}{" "}
-                <Link to="/admin-cp">Back to Dashboard</Link>
+                <Link to="/admin-cp/dashboard">Back to Dashboard</Link>
             </p>
         </PageContainer>
     );

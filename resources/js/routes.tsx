@@ -34,8 +34,8 @@ const routes = createBrowserRouter([
         errorElement: <NotFound />,
         children: [
             {
-                path: "/admin-cp",
-                element: <Page uri={'dashboard'} />,
+                path: "/admin-cp/dashboard",
+                element: <Page />,
             },
             {
                 path: "/admin-cp/:page",

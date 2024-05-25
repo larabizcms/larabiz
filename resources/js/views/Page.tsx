@@ -29,8 +29,7 @@ export default function Page({ uri }: { uri?: string }) {
             setLoading(false);
         }).catch(() => {
             setHasError(true);
-        })
-        .finally(() => {
+        }).finally(() => {
             setLoading(false);
         });
     }, [location.pathname]);

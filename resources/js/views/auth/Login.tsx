@@ -18,7 +18,7 @@ export default function Login() {
 
     useEffect(() => {
         if (userToken) {
-            navigate('/admin-cp')
+            navigate('/admin-cp/dashboard')
         }
     }, [navigate, userToken]);
 

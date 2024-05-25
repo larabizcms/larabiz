@@ -1,23 +1,22 @@
 {
-  "_EyeInvisibleOutlined-D0esduSA.js": {
-    "file": "assets/EyeInvisibleOutlined-D0esduSA.js",
-    "name": "EyeInvisibleOutlined",
-    "imports": [
-      "resources/js/index.tsx",
-      "__baseClone-C0M85RjH.js"
-    ]
-  },
-  "_NotFound-DHrctRTB.js": {
-    "file": "assets/NotFound-DHrctRTB.js",
-    "name": "NotFound",
-    "isDynamicEntry": true,
+  "_ErrorMessage-ClJGeSoy.js": {
+    "file": "assets/ErrorMessage-ClJGeSoy.js",
+    "name": "ErrorMessage",
     "imports": [
       "resources/js/index.tsx"
     ]
   },
-  "__baseClone-C0M85RjH.js": {
-    "file": "assets/_baseClone-C0M85RjH.js",
-    "name": "_baseClone",
+  "_EyeInvisibleOutlined-DRRCcH-O.js": {
+    "file": "assets/EyeInvisibleOutlined-DRRCcH-O.js",
+    "name": "EyeInvisibleOutlined",
+    "imports": [
+      "resources/js/index.tsx"
+    ]
+  },
+  "_NotFound-BOsxWdQ4.js": {
+    "file": "assets/NotFound-BOsxWdQ4.js",
+    "name": "NotFound",
+    "isDynamicEntry": true,
     "imports": [
       "resources/js/index.tsx"
     ]
@@ -651,7 +650,7 @@
     "src": "node_modules/slick-carousel/slick/fonts/slick.woff"
   },
   "node_modules/swagger-ui-react/index.mjs": {
-    "file": "assets/index-DhWhVk1m.js",
+    "file": "assets/index-BIvHHh1S.js",
     "name": "index",
     "src": "node_modules/swagger-ui-react/index.mjs",
     "isDynamicEntry": true,
@@ -668,52 +667,47 @@
     "file": "assets/avatar-1-B0hIH1z9.png",
     "src": "resources/js/assets/images/users/avatar-1.png"
   },
-  "resources/js/assets/images/users/avatar-group.png": {
-    "file": "assets/avatar-group-Bo3V_god.png",
-    "src": "resources/js/assets/images/users/avatar-group.png"
-  },
   "resources/js/index.tsx": {
-    "file": "assets/index-CYGOjZE-.js",
+    "file": "assets/index-DqrwtUFT.js",
     "name": "index",
     "src": "resources/js/index.tsx",
     "isEntry": true,
     "dynamicImports": [
       "resources/js/views/auth/Login.tsx",
-      "_NotFound-DHrctRTB.js",
+      "_NotFound-BOsxWdQ4.js",
       "resources/js/views/api/Document.tsx",
       "resources/js/views/auth/Register.tsx",
       "resources/js/views/Page.tsx"
     ],
     "assets": [
-      "assets/avatar-group-Bo3V_god.png",
       "assets/avatar-1-B0hIH1z9.png"
     ]
   },
   "resources/js/layouts/ElementBuilder.tsx": {
-    "file": "assets/ElementBuilder-D7s-FwQb.js",
+    "file": "assets/ElementBuilder-zcDcfvjq.js",
     "name": "ElementBuilder",
     "src": "resources/js/layouts/ElementBuilder.tsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/index.tsx",
-      "__baseClone-C0M85RjH.js"
+      "_ErrorMessage-ClJGeSoy.js"
     ]
   },
   "resources/js/views/Page.tsx": {
-    "file": "assets/Page-MKFVSfcQ.js",
+    "file": "assets/Page-DAcUpAiV.js",
     "name": "Page",
     "src": "resources/js/views/Page.tsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/index.tsx",
-      "_NotFound-DHrctRTB.js"
+      "_NotFound-BOsxWdQ4.js"
     ],
     "dynamicImports": [
       "resources/js/layouts/ElementBuilder.tsx"
     ]
   },
   "resources/js/views/api/Document.tsx": {
-    "file": "assets/Document-CUhq5lXM.js",
+    "file": "assets/Document-AP3GIZID.js",
     "name": "Document",
     "src": "resources/js/views/api/Document.tsx",
     "isDynamicEntry": true,
@@ -728,25 +722,24 @@
     ]
   },
   "resources/js/views/auth/Login.tsx": {
-    "file": "assets/Login-CsF7SFjR.js",
+    "file": "assets/Login-ntWmW1bQ.js",
     "name": "Login",
     "src": "resources/js/views/auth/Login.tsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/index.tsx",
-      "_EyeInvisibleOutlined-D0esduSA.js",
-      "__baseClone-C0M85RjH.js"
+      "_EyeInvisibleOutlined-DRRCcH-O.js",
+      "_ErrorMessage-ClJGeSoy.js"
     ]
   },
   "resources/js/views/auth/Register.tsx": {
-    "file": "assets/Register-B5O81fkc.js",
+    "file": "assets/Register-BYzPcotD.js",
     "name": "Register",
     "src": "resources/js/views/auth/Register.tsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/index.tsx",
-      "_EyeInvisibleOutlined-D0esduSA.js",
-      "__baseClone-C0M85RjH.js"
+      "_EyeInvisibleOutlined-DRRCcH-O.js"
     ]
   }
 }
