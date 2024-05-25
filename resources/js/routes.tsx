@@ -14,22 +14,22 @@ const Page = React.lazy(() => import("./views/Page"));
 
 const routes = createBrowserRouter([
     {
-        path: "/admin-cp",
+        //path: "/admin-cp",
         element: <Auth />,
         errorElement: <NotFound />,
         children: [
             {
-                path: "login",
+                path: "/admin-cp/login",
                 element: <Login />,
             },
             {
-                path: "register",
+                path: "/admin-cp/register",
                 element: <Register />,
             }
         ],
     },
     {
-        path: "/admin-cp",
+        //path: "/admin-cp",
         element: <Master />,
         errorElement: <NotFound />,
         children: [

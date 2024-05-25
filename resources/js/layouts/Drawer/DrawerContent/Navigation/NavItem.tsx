@@ -7,12 +7,13 @@ import { useTheme } from '@mui/material/styles';
 import Avatar from '@mui/material/Avatar';
 import Chip from '@mui/material/Chip';
 import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Typography from '@mui/material/Typography';
+import {Icon} from '@mui/material'
 
 // project import
 import { handlerActiveItem, useGetMenuMaster } from '@/api/menu';
+import { ListItemIcon } from '@mui/material';
 
 export default function NavItem({ item, level }: any) {
     const theme = useTheme();
@@ -37,8 +38,8 @@ export default function NavItem({ item, level }: any) {
         listItemProps = { component: ExternalLink };
     }
 
-    const Icon = item.icon;
-    const itemIcon = item.icon ? <Icon style={{ fontSize: drawerOpen ? '1rem' : '1.25rem' }} /> : false;
+    //const Icon = item.icon;
+    //const itemIcon = item.icon ? <Icon style={{ fontSize: drawerOpen ? '1rem' : '1.25rem' }} /> : false;
 
     const { pathname } = useLocation();
     const isSelected = !!matchPath({ path: item.url, end: false }, pathname) || openItem === item.key;
@@ -89,7 +90,7 @@ export default function NavItem({ item, level }: any) {
                 })
             }}
         >
-            {/* {itemIcon && (
+            {item.icon && (
                 <ListItemIcon
                     sx={{
                         minWidth: 28,
@@ -113,9 +114,9 @@ export default function NavItem({ item, level }: any) {
                         })
                     }}
                 >
-                    {itemIcon}
+                    <Icon style={{ fontSize: drawerOpen ? '1rem' : '1.25rem' }}>{item.icon}</Icon>
                 </ListItemIcon>
-            )} */}
+            )}
             {(drawerOpen || (!drawerOpen && level !== 1)) && (
                 <ListItemText
                     primary={

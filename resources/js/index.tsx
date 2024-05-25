@@ -27,6 +27,8 @@ import ReactDOM from 'react-dom/client';
 // import '@fontsource/public-sans/600.css';
 // import '@fontsource/public-sans/700.css';
 
+//import 'material-icons/iconfont/material-icons.css';
+
 // project import
 import App from './app';
 import reportWebVitals from './reportWebVitals';
