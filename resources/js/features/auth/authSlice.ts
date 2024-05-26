@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { registerUser, loginUser } from './authActions';
-import { UserData } from '@features/types/AuthData';
+import { UserData } from '@/features/types/AuthData';
 
 export interface AuthState {
     loading: boolean;
@@ -34,7 +34,7 @@ const authSlice = createSlice({
             state.payload = null;
         },
         setUser: (state, { payload }) => {
-            state.user = payload.data.data;
+            state.user = payload;
         },
     },
     extraReducers: (builder) => {

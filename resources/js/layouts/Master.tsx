@@ -42,7 +42,7 @@ export default function Master() {
 
     useEffect(() => {
         if (data) {
-            dispatch(setUser(data));
+            dispatch(setUser(data.data));
         }
     }, [data, dispatch]);
 

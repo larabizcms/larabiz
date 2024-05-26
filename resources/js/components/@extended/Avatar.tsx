@@ -104,10 +104,10 @@ export default function Avatar({ children, color = 'primary', type, size = 'md',
 
 getColorStyle.propTypes = { theme: PropTypes.any, color: PropTypes.any, type: PropTypes.any };
 
-Avatar.propTypes = {
-    children: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-    color: PropTypes.string,
-    type: PropTypes.any,
-    size: PropTypes.string,
-    others: PropTypes.any
-};
+// Avatar.propTypes = {
+//     children: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+//     color: PropTypes.string,
+//     type: PropTypes.any,
+//     size: PropTypes.string,
+//     others: PropTypes.any
+// };
