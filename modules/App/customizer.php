@@ -11,12 +11,18 @@
 use LarabizCMS\Modules\App\Http\Controllers\DashboardController;
 
 larabiz()->adminPage('dashboard', [DashboardController::class, 'index'])
+    ->menuGroup('apps')
     ->title('Dashboard')
-    ->icon('dashboard');
+    ->menuIcon('dashboard')
+    ->menuPriority(10);
 
 larabiz()->adminPage('media', [DashboardController::class, 'media'])
     ->title('Media')
-    ->icon('PermMedia');
+    ->menuIcon('PermMedia')
+    ->menuGroup('apps')
+    ->tap(function ($tab) {
+        return $tab->getAdminMenu()->priority(15);
+    });
 
 //
 // larabiz()->adminPage('settings')
