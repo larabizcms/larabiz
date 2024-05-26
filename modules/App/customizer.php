@@ -20,9 +20,7 @@ larabiz()->adminPage('media', [DashboardController::class, 'media'])
     ->title('Media')
     ->menuIcon('PermMedia')
     ->menuGroup('apps')
-    ->tap(function ($tab) {
-        return $tab->getAdminMenu()->priority(15);
-    });
+    ->menuPriority(15);
 
 //
 // larabiz()->adminPage('settings')

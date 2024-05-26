@@ -37,7 +37,7 @@ class DashboardController extends Controller
                     ]
                 )->title('Dashboard')
             ]
-        )->title('Dashboard');
+        )->title('Dashboard')->showTitle(false);
     }
 
     public function media()
