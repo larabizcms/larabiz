@@ -15,7 +15,7 @@
                 "./resources/js/*"
             ],
             "@larabiz/*": [
-                "./vendor/larabizcms/core/resources/js/*"
+                "./packages/core/resources/js/*"
             ],
         },
         "esModuleInterop": true,
@@ -30,6 +30,6 @@
         "resources/js/**/*.ts",
         "resources/js/**/*.tsx",
         "vendor/larabizcms/core/resources/js/**/*.ts",
-        "vendor/larabizcms/core/resources/js/**/*.tsx", "packages/core/resources/js/views/Media.tsx", "packages/core/resources/js/views/Page.tsx",
+        "vendor/larabizcms/core/resources/js/**/*.tsx", "packages/core/resources/js/views/Media.tsx", "packages/core/resources/js/views/Page.tsx", "packages/core/resources/js/views/ElementBuilder.tsx",
     ]
 }
