@@ -15,6 +15,23 @@ const PageContainer = ({ title, description, children }: Props) => (
                 <title>{title} - {"Larabiz"}</title>
                 <meta name="description" content={description} />
             </Helmet>
+
+            {/* <Breadcrumbs aria-label="breadcrumb">
+                <Link component={RouterLink} underline="none" color="inherit" to="/admin-cp">
+                    Dashboard
+                </Link>
+
+                <Link
+                    component={RouterLink}
+                    underline="none"
+                    color="inherit"
+                    to="/admin-cp/"
+                >
+                    Core
+                </Link>
+                <Typography color="text.primary">{title}</Typography>
+            </Breadcrumbs> */}
+
             {children}
         </div>
     </HelmetProvider>
