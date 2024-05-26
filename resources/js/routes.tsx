@@ -1,10 +1,11 @@
-import React, { Suspense } from "react";
+import React from "react";
 import {
     createBrowserRouter
 } from "react-router-dom";
 
 import Master from "@/layouts/Master";
 import Auth from "./layouts/Auth";
+import Media from "@larabiz/views/Media";
 
 const Login = React.lazy(() => import("./views/auth/Login"));
 const NotFound = React.lazy(() => import("./views/NotFound"));
@@ -14,7 +15,6 @@ const Page = React.lazy(() => import("./views/Page"));
 
 const routes = createBrowserRouter([
     {
-        //path: "/admin-cp",
         element: <Auth />,
         errorElement: <NotFound />,
         children: [
@@ -29,13 +29,16 @@ const routes = createBrowserRouter([
         ],
     },
     {
-        //path: "/admin-cp",
         element: <Master />,
-        errorElement: <NotFound />,
+        //errorElement: <NotFound />,
         children: [
             {
                 path: "/admin-cp/dashboard",
                 element: <Page />,
+            },
+            {
+                path: "/admin-cp/media",
+                element: <Media />,
             },
             {
                 path: "/admin-cp/:page",
@@ -54,13 +57,3 @@ const routes = createBrowserRouter([
 ]);
 
 export default routes;
-
-// (ReactDOM as any).createRoot(document.getElementById("app")).render(
-//     <React.StrictMode>
-//         <Provider store={store}>
-//             <Suspense fallback={<LinearProgress />}>
-//                 <RouterProvider router={router} />
-//             </Suspense>
-//         </Provider>
-//     </React.StrictMode>
-// );

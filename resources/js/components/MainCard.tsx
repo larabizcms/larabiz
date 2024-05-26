@@ -39,7 +39,7 @@ function MainCard(
         secondary?: any,
         shadow?: string,
         sx?: object,
-        title?: React.ReactNode,
+        title?: string|React.ReactNode,
         [key: string]: any
     },
     ref: any

@@ -10,10 +10,15 @@
 
 use LarabizCMS\Modules\App\Http\Controllers\DashboardController;
 
-customizer()->adminPage('dashboard', [DashboardController::class, 'index'])
+larabiz()->adminPage('dashboard', [DashboardController::class, 'index'])
     ->title('Dashboard')
     ->icon('dashboard');
+
+larabiz()->adminPage('media', [DashboardController::class, 'media'])
+    ->title('Media')
+    ->icon('PermMedia');
+
 //
-// customizer()->adminPage('settings')
+// larabiz()->adminPage('settings')
 //     ->title('Settings')
 //     ->icon('fas fa-home');
