@@ -51,6 +51,7 @@
         "@mui/lab": "5.0.0-alpha.170",
         "@mui/material": "^5.15.17",
         "@mui/styled-engine-sc": "^6.0.0-alpha.18",
+        "@mui/styles": "^5.15.18",
         "@mui/system": "^5.15.12",
         "@reduxjs/toolkit": "^2.2.4",
         "@stoplight/elements": "^8.1.3",

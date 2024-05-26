@@ -6,6 +6,7 @@ import Form from "@larabiz/components/elements/Form";
 import Typography from "@larabiz/components/elements/Typography";
 import EditorField from "@larabiz/components/elements/forms/EditorField";
 import TextField from "@larabiz/components/elements/forms/TextField";
+//import ImageField from "@larabiz/components/elements/forms/ImageField";
 import Card from "@larabiz/components/elements/Card";
 
 // const Box = React.lazy(() => import('@mui/material/Box'));
@@ -33,8 +34,10 @@ const Elements = (config: any, index: number, props: Props) => {
             return <Typography config={config} key={index} {...props} />;
         case 'text_field':
             return <TextField config={config} key={index} {...props} />;
-        case 'editor':
+        case 'editor_field':
             return <EditorField config={config} key={index} {...props} />;
+            // case 'image_field':
+            // return <ImageField config={config} key={index} {...props} />;
         default:
             return null;
     }
