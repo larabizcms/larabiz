@@ -11,15 +11,12 @@ import Paper from '@mui/material/Paper';
 import IconButton from '@mui/material/IconButton';
 import Popper from '@mui/material/Popper';
 import Stack from '@mui/material/Stack';
-import Tab from '@mui/material/Tab';
-import Tabs from '@mui/material/Tabs';
 import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import React from 'react';
 // project import
 import ProfileTab from './ProfileTab';
-import SettingTab from './SettingTab';
 import Avatar from '@/components/@extended/Avatar';
 import MainCard from '@/components/MainCard';
 import Transitions from '@/components/@extended/Transitions';
@@ -37,13 +34,6 @@ function TabPanel({ children, value, index, ...other }: any) {
             {value === index && children}
         </div>
     );
-}
-
-function a11yProps(index: number) {
-    return {
-        id: `profile-tab-${index}`,
-        'aria-controls': `profile-tabpanel-${index}`
-    };
 }
 
 export default function Profile() {

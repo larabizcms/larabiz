@@ -6,6 +6,7 @@ import {
 import Master from "@/layouts/Master";
 import Auth from "./layouts/Auth";
 import Media from "@larabiz/views/Media";
+import Setting from "./views/Setting";
 
 const Login = React.lazy(() => import("./views/auth/Login"));
 const NotFound = React.lazy(() => import("./views/NotFound"));
@@ -39,6 +40,10 @@ const routes = createBrowserRouter([
             {
                 path: "/admin-cp/media",
                 element: <Media />,
+            },
+            {
+                path: "/admin-cp/settings/:page/:form",
+                element: <Setting />,
             },
             {
                 path: "/admin-cp/:page",

@@ -22,7 +22,7 @@ larabiz()->adminPage('media', [DashboardController::class, 'media'])
     ->menuGroup('apps')
     ->menuPriority(15);
 
-//
-// larabiz()->adminPage('settings')
-//     ->title('Settings')
-//     ->icon('fas fa-home');
+larabiz()->adminPage('settings', [DashboardController::class, 'settings'])
+    ->title('General')
+    ->menuIcon('Settings')
+    ->menuGroup('settings');
