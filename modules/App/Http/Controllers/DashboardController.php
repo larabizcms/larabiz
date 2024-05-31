@@ -25,7 +25,7 @@ class DashboardController extends Controller
                                     'color' => '#3f51b5',
                                 ]),
                                 [
-                                    'element' => 'editor',
+                                    'element' => 'textarea_field',
                                     'attributes' => [
                                         'name' => 'editor',
                                         'label' => 'Editor',

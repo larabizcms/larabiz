@@ -21,8 +21,3 @@ larabiz()->adminPage('media', [DashboardController::class, 'media'])
     ->menuIcon('PermMedia')
     ->menuGroup('apps')
     ->menuPriority(15);
-
-larabiz()->adminPage('settings', [DashboardController::class, 'settings'])
-    ->title('General')
-    ->menuIcon('Settings')
-    ->menuGroup('settings');

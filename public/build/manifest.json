@@ -1,24 +1,9 @@
 {
-  "_EyeInvisibleOutlined-DNv1UNjx.js": {
-    "file": "assets/EyeInvisibleOutlined-DNv1UNjx.js",
+  "_EyeInvisibleOutlined-dM8RCBng.js": {
+    "file": "assets/EyeInvisibleOutlined-dM8RCBng.js",
     "name": "EyeInvisibleOutlined",
     "imports": [
       "resources/js/index.tsx"
-    ]
-  },
-  "_InputLabel-BvJaKrpj.js": {
-    "file": "assets/InputLabel-BvJaKrpj.js",
-    "name": "InputLabel",
-    "imports": [
-      "resources/js/index.tsx"
-    ]
-  },
-  "_Text-CtlWdnIo.js": {
-    "file": "assets/Text-CtlWdnIo.js",
-    "name": "Text",
-    "imports": [
-      "resources/js/index.tsx",
-      "_InputLabel-BvJaKrpj.js"
     ]
   },
   "node_modules/@fontsource/inter/files/inter-cyrillic-400-normal.woff": {
@@ -690,7 +675,7 @@
     "src": "node_modules/slick-carousel/slick/fonts/slick.woff"
   },
   "node_modules/swagger-ui-react/index.mjs": {
-    "file": "assets/index-BnTcbhgp.js",
+    "file": "assets/index-PQPBi-nH.js",
     "name": "index",
     "src": "node_modules/swagger-ui-react/index.mjs",
     "isDynamicEntry": true,
@@ -699,7 +684,7 @@
     ]
   },
   "packages/core/resources/js/components/elements/forms/EditorField.tsx": {
-    "file": "assets/EditorField-B-WcfA6P.js",
+    "file": "assets/EditorField--ubBUauS.js",
     "name": "EditorField",
     "src": "packages/core/resources/js/components/elements/forms/EditorField.tsx",
     "isDynamicEntry": true,
@@ -707,22 +692,8 @@
       "resources/js/index.tsx"
     ]
   },
-  "packages/core/resources/js/views/ElementBuilder.tsx": {
-    "file": "assets/ElementBuilder-CHN8uPGx.js",
-    "name": "ElementBuilder",
-    "src": "packages/core/resources/js/views/ElementBuilder.tsx",
-    "isDynamicEntry": true,
-    "imports": [
-      "resources/js/index.tsx",
-      "_Text-CtlWdnIo.js",
-      "_InputLabel-BvJaKrpj.js"
-    ],
-    "dynamicImports": [
-      "packages/core/resources/js/components/elements/forms/EditorField.tsx"
-    ]
-  },
   "packages/core/resources/js/views/Page.tsx": {
-    "file": "assets/Page-C_l5T3h0.js",
+    "file": "assets/Page-B8kMOYBE.js",
     "name": "Page",
     "src": "packages/core/resources/js/views/Page.tsx",
     "isDynamicEntry": true,
@@ -730,7 +701,7 @@
       "resources/js/index.tsx"
     ],
     "dynamicImports": [
-      "packages/core/resources/js/views/ElementBuilder.tsx"
+      "resources/js/index.tsx"
     ]
   },
   "resources/css/app.css": {
@@ -743,12 +714,13 @@
     "src": "resources/js/assets/images/users/avatar-1.png"
   },
   "resources/js/index.tsx": {
-    "file": "assets/index-BOBrdGU1.js",
+    "file": "assets/index-2SK3uNPh.js",
     "name": "index",
     "src": "resources/js/index.tsx",
     "isEntry": true,
+    "isDynamicEntry": true,
     "dynamicImports": [
-      "packages/core/resources/js/views/ElementBuilder.tsx",
+      "packages/core/resources/js/components/elements/forms/EditorField.tsx",
       "resources/js/views/auth/Login.tsx",
       "resources/js/views/api/Document.tsx",
       "resources/js/views/auth/Register.tsx",
@@ -759,7 +731,7 @@
     ]
   },
   "resources/js/views/api/Document.tsx": {
-    "file": "assets/Document-ChzH8iCe.js",
+    "file": "assets/Document-C32e4fl1.js",
     "name": "Document",
     "src": "resources/js/views/api/Document.tsx",
     "isDynamicEntry": true,
@@ -774,26 +746,23 @@
     ]
   },
   "resources/js/views/auth/Login.tsx": {
-    "file": "assets/Login-BPx63JqY.js",
+    "file": "assets/Login-D9Ef-sdG.js",
     "name": "Login",
     "src": "resources/js/views/auth/Login.tsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/index.tsx",
-      "_EyeInvisibleOutlined-DNv1UNjx.js",
-      "_Text-CtlWdnIo.js",
-      "_InputLabel-BvJaKrpj.js"
+      "_EyeInvisibleOutlined-dM8RCBng.js"
     ]
   },
   "resources/js/views/auth/Register.tsx": {
-    "file": "assets/Register-duQI2SSs.js",
+    "file": "assets/Register-BdcuuLjn.js",
     "name": "Register",
     "src": "resources/js/views/auth/Register.tsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/index.tsx",
-      "_EyeInvisibleOutlined-DNv1UNjx.js",
-      "_InputLabel-BvJaKrpj.js"
+      "_EyeInvisibleOutlined-dM8RCBng.js"
     ]
   }
 }
