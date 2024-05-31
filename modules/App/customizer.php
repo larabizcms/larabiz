@@ -9,6 +9,7 @@
  */
 
 use LarabizCMS\Modules\App\Http\Controllers\DashboardController;
+use LarabizCMS\Modules\App\Http\Controllers\ExampleController;
 
 larabiz()->adminPage('dashboard', [DashboardController::class, 'index'])
     ->menuGroup('apps')
@@ -21,3 +22,11 @@ larabiz()->adminPage('media', [DashboardController::class, 'media'])
     ->menuIcon('PermMedia')
     ->menuGroup('apps')
     ->menuPriority(15);
+
+if (config('app.debug')) {
+    larabiz()->adminPage('example', [ExampleController::class, 'index'])
+        ->title('Example')
+        ->menuIcon('TipsAndUpdates')
+        ->menuGroup('apps')
+        ->menuPriority(20);
+}
