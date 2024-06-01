@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import { RouterProvider } from 'react-router-dom';
-import { store } from '../../packages/core/resources/js/store';
+import { store } from './store';
 import { Provider } from 'react-redux';
 import { LinearProgress } from "@mui/material";
 import router from './routes';

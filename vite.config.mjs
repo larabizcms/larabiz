@@ -11,7 +11,14 @@ export default defineConfig((mode) => {
                     'resources/js/index.tsx',
                     'resources/css/app.css',
                 ],
-                refresh: true,
+                refresh: {
+                    paths: [
+                        'resources/views/**',
+                        'routes/**',
+                        'packages/core/resources/views/**',
+                    ],
+                    config: { delay: 300 },
+                },
             }),
             react(),
         ],
