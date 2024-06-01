@@ -41,12 +41,13 @@ class Kernel extends HttpKernel
         'api' => [
             'throttle:api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            \LarabizCMS\Core\Http\Middleware\ForceJsonResponse::class,
         ],
 
-        'admin-api' => [
-            'api',
-            \LarabizCMS\Core\Http\Middleware\Admin::class,
-        ],
+        // 'admin-api' => [
+        //     'api',
+        //     \LarabizCMS\Core\Http\Middleware\Admin::class,
+        // ],
 
         'static' => [
             // 'throttle:api',
@@ -72,6 +73,6 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
-        'admin' => \LarabizCMS\Core\Http\Middleware\Admin::class,
+        //'admin' => \LarabizCMS\Core\Http\Middleware\Admin::class,
     ];
 }

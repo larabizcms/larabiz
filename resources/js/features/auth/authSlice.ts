@@ -7,7 +7,7 @@ export interface AuthState {
     user: null | UserData;
     userToken: null | string;
     payload: null | {} | unknown;
-    success: boolean; // for monitoring the registration process.
+    success: boolean;
 }
 
 const userToken = localStorage.getItem('lb_auth_token')
@@ -19,7 +19,7 @@ const initialState: AuthState = {
     user: null,
     userToken: userToken,
     payload: null,
-    success: false, // for monitoring the registration process.
+    success: false,
 }
 
 const authSlice = createSlice({

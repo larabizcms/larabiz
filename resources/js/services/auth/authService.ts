@@ -1,4 +1,16 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import { BaseQueryApi, FetchArgs, createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+
+const onQueryStartedErrorToast = async (args: any, { queryFulfilled }: { queryFulfilled: Promise<any> }) => {
+    try {
+        await queryFulfilled;
+    } catch (e: any) {
+        // handle error here, dispatch toast message
+        if (e.error.status === 401) {
+            // redirect to login
+            localStorage.removeItem('lb_auth_token');
+        }
+    }
+};
 
 export const authApi = createApi({
     reducerPath: 'authApi',
@@ -8,7 +20,8 @@ export const authApi = createApi({
             const token = getState().auth.userToken?.access_token;
 
             if (token) {
-                headers.set('Authorization', `Bearer ${token}`)
+                headers.set('Authorization', `Bearer ${token}`);
+                headers.set('Accept', 'application/json');
                 return headers
             }
         },
@@ -19,6 +32,7 @@ export const authApi = createApi({
                 url: '/profile',
                 method: 'GET',
             }),
+            onQueryStarted: onQueryStartedErrorToast,
         }),
         // getGeneralData: builder.query({
         //     query: () => ({

@@ -34,7 +34,7 @@ class DashboardController extends Controller
                                 ],
                                 [
                                     'element' => 'select_field',
-                                    'helperText' => 'select_field',
+                                    'helpertext' => 'select_field',
                                     'defaultValue' => 'option1',
                                     'attributes' => [
                                         'name' => 'select',
