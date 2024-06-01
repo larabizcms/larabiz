@@ -19,10 +19,10 @@ import EyeInvisibleOutlined from '@ant-design/icons/EyeInvisibleOutlined';
 import { useAppDispatch } from '@/hooks/hooks';
 import { useSelector } from 'react-redux';
 import { useForm } from 'react-hook-form';
-import { AuthState } from '@/features/auth/authSlice';
+import { AuthState } from '@larabiz/features/auth/authSlice';
 import { LoginData } from '@/features/types/AuthData';
 import { mapErrorsToForm } from '@larabiz/helpers/helper';
-import { loginUser } from '@/features/auth/authActions';
+import { loginUser } from '@larabiz/features/auth/authActions';
 import Text from '@larabiz/components/forms/Text';
 import ErrorMessage from '@/layouts/shared/ErrorMessage';
 import Checkbox from '@larabiz/components/forms/Checkbox';
@@ -102,6 +102,7 @@ export default function AuthLogin() {
                         label="Keep me sign in"
                         color="primary"
                         size="small"
+                        defaultChecked={true}
                         after={
                             <Link variant="h6" component={RouterLink} color="text.primary" to={'/admin-cp/forgot-password'}>
                                 Forgot Password?

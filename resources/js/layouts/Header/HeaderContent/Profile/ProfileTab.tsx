@@ -9,7 +9,7 @@ import ListItemText from '@mui/material/ListItemText';
 
 import LogoutOutlined from '@ant-design/icons/LogoutOutlined';
 import { useDispatch, useSelector } from 'react-redux';
-import { logout } from '@/features/auth/authSlice';
+import { logout } from '@larabiz/features/auth/authSlice';
 
 export default function ProfileTab() {
     const [selectedIndex, setSelectedIndex] = useState(0);

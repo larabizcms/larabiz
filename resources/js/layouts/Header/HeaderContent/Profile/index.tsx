@@ -25,7 +25,7 @@ import Transitions from '@/components/@extended/Transitions';
 import LogoutOutlined from '@ant-design/icons/LogoutOutlined';
 import avatar from '@/assets/images/users/avatar-1.png';
 import { useDispatch, useSelector } from 'react-redux';
-import { logout } from '@/features/auth/authSlice';
+import { logout } from '@larabiz/features/auth/authSlice';
 
 // tab panel wrapper
 function TabPanel({ children, value, index, ...other }: any) {

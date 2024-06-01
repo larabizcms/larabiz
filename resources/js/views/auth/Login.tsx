@@ -10,7 +10,7 @@ import AuthWrapper from './AuthWrapper';
 import AuthLogin from './components/AuthLogin';
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { AuthState } from '@/features/auth/authSlice';
+import { AuthState } from '@larabiz/features/auth/authSlice';
 
 export default function Login() {
     const { userToken } = useSelector<{ auth: any }, AuthState>((state) => state.auth);

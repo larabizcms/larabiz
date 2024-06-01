@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useAppDispatch } from "@/hooks/hooks";
-import { getGeneralData } from "@/features/setting/settingActions";
+import { getGeneralData } from "@larabiz/features/setting/settingActions";
 
 export default function MinimalLayout() {
     const { setting } = useSelector((state: any) => state.setting);
@@ -14,9 +14,9 @@ export default function MinimalLayout() {
         }
     }, [setting, dispatch]);
 
-  return (
-    <>
-      <Outlet />
-    </>
-  );
+    return (
+        <>
+            <Outlet />
+        </>
+    );
 }
