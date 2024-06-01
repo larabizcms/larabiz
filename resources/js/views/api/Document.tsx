@@ -31,7 +31,7 @@ export default function Document(): React.JSX.Element {
     }, [navigate, userToken]);
 
     return <SwaggerUI
-        url={import.meta.env.VITE_APP_URL + "/api/swagger.json"}
+        url={(import.meta.env.VITE_APP_URL || '') + "/api/swagger.json"}
         requestInterceptor={requestInterceptor}
     />;
 }

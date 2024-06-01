@@ -5,7 +5,7 @@ const authToken = localStorage.getItem("lb_auth_token")
     : null;
 
 const http = axios.create({
-    baseURL: import.meta.env.VITE_APP_URL + "/api",
+    baseURL: (import.meta.env.VITE_APP_URL || '') + "/api",
     headers: {
         "Content-type": "application/json",
         ...(authToken && { 'Authorization': `Bearer ${authToken.access_token}` }),
