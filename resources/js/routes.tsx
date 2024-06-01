@@ -42,6 +42,10 @@ const routes = createBrowserRouter([
                 element: <Media />,
             },
             {
+                path: "/admin-cp/media/:folder",
+                element: <Media />,
+            },
+            {
                 path: "/admin-cp/settings/:page/:form",
                 element: <Setting />,
             },
