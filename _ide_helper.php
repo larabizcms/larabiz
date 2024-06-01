@@ -17743,9 +17743,9 @@ namespace Illuminate\Http {
          * @see \LarabizCMS\Core\Providers\LarabizServiceProvider::boot()
          * @param mixed $value
          * @static 
-         */        public static function appendData($value)
+         */        public static function append($value)
         {
-                        return \Illuminate\Http\JsonResponse::appendData($value);
+                        return \Illuminate\Http\JsonResponse::append($value);
         }
             }
     }

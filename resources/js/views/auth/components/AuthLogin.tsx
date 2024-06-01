@@ -21,7 +21,7 @@ import { useSelector } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import { AuthState } from '@/features/auth/authSlice';
 import { LoginData } from '@/features/types/AuthData';
-import { mapErrorsToForm } from '@/hooks/helper';
+import { mapErrorsToForm } from '@larabiz/helpers/helper';
 import { loginUser } from '@/features/auth/authActions';
 import Text from '@larabiz/components/forms/Text';
 import ErrorMessage from '@/layouts/shared/ErrorMessage';

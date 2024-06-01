@@ -17,7 +17,6 @@ use LarabizCMS\Core\Support\PageBuilder\Elements\Forms\Text as TextField;
 use LarabizCMS\Core\Support\PageBuilder\Elements\Forms\Textarea;
 use LarabizCMS\Core\Support\PageBuilder\Elements\Grids\ContainerGrid;
 use LarabizCMS\Core\Support\PageBuilder\Elements\Grids\ItemGrid;
-use LarabizCMS\Core\Support\PageBuilder\Elements\Text;
 use LarabizCMS\Core\Support\PageBuilder\Page;
 
 class ExampleController extends Controller
@@ -33,7 +32,7 @@ class ExampleController extends Controller
         $input = TextField::make(['name' => 'textfield', 'label' => 'Textfield'])
             ->placeholder('Placeholder text');
         $textarea = Textarea::make(['name' => 'textarea', 'label' => 'Textarea'])
-            ->rows(5)->placeholder('Placeholder text');
+            ->placeholder('Placeholder text')->rows(5);
         $select = Select::make(['name' => 'select', 'label' => 'Selector'])
             ->options(['' => '-- Select --', 'option1' => 'Option 1', 'option2' => 'Option 2', 'option3' => 'Option 3'])
             ->value('');
