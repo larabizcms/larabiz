@@ -1,4 +1,4 @@
-import { BaseQueryApi, FetchArgs, createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 const onQueryStartedErrorToast = async (args: any, { queryFulfilled }: { queryFulfilled: Promise<any> }) => {
     try {
