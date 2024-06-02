@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import PageContainer from "@/components/container/PageContainer";
-import MainCard from "@/components/MainCard";
+import PageContainer from "@larabiz/layouts/components/container/PageContainer";
+import MainCard from "@larabiz/layouts/components/MainCard";
 import { Typography } from "@mui/material";
 
 const NotFound = ({ title, message }: { title?: string, message?: string }): JSX.Element => {

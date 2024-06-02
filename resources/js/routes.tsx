@@ -3,15 +3,15 @@ import {
     createBrowserRouter
 } from "react-router-dom";
 
-import Master from "@/layouts/Master";
-import Auth from "./layouts/Auth";
+import Master from "@larabiz/layouts/Master";
+import Auth from "@larabiz/layouts/Auth";
 import Media from "@larabiz/views/Media";
 import Setting from "@larabiz/views/Setting";
 
-const Login = React.lazy(() => import("./views/auth/Login"));
+const Login = React.lazy(() => import("@larabiz/views/auth/Login"));
 const NotFound = React.lazy(() => import("./views/NotFound"));
-const Document = React.lazy(() => import("./views/api/Document"));
-const Register = React.lazy(() => import("./views/auth/Register"));
+const Document = React.lazy(() => import("@larabiz/views/api/Document"));
+const Register = React.lazy(() => import("@larabiz/views/auth/Register"));
 const Page = React.lazy(() => import("@larabiz/views/Page"));
 
 const routes = createBrowserRouter([
