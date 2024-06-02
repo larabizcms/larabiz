@@ -1,22 +1,28 @@
-import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import rootReducers from '@larabiz/features/reducers';
-import { rootMiddleware } from '@larabiz/features/middleware';
+import { Middleware, combineReducers, configureStore } from '@reduxjs/toolkit';
+import rootReducers, { rootMiddleware } from '@larabiz/features/reducers';
 
-const combinedReducer = combineReducers(rootReducers);
+// Combine all reducers
+const customReducers = {};
+const combinedReducer = combineReducers({...rootReducers, ...customReducers});
+
+const customMiddleware: Middleware[] = [
+    // Add your middleware functions here
+];
 
 export const store = configureStore({
     reducer: combinedReducer,
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware().concat(
-            ...rootMiddleware
+            ...rootMiddleware,
+            ...customMiddleware
         ),
 });
 
+// Hot Module Replacement
 if (import.meta.hot) {
-    //import.meta.hot.dispose(() => store.dispatch({ type: 'RESET' }));
-    import.meta.hot.accept('../../packages/core/resources/js/features/reducers', async () =>  {
+    import.meta.hot.accept(['../../packages/core/resources/js/features/reducers'], async () =>  {
         const newRootReducers = (await import('@larabiz/features/reducers')).default;
-        store.replaceReducer(combineReducers(newRootReducers));
+        store.replaceReducer(combineReducers({...newRootReducers, ...customReducers}));
     })
 }
 
