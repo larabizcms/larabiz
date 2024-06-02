@@ -35,7 +35,7 @@ export default defineConfig((mode) => {
                 },
                 {
                     find: '@larabiz',
-                    replacement: path.resolve(__dirname, 'vendor/larabizcms/core/resources/js'),
+                    replacement: path.resolve(__dirname, 'packages/core/resources/js'),
                 },
                 {
                     find: /^\@modules\/([a-zA-Z0-9]+)\/(.+)/,
@@ -48,13 +48,5 @@ export default defineConfig((mode) => {
                 usePolling: true,
             },
         },
-        // server: {
-        //     open: true,
-        //     port: 3000
-        // },
-        // preview: {
-        //     open: true,
-        //     port: 3000
-        // }
     }
 });

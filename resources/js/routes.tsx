@@ -6,10 +6,14 @@ import {
 import { authRoutes, appRoutes } from "@larabiz/routes";
 import NotFound from "./views/NotFound";
 
+const customRoutes: [] = [
+    // Your custom routes here
+];
+
 const routes = createBrowserRouter([
     ...authRoutes,
     ...appRoutes,
-    // custom routes
+    ...customRoutes,
     {
         path: "*",
         element: <NotFound />,
