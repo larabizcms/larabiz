@@ -79,5 +79,5 @@ customizer()->api()->post('auth/login', [Controllers\Auth\LoginController::class
 return $this->restSuccess(
     $data,
     'Get data successfully.'
-)->appendData(['code' => 'CUSTOM_CODE']);
+)->append(['code' => 'CUSTOM_CODE']);
 ```

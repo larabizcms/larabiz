@@ -39,7 +39,7 @@ class AuthServiceProvider extends ServiceProvider
 
         // Before check user permission
         Gate::before(function ($user, $ability) {
-            if ($user->isMasterAdmin()) {
+            if ($user->isSuperAdmin()) {
                 return true;
             }
 

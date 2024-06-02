@@ -6,7 +6,7 @@ import {
 } from "@mui/material";
 import { useNavigate, NavigateFunction } from "react-router-dom";
 
-import CustomTextField from "../../../components/forms/theme-elements/CustomTextField";
+import CustomTextField from "@larabiz/components/forms/theme-elements/CustomTextField";
 import { LoadingButton } from '@mui/lab';
 
 interface forgotPasswordType {

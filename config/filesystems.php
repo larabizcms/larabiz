@@ -44,6 +44,18 @@ return [
             'throw' => false,
         ],
 
+        'protected' => [
+            'driver' => 'local',
+            'root' => storage_path('app/protected'),
+            'throw' => false,
+        ],
+
+        'tmp' => [
+            'driver' => 'local',
+            'root' => storage_path('app/tmps'),
+            'throw' => false,
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),

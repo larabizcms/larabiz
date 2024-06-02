@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'namespace' => 'LarabizCMS\Modules',
+    'namespace' => 'LarabizCMS\\Modules',
 
     /*
     |--------------------------------------------------------------------------

@@ -9,4 +9,4 @@ interface ImportMeta {
     readonly env: ImportMetaEnv
 }
 
-declare const localStorage: any;
+//declare const localStorage: any;

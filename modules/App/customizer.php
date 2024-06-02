@@ -9,11 +9,24 @@
  */
 
 use LarabizCMS\Modules\App\Http\Controllers\DashboardController;
+use LarabizCMS\Modules\App\Http\Controllers\ExampleController;
 
-customizer()->adminPage('dashboard', [DashboardController::class, 'index'])
+larabiz()->adminPage('dashboard', [DashboardController::class, 'index'])
+    ->menuGroup('apps')
     ->title('Dashboard')
-    ->icon('dashboard');
-//
-// customizer()->adminPage('settings')
-//     ->title('Settings')
-//     ->icon('fas fa-home');
+    ->menuIcon('dashboard')
+    ->menuPriority(10);
+
+larabiz()->adminPage('media', [DashboardController::class, 'media'])
+    ->title('Media')
+    ->menuIcon('PermMedia')
+    ->menuGroup('apps')
+    ->menuPriority(15);
+
+if (config('app.debug')) {
+    larabiz()->adminPage('example', [ExampleController::class, 'index'])
+        ->title('Example')
+        ->menuIcon('TipsAndUpdates')
+        ->menuGroup('apps')
+        ->menuPriority(20);
+}

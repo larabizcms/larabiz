@@ -1,42 +1,40 @@
-import { styled, Container, Box } from "@mui/material";
-import React, { useEffect, useState } from "react";
-import Header from "./header/Header";
-import Sidebar from "./sidebar/Sidebar";
-import { NavigateFunction, Outlet, useNavigate } from "react-router-dom";
-import { ThemeProvider } from "@mui/material/styles";
-import CssBaseline from "@mui/material/CssBaseline";
-import { baselightTheme } from "../utils/theme/DefaultColors";
-import { useDispatch, useSelector } from "react-redux";
-import { useGetUserProfileQuery } from "services/auth/authService";
-import { setUser } from "features/auth/authSlice";
-import { getGeneralData } from "features/setting/settingActions";
-import { useAppDispatch } from "hooks/hooks";
+import React from 'react';
+import { useEffect } from 'react';
+import { NavigateFunction, Outlet, useNavigate } from 'react-router-dom';
 
-const MainWrapper = styled("div")(() => ({
-    display: "flex",
-    minHeight: "100vh",
-    width: "100%",
-}));
+// material-ui
+import useMediaQuery from '@mui/material/useMediaQuery';
+import Toolbar from '@mui/material/Toolbar';
+import Box from '@mui/material/Box';
 
-const PageWrapper = styled("div")(() => ({
-    display: "flex",
-    flexGrow: 1,
-    paddingBottom: "60px",
-    flexDirection: "column",
-    zIndex: 1,
-    backgroundColor: "transparent",
-}));
+// project import
+import Drawer from './Drawer';
+import Header from './Header';
+import navigation from '@/menu-items';
+import Loader from '@/components/Loader';
+import Breadcrumbs from '@/components/@extended/Breadcrumbs';
+
+import { handlerDrawerOpen, useGetMenuMaster } from '@/hooks/menu';
+import { useSelector } from 'react-redux';
+import { useAppDispatch } from '@/hooks/hooks';
+import { setUser } from '@larabiz/features/auth/authSlice';
+import { useGetUserProfileQuery } from '@larabiz/features/auth/authService';
+import { getGeneralData } from '@larabiz/features/setting/settingActions';
 
 export default function Master() {
-    const [isSidebarOpen, setSidebarOpen] = useState(false);
-    const [isMobileSidebarOpen, setMobileSidebarOpen] = useState(false);
+    const { menuMasterLoading } = useGetMenuMaster();
+    const downXL = useMediaQuery((theme: any) => theme.breakpoints.down('xl'));
+
+    useEffect(() => {
+        handlerDrawerOpen(!downXL);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [downXL]);
 
     const { userToken } = useSelector((state: any) => state.auth);
-    const { generalData } = useSelector((state: any) => state.setting);
+    const { setting } = useSelector((state: any) => state.setting);
 
     const navigate: NavigateFunction = useNavigate();
     const dispatch = useAppDispatch();
-    //const appDispatch = useAppDispatch();
 
     const { data } = useGetUserProfileQuery('userProfile', {
         pollingInterval: 900000,
@@ -44,12 +42,12 @@ export default function Master() {
 
     useEffect(() => {
         if (data) {
-            dispatch(setUser(data));
+            dispatch(setUser(data.data));
         }
     }, [data, dispatch]);
 
     useEffect(() => {
-        if (!generalData) {
+        if (!setting) {
             dispatch(getGeneralData());
         }
     }, []);
@@ -60,48 +58,18 @@ export default function Master() {
         }
     }, [navigate, userToken]);
 
+    if (menuMasterLoading) return <Loader />;
+
     return (
-        <ThemeProvider theme={baselightTheme}>
-            {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-            <CssBaseline />
-            <MainWrapper className="mainwrapper">
-                {/* ------------------------------------------- */}
-                {/* Sidebar */}
-                {/* ------------------------------------------- */}
-                <Sidebar
-                    isSidebarOpen={isSidebarOpen}
-                    isMobileSidebarOpen={isMobileSidebarOpen}
-                    onSidebarClose={() => setMobileSidebarOpen(false)}
-                />
-                {/* ------------------------------------------- */}
-                {/* Main Wrapper */}
-                {/* ------------------------------------------- */}
-                <PageWrapper className="page-wrapper">
-                    {/* ------------------------------------------- */}
-                    {/* Header */}
-                    {/* ------------------------------------------- */}
-                    <Header toggleMobileSidebar={() => setMobileSidebarOpen(true)} setSidebarOpen={() => setSidebarOpen(!isSidebarOpen)} />
-                    {/* ------------------------------------------- */}
-                    {/* PageContent */}
-                    {/* ------------------------------------------- */}
-                    <Container
-                        sx={{
-                            paddingTop: "20px",
-                            maxWidth: "1200px",
-                        }}
-                    >
-                        {/* ------------------------------------------- */}
-                        {/* Page Route */}
-                        {/* ------------------------------------------- */}
-                        <Box sx={{ minHeight: "calc(100vh - 170px)" }}>
-                            <Outlet />
-                        </Box>
-                        {/* ------------------------------------------- */}
-                        {/* End Page */}
-                        {/* ------------------------------------------- */}
-                    </Container>
-                </PageWrapper>
-            </MainWrapper>
-        </ThemeProvider>
+        <Box sx={{ display: 'flex', width: '100%' }}>
+            <Header />
+            <Drawer />
+            <Box component="main" sx={{ width: 'calc(100% - 260px)', flexGrow: 1, p: { xs: 2, sm: 3 } }}>
+                <Toolbar />
+                {/* <Breadcrumbs navigation={navigation} title /> */}
+
+                <Outlet />
+            </Box>
+        </Box>
     );
 }
