@@ -2,8 +2,8 @@ import axios from "axios";
 
 function getDefaultHeaders() {
     const authToken = localStorage.getItem("lb_auth_token")
-    ? JSON.parse(localStorage.getItem("lb_auth_token") as string)
-    : null;
+        ? JSON.parse(localStorage.getItem("lb_auth_token") as string)
+        : null;
 
     return {
         "Content-type": "application/json",

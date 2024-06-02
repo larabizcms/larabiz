@@ -30,6 +30,6 @@
         "resources/js/**/*.ts",
         "resources/js/**/*.tsx",
         "packages/core/resources/js/**/*.ts",
-        "packages/core/resources/js/app.tsx",
+        "packages/core/resources/js/**/*.tsx",
     ]
 }
