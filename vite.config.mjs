@@ -16,7 +16,8 @@ export default defineConfig((mode) => {
                         'resources/views/**',
                         'routes/**',
                         'packages/core/resources/views/**',
-                        //'resources/js/app.tsx',
+                        'resources/js/app.tsx',
+                        'resources/js/store.ts',
                         //'packages/core/resources/js/features/**'
                     ],
                     config: { delay: 300 },
@@ -45,9 +46,9 @@ export default defineConfig((mode) => {
         },
         server: {
             watch: {
-              usePolling: true,
+                usePolling: true,
             },
-          },
+        },
         // server: {
         //     open: true,
         //     port: 3000
