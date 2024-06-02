@@ -29,6 +29,6 @@
         "vite.config.mjs",
         "resources/js/**/*.ts",
         "resources/js/**/*.tsx",
-        "packages/core/resources/js/**/*.ts",
+        "packages/core/resources/js/**/*.ts", "packages/core/resources/js/app.tsx",
     ]
 }
