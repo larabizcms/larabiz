@@ -9,14 +9,16 @@ import ScrollTop from '@/components/ScrollTop';
 
 export default function App() {
     return (
-        <Provider store={store}>
-            <Suspense fallback={<LinearProgress />}>
-                <ThemeCustomization>
-                    <ScrollTop>
-                        <RouterProvider router={router} />
-                    </ScrollTop>
-                </ThemeCustomization>
-            </Suspense>
-        </Provider>
+        <React.StrictMode>
+            <Provider store={store}>
+                <Suspense fallback={<LinearProgress />}>
+                    <ThemeCustomization>
+                        <ScrollTop>
+                            <RouterProvider router={router} />
+                        </ScrollTop>
+                    </ThemeCustomization>
+                </Suspense>
+            </Provider>
+        </React.StrictMode>
     );
 }

@@ -18,7 +18,6 @@ export default defineConfig((mode) => {
                         'packages/core/resources/views/**',
                         'resources/js/app.tsx',
                         //'resources/js/store.ts',
-                        //'packages/core/resources/js/features/**'
                     ],
                     config: { delay: 300 },
                 },

@@ -2,12 +2,15 @@ import { Middleware, combineReducers, configureStore } from '@reduxjs/toolkit';
 import rootReducers, { rootMiddleware } from '@larabiz/features/reducers';
 
 // Combine all reducers
-const customReducers = {};
-const combinedReducer = combineReducers({...rootReducers, ...customReducers});
+const customReducers = {
+    // Add your custom reducers here
+};
 
 const customMiddleware: Middleware[] = [
     // Add your middleware functions here
 ];
+
+const combinedReducer = combineReducers({...rootReducers, ...customReducers});
 
 export const store = configureStore({
     reducer: combinedReducer,
