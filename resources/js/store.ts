@@ -27,6 +27,16 @@ export const store = configureStore({
             .concat(mediaApi.middleware),
 });
 
+// Enable Webpack hot module replacement for reducers
+// if (import.meta.hot) {
+//     import.meta.hot.accept('@larabiz/features/page/pageService', () => {
+//         const pageApi = require('@larabiz/features/page/pageService').apiSlice;
+//         store.replaceReducer({
+//             [pageApi.reducerPath]: pageApi.reducer,
+//         });
+//     });
+// }
+
 // Infer the `RootState` and `AppDispatch` types from the store itself
 export type RootState = ReturnType<typeof store.getState>;
 // Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
