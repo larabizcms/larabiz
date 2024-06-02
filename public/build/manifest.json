@@ -1,6 +1,6 @@
 {
-  "_EyeInvisibleOutlined-DOV7THNZ.js": {
-    "file": "assets/EyeInvisibleOutlined-DOV7THNZ.js",
+  "_EyeInvisibleOutlined-B1_c9WX7.js": {
+    "file": "assets/EyeInvisibleOutlined-B1_c9WX7.js",
     "name": "EyeInvisibleOutlined",
     "imports": [
       "resources/js/index.tsx"
@@ -679,7 +679,7 @@
     "src": "node_modules/slick-carousel/slick/fonts/slick.woff"
   },
   "node_modules/swagger-ui-react/index.mjs": {
-    "file": "assets/index-BdSL5SeT.js",
+    "file": "assets/index-BhwzaeHd.js",
     "name": "index",
     "src": "node_modules/swagger-ui-react/index.mjs",
     "isDynamicEntry": true,
@@ -688,8 +688,14 @@
       "_toPropertyKey-Vfs27RhP.js"
     ]
   },
+  "node_modules/web-vitals/dist/web-vitals.js": {
+    "file": "assets/web-vitals-CXltg8Ln.js",
+    "name": "web-vitals",
+    "src": "node_modules/web-vitals/dist/web-vitals.js",
+    "isDynamicEntry": true
+  },
   "packages/core/resources/js/components/MediaDialog.tsx": {
-    "file": "assets/MediaDialog-ByQx0xD6.js",
+    "file": "assets/MediaDialog-8XCWMTez.js",
     "name": "MediaDialog",
     "src": "packages/core/resources/js/components/MediaDialog.tsx",
     "isDynamicEntry": true,
@@ -699,7 +705,7 @@
     ]
   },
   "packages/core/resources/js/components/elements/forms/EditorField.tsx": {
-    "file": "assets/EditorField-jvotn9hX.js",
+    "file": "assets/EditorField-VfTnBkqd.js",
     "name": "EditorField",
     "src": "packages/core/resources/js/components/elements/forms/EditorField.tsx",
     "isDynamicEntry": true,
@@ -708,7 +714,7 @@
     ]
   },
   "packages/core/resources/js/views/Page.tsx": {
-    "file": "assets/Page-zHhJ_pnj.js",
+    "file": "assets/Page-DF5qmRiy.js",
     "name": "Page",
     "src": "packages/core/resources/js/views/Page.tsx",
     "isDynamicEntry": true,
@@ -737,7 +743,7 @@
     "src": "resources/js/assets/images/users/avatar-1.png"
   },
   "resources/js/index.tsx": {
-    "file": "assets/index-naytQ3Ug.js",
+    "file": "assets/index-t1QlYXH4.js",
     "name": "index",
     "src": "resources/js/index.tsx",
     "isEntry": true,
@@ -748,7 +754,8 @@
       "resources/js/views/auth/Login.tsx",
       "resources/js/views/api/Document.tsx",
       "resources/js/views/auth/Register.tsx",
-      "packages/core/resources/js/views/Page.tsx"
+      "packages/core/resources/js/views/Page.tsx",
+      "node_modules/web-vitals/dist/web-vitals.js"
     ],
     "assets": [
       "assets/avatar-1-B0hIH1z9.png",
@@ -757,7 +764,7 @@
     ]
   },
   "resources/js/views/api/Document.tsx": {
-    "file": "assets/Document-DmnCU7SH.js",
+    "file": "assets/Document-Boc53A1S.js",
     "name": "Document",
     "src": "resources/js/views/api/Document.tsx",
     "isDynamicEntry": true,
@@ -772,23 +779,23 @@
     ]
   },
   "resources/js/views/auth/Login.tsx": {
-    "file": "assets/Login-Cj0VTTWJ.js",
+    "file": "assets/Login-SNbeB7jr.js",
     "name": "Login",
     "src": "resources/js/views/auth/Login.tsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/index.tsx",
-      "_EyeInvisibleOutlined-DOV7THNZ.js"
+      "_EyeInvisibleOutlined-B1_c9WX7.js"
     ]
   },
   "resources/js/views/auth/Register.tsx": {
-    "file": "assets/Register-B6x9SfKS.js",
+    "file": "assets/Register-BsLFMgA2.js",
     "name": "Register",
     "src": "resources/js/views/auth/Register.tsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/index.tsx",
-      "_EyeInvisibleOutlined-DOV7THNZ.js"
+      "_EyeInvisibleOutlined-B1_c9WX7.js"
     ]
   }
 }
