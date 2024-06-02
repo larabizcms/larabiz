@@ -9,6 +9,7 @@
 
 namespace LarabizCMS\Modules\App\Http\Controllers;
 
+use LarabizCMS\Core\Facades\Breadcrumb;
 use LarabizCMS\Core\Http\Controllers\Controller;
 use LarabizCMS\Core\Support\PageBuilder\Elements\Card;
 use LarabizCMS\Core\Support\PageBuilder\Elements\Forms\Editor;
@@ -23,11 +24,15 @@ class ExampleController extends Controller
 {
     public function index()
     {
-        // $text = Text::make('Dashboard', [
-        //     //'fontWeight' => 600,
-        //     //'mt' => '50px',
-        //     'color' => '#3f51b5',
-        // ])->mb(3);
+        Breadcrumb::items([
+            [
+                'title' => 'Dashboard',
+                'url' => '/admin-cp/dashboard',
+            ],
+            [
+                'title' => 'Example',
+            ],
+        ]);
 
         $input = TextField::make(['name' => 'textfield', 'label' => 'Textfield'])
             ->placeholder('Placeholder text');
