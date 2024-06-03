@@ -19,7 +19,7 @@ export default defineConfig((mode) => {
                         'resources/js/app.tsx',
                         //'resources/js/store.ts',
                     ],
-                    config: { delay: 300 },
+                    //config: { delay: 300 },
                 },
             }),
             react(),
@@ -28,6 +28,7 @@ export default defineConfig((mode) => {
             global: 'window',
         },
         resolve: {
+            extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json'],
             alias: [
                 {
                     find: '@',

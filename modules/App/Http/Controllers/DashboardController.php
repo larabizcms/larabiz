@@ -2,6 +2,7 @@
 
 namespace LarabizCMS\Modules\App\Http\Controllers;
 
+use LarabizCMS\Core\Facades\Breadcrumb;
 use LarabizCMS\Core\Http\Controllers\Controller;
 use LarabizCMS\Core\Support\PageBuilder\Elements\Box;
 use LarabizCMS\Core\Support\PageBuilder\Elements\Card;
@@ -58,6 +59,16 @@ class DashboardController extends Controller
 
     public function media()
     {
+        Breadcrumb::items([
+            [
+                'title' => 'Dashboard',
+                'url' => '/admin-cp/dashboard',
+            ],
+            [
+                'title' => 'Media',
+            ],
+        ]);
+
         return Page::make(
             []
         )->fill(['title' => 'Media', 'description' => 'Media']);

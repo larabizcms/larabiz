@@ -9,8 +9,9 @@ const NotFound = ({ title, message }: { title?: string, message?: string }): JSX
         <PageContainer title={title || 'Page Not Found'} description={message || 'Page Not Found'}>
             <MainCard title={title || 'Page Not Found'} sx={{ maxWidth: '100%' }}>
                 <Typography variant="body2">
-                    {message || 'Page Not Found'}{" "}
-                    <Link to="/admin-cp/dashboard">Back to Dashboard</Link>
+                    {message || 'Sorry, the page you visited does not exist.'}<br />
+
+                    <Link to="/admin-cp/dashboard" style={{ textDecoration: 'none' }}>Back to Dashboard</Link>
                 </Typography>
             </MainCard>
         </PageContainer>
