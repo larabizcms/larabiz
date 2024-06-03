@@ -29,7 +29,7 @@ export default defineConfig((mode) => {
             global: 'window',
         },
         resolve: {
-            extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json'],
+            extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.mjs', '.css', '.scss'],
             alias: [
                 {
                     find: '@',
