@@ -40,8 +40,8 @@ class Kernel extends HttpKernel
 
         'api' => [
             'throttle:api',
-            \Illuminate\Routing\Middleware\SubstituteBindings::class,
             \LarabizCMS\Core\Http\Middleware\ForceJsonResponse::class,
+            \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
 
         'static' => [

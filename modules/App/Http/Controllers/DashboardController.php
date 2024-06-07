@@ -56,21 +56,4 @@ class DashboardController extends Controller
             ]
         )->title('Dashboard')->showTitle(false);
     }
-
-    public function media()
-    {
-        Breadcrumb::items([
-            [
-                'title' => 'Dashboard',
-                'url' => '/admin-cp/dashboard',
-            ],
-            [
-                'title' => 'Media',
-            ],
-        ]);
-
-        return Page::make(
-            []
-        )->fill(['title' => 'Media', 'description' => 'Media']);
-    }
 }
