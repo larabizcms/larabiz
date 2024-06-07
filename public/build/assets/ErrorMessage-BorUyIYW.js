@@ -1,0 +1,1 @@
+import{j as o,G as e}from"./index-MUxIJpLk.js";import{F as t}from"./Text-w6hiIWma.js";const m=r=>{var s;return(s=r==null?void 0:r.errors)!=null&&s.root?o.jsx(e,{item:!0,xs:12,children:o.jsx(t,{error:!0,children:r.errors.root.message})}):null},n=m;export{n as E};
