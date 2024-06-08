@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 // project import
-import App from '@/app';
+import App from '@local/app';
 import {onLCP, onINP, onCLS} from 'web-vitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);

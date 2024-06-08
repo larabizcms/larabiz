@@ -2,8 +2,9 @@ import path from 'path';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import laravel from 'laravel-vite-plugin';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
-export default defineConfig((mode) => {
+export default defineConfig(() => {
     return {
         plugins: [
             laravel({
@@ -15,7 +16,8 @@ export default defineConfig((mode) => {
                     paths: [
                         'resources/views/**',
                         'routes/**',
-                        'packages/core/resources/views/**',
+                        'packages/**/resources/views/**',
+                        'packages/**/src/Http/Controllers/Admin/*.php',
                         'resources/js/app.tsx',
                         'modules/**/Http/**',
                         'modules/**/resources/views/**',
@@ -24,6 +26,7 @@ export default defineConfig((mode) => {
                 },
             }),
             react(),
+            tsconfigPaths(),
         ],
         define: {
             global: 'window',
@@ -32,23 +35,24 @@ export default defineConfig((mode) => {
             extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.mjs', '.css', '.scss'],
             alias: [
                 {
-                    find: '@',
+                    find: '@local',
                     replacement: path.resolve(__dirname, 'resources/js')
                 },
                 {
                     find: '@larabiz',
-                    replacement: path.resolve(__dirname, 'packages/core/resources/js'),
+                    replacement: path.resolve(__dirname, 'vendor/larabizcms/core/resources/js'),
                 },
                 {
                     find: /^\@modules\/([a-zA-Z0-9]+)\/(.+)/,
                     replacement: path.join(process.cwd(), 'modules/$1/resources/js/$2'),
                 },
-            ]
+            ],
+            preserveSymlinks: true,
         },
         server: {
             watch: {
                 usePolling: true,
-            },
+            }
         },
     }
 });

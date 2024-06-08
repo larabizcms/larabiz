@@ -4,6 +4,7 @@
     "scripts": {
         "dev": "npm run development",
         "start": "vite",
+        "hmr-debug": "vite --debug hmr",
         "build": "vite build",
         "preview": "vite preview"
     },

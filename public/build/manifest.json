@@ -1,68 +1,57 @@
 {
-  "_Container-uDHVR-Bi.js": {
-    "file": "assets/Container-uDHVR-Bi.js",
+  "_AnimateButton-DxRnYZdp.js": {
+    "file": "assets/AnimateButton-DxRnYZdp.js",
+    "name": "AnimateButton",
+    "imports": [
+      "resources/js/index.tsx"
+    ]
+  },
+  "_Container-DUJ0ODLl.js": {
+    "file": "assets/Container-DUJ0ODLl.js",
     "name": "Container",
     "imports": [
       "resources/js/index.tsx"
     ]
   },
-  "_ErrorMessage-BorUyIYW.js": {
-    "file": "assets/ErrorMessage-BorUyIYW.js",
-    "name": "ErrorMessage",
-    "imports": [
-      "resources/js/index.tsx",
-      "_Text-w6hiIWma.js"
-    ]
-  },
-  "_EyeInvisibleOutlined-C0lCP3S8.js": {
-    "file": "assets/EyeInvisibleOutlined-C0lCP3S8.js",
-    "name": "EyeInvisibleOutlined",
-    "imports": [
-      "resources/js/index.tsx",
-      "_Container-uDHVR-Bi.js"
-    ]
-  },
-  "_Form-BhRj_msD.js": {
-    "file": "assets/Form-BhRj_msD.js",
-    "name": "Form",
+  "_ElementBuilder-CYP5lbRY.js": {
+    "file": "assets/ElementBuilder-CYP5lbRY.js",
+    "name": "ElementBuilder",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/index.tsx",
-      "_Text-w6hiIWma.js",
-      "_ErrorMessage-BorUyIYW.js",
-      "_LoadingPage-B4Sebckz.js",
-      "_InputLabel-CcW7Ugtv.js"
+      "_ErrorMessage-BYTh94t5.js",
+      "_InputLabel-DEOZFZfP.js"
     ],
     "dynamicImports": [
       "packages/core/resources/js/components/MediaDialog.tsx",
       "packages/core/resources/js/components/elements/forms/EditorField.tsx"
     ]
   },
-  "_InputLabel-CcW7Ugtv.js": {
-    "file": "assets/InputLabel-CcW7Ugtv.js",
+  "_ErrorMessage-BYTh94t5.js": {
+    "file": "assets/ErrorMessage-BYTh94t5.js",
+    "name": "ErrorMessage",
+    "imports": [
+      "resources/js/index.tsx",
+      "_InputLabel-DEOZFZfP.js"
+    ]
+  },
+  "_EyeInvisibleOutlined-BRgM6Ad3.js": {
+    "file": "assets/EyeInvisibleOutlined-BRgM6Ad3.js",
+    "name": "EyeInvisibleOutlined",
+    "imports": [
+      "resources/js/index.tsx",
+      "_Container-DUJ0ODLl.js"
+    ]
+  },
+  "_InputLabel-DEOZFZfP.js": {
+    "file": "assets/InputLabel-DEOZFZfP.js",
     "name": "InputLabel",
     "imports": [
       "resources/js/index.tsx"
     ]
   },
-  "_LoadingPage-B4Sebckz.js": {
-    "file": "assets/LoadingPage-B4Sebckz.js",
-    "name": "LoadingPage",
-    "imports": [
-      "resources/js/index.tsx",
-      "_InputLabel-CcW7Ugtv.js"
-    ]
-  },
-  "_Text-w6hiIWma.js": {
-    "file": "assets/Text-w6hiIWma.js",
-    "name": "Text",
-    "imports": [
-      "resources/js/index.tsx",
-      "_InputLabel-CcW7Ugtv.js"
-    ]
-  },
-  "_makeStyles-DDL2eDCa.js": {
-    "file": "assets/makeStyles-DDL2eDCa.js",
+  "_makeStyles-CnE7jYG_.js": {
+    "file": "assets/makeStyles-CnE7jYG_.js",
     "name": "makeStyles",
     "imports": [
       "resources/js/index.tsx",
@@ -750,7 +739,7 @@
     "src": "node_modules/slick-carousel/slick/fonts/slick.woff"
   },
   "node_modules/swagger-ui-react/index.mjs": {
-    "file": "assets/index-D0vK4Gb_.js",
+    "file": "assets/index-DUWEiAN3.js",
     "name": "index",
     "src": "node_modules/swagger-ui-react/index.mjs",
     "isDynamicEntry": true,
@@ -761,66 +750,66 @@
     ]
   },
   "packages/core/resources/js/components/MediaDialog.tsx": {
-    "file": "assets/MediaDialog-BmfETwcj.js",
+    "file": "assets/MediaDialog-B7ENs6hm.js",
     "name": "MediaDialog",
     "src": "packages/core/resources/js/components/MediaDialog.tsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/index.tsx",
-      "_makeStyles-DDL2eDCa.js",
-      "_LoadingPage-B4Sebckz.js",
-      "_Container-uDHVR-Bi.js",
-      "_InputLabel-CcW7Ugtv.js",
-      "_toPropertyKey-Vfs27RhP.js"
+      "_makeStyles-CnE7jYG_.js",
+      "_ElementBuilder-CYP5lbRY.js",
+      "_Container-DUJ0ODLl.js",
+      "_InputLabel-DEOZFZfP.js",
+      "_toPropertyKey-Vfs27RhP.js",
+      "_ErrorMessage-BYTh94t5.js"
     ]
   },
   "packages/core/resources/js/components/elements/forms/EditorField.tsx": {
-    "file": "assets/EditorField-GEnBEiwm.js",
+    "file": "assets/EditorField-CaZKvaxd.js",
     "name": "EditorField",
     "src": "packages/core/resources/js/components/elements/forms/EditorField.tsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/index.tsx",
-      "_InputLabel-CcW7Ugtv.js",
-      "_Text-w6hiIWma.js"
+      "_InputLabel-DEOZFZfP.js",
+      "_ErrorMessage-BYTh94t5.js"
     ]
   },
   "packages/core/resources/js/views/Page.tsx": {
-    "file": "assets/Page-CmnS7PZP.js",
+    "file": "assets/Page-C7c7BTti.js",
     "name": "Page",
     "src": "packages/core/resources/js/views/Page.tsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/index.tsx",
-      "_LoadingPage-B4Sebckz.js",
-      "_makeStyles-DDL2eDCa.js",
+      "_ElementBuilder-CYP5lbRY.js",
+      "_AnimateButton-DxRnYZdp.js",
+      "_InputLabel-DEOZFZfP.js",
+      "_makeStyles-CnE7jYG_.js",
       "_tslib.es6-aqFK0STT.js",
-      "_Container-uDHVR-Bi.js",
-      "_Text-w6hiIWma.js",
-      "_InputLabel-CcW7Ugtv.js",
+      "_Container-DUJ0ODLl.js",
+      "_ErrorMessage-BYTh94t5.js",
       "_toPropertyKey-Vfs27RhP.js"
     ],
     "dynamicImports": [
-      "_Form-BhRj_msD.js",
-      "_Form-BhRj_msD.js"
+      "_ElementBuilder-CYP5lbRY.js",
+      "_ElementBuilder-CYP5lbRY.js"
     ]
   },
   "packages/core/resources/js/views/Setting.tsx": {
-    "file": "assets/Setting-DJL24vXb.js",
+    "file": "assets/Setting-fjlzwC3_.js",
     "name": "Setting",
     "src": "packages/core/resources/js/views/Setting.tsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/index.tsx",
-      "_Form-BhRj_msD.js",
-      "_LoadingPage-B4Sebckz.js",
-      "_Text-w6hiIWma.js",
-      "_InputLabel-CcW7Ugtv.js",
-      "_ErrorMessage-BorUyIYW.js"
+      "_ElementBuilder-CYP5lbRY.js",
+      "_ErrorMessage-BYTh94t5.js",
+      "_InputLabel-DEOZFZfP.js"
     ]
   },
   "packages/core/resources/js/views/api/Document.tsx": {
-    "file": "assets/Document-OpS976DS.js",
+    "file": "assets/Document-Di5vhqpc.js",
     "name": "Document",
     "src": "packages/core/resources/js/views/api/Document.tsx",
     "isDynamicEntry": true,
@@ -835,29 +824,30 @@
     ]
   },
   "packages/core/resources/js/views/auth/Login.tsx": {
-    "file": "assets/Login-BvIs8D1Z.js",
+    "file": "assets/Login-DYdwGUSh.js",
     "name": "Login",
     "src": "packages/core/resources/js/views/auth/Login.tsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/index.tsx",
-      "_EyeInvisibleOutlined-C0lCP3S8.js",
-      "_Text-w6hiIWma.js",
-      "_ErrorMessage-BorUyIYW.js",
-      "_InputLabel-CcW7Ugtv.js",
-      "_Container-uDHVR-Bi.js"
+      "_EyeInvisibleOutlined-BRgM6Ad3.js",
+      "_AnimateButton-DxRnYZdp.js",
+      "_ErrorMessage-BYTh94t5.js",
+      "_InputLabel-DEOZFZfP.js",
+      "_Container-DUJ0ODLl.js"
     ]
   },
   "packages/core/resources/js/views/auth/Register.tsx": {
-    "file": "assets/Register-DmYqVJ6Z.js",
+    "file": "assets/Register-vHTG4TqP.js",
     "name": "Register",
     "src": "packages/core/resources/js/views/auth/Register.tsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/index.tsx",
-      "_EyeInvisibleOutlined-C0lCP3S8.js",
-      "_InputLabel-CcW7Ugtv.js",
-      "_Container-uDHVR-Bi.js"
+      "_EyeInvisibleOutlined-BRgM6Ad3.js",
+      "_AnimateButton-DxRnYZdp.js",
+      "_InputLabel-DEOZFZfP.js",
+      "_Container-DUJ0ODLl.js"
     ]
   },
   "resources/css/app.css": {
@@ -878,7 +868,7 @@
     "src": "resources/js/assets/images/users/avatar-1.png"
   },
   "resources/js/index.tsx": {
-    "file": "assets/index-MUxIJpLk.js",
+    "file": "assets/index-CkfKW7xx.js",
     "name": "index",
     "src": "resources/js/index.tsx",
     "isEntry": true,

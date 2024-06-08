@@ -1,8 +1,8 @@
 import React from "react";
 import { RouterProvider } from 'react-router-dom';
-import { store } from '@/store';
+import { store } from '@local/store';
 import { Provider } from 'react-redux';
-import router from '@/routes';
+import router from '@local/routes';
 import ThemeCustomization from '@larabiz/themes';
 import ScrollTop from '@larabiz/layouts/components/ScrollTop';
 

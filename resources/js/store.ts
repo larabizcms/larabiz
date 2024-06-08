@@ -26,7 +26,7 @@ if (import.meta.hot) {
     import.meta.hot.accept(['../../packages/core/resources/js/features/reducers'], async () =>  {
         const newRootReducers = (await import('@larabiz/features/reducers')).default;
         store.replaceReducer(combineReducers({...newRootReducers, ...customReducers}));
-    })
+    });
 }
 
 // Infer the `RootState` and `AppDispatch` types from the store itself

@@ -7,15 +7,15 @@
         ],
         "jsx": "react",
         "module": "ESNext",
-        "rootDir": "./",
+        //"rootDir": "./",
         "moduleResolution": "node",
         //"baseUrl": "./resources/js",
         "paths": {
-            "@/*": [
+            "@local/*": [
                 "./resources/js/*"
             ],
             "@larabiz/*": [
-                "./packages/core/resources/js/*"
+                "./vendor/larabizcms/core/resources/js/*"
             ],
         },
         "esModuleInterop": true,
@@ -23,7 +23,9 @@
         "strict": true,
         "allowSyntheticDefaultImports": true,
         "skipLibCheck": true,
-        "types": ["vite/client"]
+        "types": [
+            "vite/client"
+        ]
     },
     "include": [
         "vite.config.ts",
@@ -31,5 +33,7 @@
         "resources/js/**/*.tsx",
         "packages/core/resources/js/**/*.ts",
         "packages/core/resources/js/**/*.tsx",
+        "vendor/larabizcms/core/resources/js/**/*.ts",
+        "vendor/larabizcms/core/resources/js/**/*.tsx"
     ]
 }
