@@ -1,10 +1,13 @@
-import RootElements, { ElementConfig, ElementProps } from "@larabiz/RootElements";
+import { ElementProps } from "@larabiz/views/ElementBuilder";
+import RootElements from "@larabiz/RootElements";
 
-const Elements = (config: ElementConfig, index: number, props: ElementProps): JSX.Element|null => {
-    switch (config.element) {
+const Elements = (props: ElementProps, index: number): JSX.Element|null => {
+    console.log(props);
+
+    switch (props.config.element) {
         // Custom templates
         default:
-            return RootElements(config, index, props);
+            return RootElements(props, index);
     }
 }
 
