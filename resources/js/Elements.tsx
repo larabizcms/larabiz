@@ -2,8 +2,6 @@ import { ElementProps } from "@larabiz/views/ElementBuilder";
 import RootElements from "@larabiz/RootElements";
 
 const Elements = (props: ElementProps, index: number): JSX.Element|null => {
-    console.log(props);
-
     switch (props.config.element) {
         // Custom templates
         default:

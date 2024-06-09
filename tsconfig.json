@@ -15,7 +15,7 @@
                 "./resources/js/*"
             ],
             "@larabiz/*": [
-                "./vendor/larabizcms/core/resources/js/*"
+                "./packages/core/resources/js/*"
             ],
         },
         "esModuleInterop": true,
