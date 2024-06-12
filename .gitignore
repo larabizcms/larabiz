@@ -15,3 +15,4 @@ yarn-error.log
 /modules/statuses.json
 /public/js/chunks/dev
 /public/dev
+/.php-cs-fixer.cache
