@@ -33,9 +33,9 @@ class AuthServiceProvider extends ServiceProvider
         Passport::hashClientSecrets();
 
         // Passport token expirations
-        Passport::tokensExpireIn(now()->addDays(15));
+        Passport::tokensExpireIn(now()->addDay());
         Passport::refreshTokensExpireIn(now()->addDays(30));
-        Passport::personalAccessTokensExpireIn(now()->addMonths(6));
+        // Passport::personalAccessTokensExpireIn(now()->addMonths(6));
 
         // Before check user permission
         Gate::before(function ($user, $ability) {
