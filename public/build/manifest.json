@@ -1,57 +1,50 @@
 {
-  "_AnimateButton-DxRnYZdp.js": {
-    "file": "assets/AnimateButton-DxRnYZdp.js",
+  "_AnimateButton-A3mGRSVU.js": {
+    "file": "assets/AnimateButton-A3mGRSVU.js",
     "name": "AnimateButton",
     "imports": [
       "resources/js/index.tsx"
     ]
   },
-  "_Container-DUJ0ODLl.js": {
-    "file": "assets/Container-DUJ0ODLl.js",
+  "_Container-BU27vRiL.js": {
+    "file": "assets/Container-BU27vRiL.js",
     "name": "Container",
     "imports": [
       "resources/js/index.tsx"
     ]
   },
-  "_ElementBuilder-CYP5lbRY.js": {
-    "file": "assets/ElementBuilder-CYP5lbRY.js",
+  "_ElementBuilder-B1UCTU6z.js": {
+    "file": "assets/ElementBuilder-B1UCTU6z.js",
     "name": "ElementBuilder",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/index.tsx",
-      "_ErrorMessage-BYTh94t5.js",
-      "_InputLabel-DEOZFZfP.js"
+      "_ErrorMessage-ClzuK_Cr.js",
+      "_AnimateButton-A3mGRSVU.js"
     ],
     "dynamicImports": [
-      "packages/core/resources/js/components/MediaDialog.tsx",
-      "packages/core/resources/js/components/elements/forms/EditorField.tsx"
+      "vendor/larabizcms/core/resources/js/components/MediaDialog.tsx",
+      "vendor/larabizcms/core/resources/js/components/forms/Editor.tsx"
     ]
   },
-  "_ErrorMessage-BYTh94t5.js": {
-    "file": "assets/ErrorMessage-BYTh94t5.js",
+  "_ErrorMessage-ClzuK_Cr.js": {
+    "file": "assets/ErrorMessage-ClzuK_Cr.js",
     "name": "ErrorMessage",
     "imports": [
       "resources/js/index.tsx",
-      "_InputLabel-DEOZFZfP.js"
+      "_AnimateButton-A3mGRSVU.js"
     ]
   },
-  "_EyeInvisibleOutlined-BRgM6Ad3.js": {
-    "file": "assets/EyeInvisibleOutlined-BRgM6Ad3.js",
+  "_EyeInvisibleOutlined-BTt-0BS9.js": {
+    "file": "assets/EyeInvisibleOutlined-BTt-0BS9.js",
     "name": "EyeInvisibleOutlined",
     "imports": [
       "resources/js/index.tsx",
-      "_Container-DUJ0ODLl.js"
+      "_Container-BU27vRiL.js"
     ]
   },
-  "_InputLabel-DEOZFZfP.js": {
-    "file": "assets/InputLabel-DEOZFZfP.js",
-    "name": "InputLabel",
-    "imports": [
-      "resources/js/index.tsx"
-    ]
-  },
-  "_makeStyles-CnE7jYG_.js": {
-    "file": "assets/makeStyles-CnE7jYG_.js",
+  "_makeStyles-CjfWvPb_.js": {
+    "file": "assets/makeStyles-CjfWvPb_.js",
     "name": "makeStyles",
     "imports": [
       "resources/js/index.tsx",
@@ -739,7 +732,7 @@
     "src": "node_modules/slick-carousel/slick/fonts/slick.woff"
   },
   "node_modules/swagger-ui-react/index.mjs": {
-    "file": "assets/index-DUWEiAN3.js",
+    "file": "assets/index-DW7zf-sF.js",
     "name": "index",
     "src": "node_modules/swagger-ui-react/index.mjs",
     "isDynamicEntry": true,
@@ -747,107 +740,6 @@
       "resources/js/index.tsx",
       "_toPropertyKey-Vfs27RhP.js",
       "_tslib.es6-aqFK0STT.js"
-    ]
-  },
-  "packages/core/resources/js/components/MediaDialog.tsx": {
-    "file": "assets/MediaDialog-B7ENs6hm.js",
-    "name": "MediaDialog",
-    "src": "packages/core/resources/js/components/MediaDialog.tsx",
-    "isDynamicEntry": true,
-    "imports": [
-      "resources/js/index.tsx",
-      "_makeStyles-CnE7jYG_.js",
-      "_ElementBuilder-CYP5lbRY.js",
-      "_Container-DUJ0ODLl.js",
-      "_InputLabel-DEOZFZfP.js",
-      "_toPropertyKey-Vfs27RhP.js",
-      "_ErrorMessage-BYTh94t5.js"
-    ]
-  },
-  "packages/core/resources/js/components/elements/forms/EditorField.tsx": {
-    "file": "assets/EditorField-CaZKvaxd.js",
-    "name": "EditorField",
-    "src": "packages/core/resources/js/components/elements/forms/EditorField.tsx",
-    "isDynamicEntry": true,
-    "imports": [
-      "resources/js/index.tsx",
-      "_InputLabel-DEOZFZfP.js",
-      "_ErrorMessage-BYTh94t5.js"
-    ]
-  },
-  "packages/core/resources/js/views/Page.tsx": {
-    "file": "assets/Page-C7c7BTti.js",
-    "name": "Page",
-    "src": "packages/core/resources/js/views/Page.tsx",
-    "isDynamicEntry": true,
-    "imports": [
-      "resources/js/index.tsx",
-      "_ElementBuilder-CYP5lbRY.js",
-      "_AnimateButton-DxRnYZdp.js",
-      "_InputLabel-DEOZFZfP.js",
-      "_makeStyles-CnE7jYG_.js",
-      "_tslib.es6-aqFK0STT.js",
-      "_Container-DUJ0ODLl.js",
-      "_ErrorMessage-BYTh94t5.js",
-      "_toPropertyKey-Vfs27RhP.js"
-    ],
-    "dynamicImports": [
-      "_ElementBuilder-CYP5lbRY.js",
-      "_ElementBuilder-CYP5lbRY.js"
-    ]
-  },
-  "packages/core/resources/js/views/Setting.tsx": {
-    "file": "assets/Setting-fjlzwC3_.js",
-    "name": "Setting",
-    "src": "packages/core/resources/js/views/Setting.tsx",
-    "isDynamicEntry": true,
-    "imports": [
-      "resources/js/index.tsx",
-      "_ElementBuilder-CYP5lbRY.js",
-      "_ErrorMessage-BYTh94t5.js",
-      "_InputLabel-DEOZFZfP.js"
-    ]
-  },
-  "packages/core/resources/js/views/api/Document.tsx": {
-    "file": "assets/Document-Di5vhqpc.js",
-    "name": "Document",
-    "src": "packages/core/resources/js/views/api/Document.tsx",
-    "isDynamicEntry": true,
-    "imports": [
-      "resources/js/index.tsx"
-    ],
-    "dynamicImports": [
-      "node_modules/swagger-ui-react/index.mjs"
-    ],
-    "css": [
-      "assets/Document-3e3Awjyw.css"
-    ]
-  },
-  "packages/core/resources/js/views/auth/Login.tsx": {
-    "file": "assets/Login-DYdwGUSh.js",
-    "name": "Login",
-    "src": "packages/core/resources/js/views/auth/Login.tsx",
-    "isDynamicEntry": true,
-    "imports": [
-      "resources/js/index.tsx",
-      "_EyeInvisibleOutlined-BRgM6Ad3.js",
-      "_AnimateButton-DxRnYZdp.js",
-      "_ErrorMessage-BYTh94t5.js",
-      "_InputLabel-DEOZFZfP.js",
-      "_Container-DUJ0ODLl.js"
-    ]
-  },
-  "packages/core/resources/js/views/auth/Register.tsx": {
-    "file": "assets/Register-vHTG4TqP.js",
-    "name": "Register",
-    "src": "packages/core/resources/js/views/auth/Register.tsx",
-    "isDynamicEntry": true,
-    "imports": [
-      "resources/js/index.tsx",
-      "_EyeInvisibleOutlined-BRgM6Ad3.js",
-      "_AnimateButton-DxRnYZdp.js",
-      "_InputLabel-DEOZFZfP.js",
-      "_Container-DUJ0ODLl.js"
     ]
   },
   "resources/css/app.css": {
@@ -868,19 +760,117 @@
     "src": "resources/js/assets/images/users/avatar-1.png"
   },
   "resources/js/index.tsx": {
-    "file": "assets/index-CkfKW7xx.js",
+    "file": "assets/index-DXOsxttP.js",
     "name": "index",
     "src": "resources/js/index.tsx",
     "isEntry": true,
     "dynamicImports": [
-      "packages/core/resources/js/views/auth/Login.tsx",
-      "packages/core/resources/js/views/auth/Register.tsx",
-      "packages/core/resources/js/views/api/Document.tsx",
-      "packages/core/resources/js/views/Page.tsx",
-      "packages/core/resources/js/views/Setting.tsx"
+      "vendor/larabizcms/core/resources/js/views/auth/Login.tsx",
+      "vendor/larabizcms/core/resources/js/views/auth/Register.tsx",
+      "vendor/larabizcms/core/resources/js/views/api/Document.tsx",
+      "vendor/larabizcms/core/resources/js/views/Page.tsx",
+      "vendor/larabizcms/core/resources/js/views/Setting.tsx"
     ],
     "assets": [
       "assets/avatar-1-B0hIH1z9.png"
+    ]
+  },
+  "vendor/larabizcms/core/resources/js/components/MediaDialog.tsx": {
+    "file": "assets/MediaDialog-CbwVHGIm.js",
+    "name": "MediaDialog",
+    "src": "vendor/larabizcms/core/resources/js/components/MediaDialog.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/index.tsx",
+      "_makeStyles-CjfWvPb_.js",
+      "_ElementBuilder-B1UCTU6z.js",
+      "_Container-BU27vRiL.js",
+      "_AnimateButton-A3mGRSVU.js",
+      "_toPropertyKey-Vfs27RhP.js",
+      "_ErrorMessage-ClzuK_Cr.js"
+    ]
+  },
+  "vendor/larabizcms/core/resources/js/components/forms/Editor.tsx": {
+    "file": "assets/Editor-Dsb_OPc9.js",
+    "name": "Editor",
+    "src": "vendor/larabizcms/core/resources/js/components/forms/Editor.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/index.tsx",
+      "_AnimateButton-A3mGRSVU.js",
+      "_ErrorMessage-ClzuK_Cr.js"
+    ]
+  },
+  "vendor/larabizcms/core/resources/js/views/Page.tsx": {
+    "file": "assets/Page-DVbYnRq4.js",
+    "name": "Page",
+    "src": "vendor/larabizcms/core/resources/js/views/Page.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/index.tsx",
+      "_ElementBuilder-B1UCTU6z.js",
+      "_AnimateButton-A3mGRSVU.js",
+      "_makeStyles-CjfWvPb_.js",
+      "_tslib.es6-aqFK0STT.js",
+      "_Container-BU27vRiL.js",
+      "_ErrorMessage-ClzuK_Cr.js",
+      "_toPropertyKey-Vfs27RhP.js"
+    ],
+    "dynamicImports": [
+      "_ElementBuilder-B1UCTU6z.js",
+      "_ElementBuilder-B1UCTU6z.js"
+    ]
+  },
+  "vendor/larabizcms/core/resources/js/views/Setting.tsx": {
+    "file": "assets/Setting-DtH0hAVP.js",
+    "name": "Setting",
+    "src": "vendor/larabizcms/core/resources/js/views/Setting.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/index.tsx",
+      "_ElementBuilder-B1UCTU6z.js",
+      "_ErrorMessage-ClzuK_Cr.js",
+      "_AnimateButton-A3mGRSVU.js"
+    ]
+  },
+  "vendor/larabizcms/core/resources/js/views/api/Document.tsx": {
+    "file": "assets/Document-3E8mdtRq.js",
+    "name": "Document",
+    "src": "vendor/larabizcms/core/resources/js/views/api/Document.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/index.tsx"
+    ],
+    "dynamicImports": [
+      "node_modules/swagger-ui-react/index.mjs"
+    ],
+    "css": [
+      "assets/Document-3e3Awjyw.css"
+    ]
+  },
+  "vendor/larabizcms/core/resources/js/views/auth/Login.tsx": {
+    "file": "assets/Login-r1lUIYCO.js",
+    "name": "Login",
+    "src": "vendor/larabizcms/core/resources/js/views/auth/Login.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/index.tsx",
+      "_EyeInvisibleOutlined-BTt-0BS9.js",
+      "_AnimateButton-A3mGRSVU.js",
+      "_ErrorMessage-ClzuK_Cr.js",
+      "_Container-BU27vRiL.js"
+    ]
+  },
+  "vendor/larabizcms/core/resources/js/views/auth/Register.tsx": {
+    "file": "assets/Register-Dw5NTGSr.js",
+    "name": "Register",
+    "src": "vendor/larabizcms/core/resources/js/views/auth/Register.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/index.tsx",
+      "_EyeInvisibleOutlined-BTt-0BS9.js",
+      "_AnimateButton-A3mGRSVU.js",
+      "_Container-BU27vRiL.js"
     ]
   }
 }
