@@ -1,3 +1,4 @@
+import { apiBaseUrl } from "@larabiz/helpers/helper";
 import axios from "axios";
 
 function getDefaultHeaders() {
@@ -11,9 +12,9 @@ function getDefaultHeaders() {
     };
 }
 
-const http = axios.create({
-    baseURL: (import.meta.env.VITE_APP_URL || '') + "/api",
-    headers: getDefaultHeaders(),
+const http = (headers = []): { [key: string]: any } => axios.create({
+    baseURL: apiBaseUrl,
+    headers: {...getDefaultHeaders(), ...headers},
 });
 
 export default http;
