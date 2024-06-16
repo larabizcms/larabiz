@@ -1,54 +1,55 @@
 {
-  "_AnimateButton-A3mGRSVU.js": {
-    "file": "assets/AnimateButton-A3mGRSVU.js",
+  "_AnimateButton-D-dXh-0J.js": {
+    "file": "assets/AnimateButton-D-dXh-0J.js",
     "name": "AnimateButton",
     "imports": [
       "resources/js/index.tsx"
     ]
   },
-  "_Container-BU27vRiL.js": {
-    "file": "assets/Container-BU27vRiL.js",
+  "_Container-Bp8gS4TQ.js": {
+    "file": "assets/Container-Bp8gS4TQ.js",
     "name": "Container",
     "imports": [
       "resources/js/index.tsx"
     ]
   },
-  "_ElementBuilder-B1UCTU6z.js": {
-    "file": "assets/ElementBuilder-B1UCTU6z.js",
+  "_ElementBuilder-DejoIXFr.js": {
+    "file": "assets/ElementBuilder-DejoIXFr.js",
     "name": "ElementBuilder",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/index.tsx",
-      "_ErrorMessage-ClzuK_Cr.js",
-      "_AnimateButton-A3mGRSVU.js"
+      "_ErrorMessage-Da91bmNV.js",
+      "_AnimateButton-D-dXh-0J.js"
     ],
     "dynamicImports": [
       "vendor/larabizcms/core/resources/js/components/MediaDialog.tsx",
       "vendor/larabizcms/core/resources/js/components/forms/Editor.tsx"
     ]
   },
-  "_ErrorMessage-ClzuK_Cr.js": {
-    "file": "assets/ErrorMessage-ClzuK_Cr.js",
+  "_ErrorMessage-Da91bmNV.js": {
+    "file": "assets/ErrorMessage-Da91bmNV.js",
     "name": "ErrorMessage",
     "imports": [
       "resources/js/index.tsx",
-      "_AnimateButton-A3mGRSVU.js"
+      "_AnimateButton-D-dXh-0J.js"
     ]
   },
-  "_EyeInvisibleOutlined-BTt-0BS9.js": {
-    "file": "assets/EyeInvisibleOutlined-BTt-0BS9.js",
+  "_EyeInvisibleOutlined-C1WyOeva.js": {
+    "file": "assets/EyeInvisibleOutlined-C1WyOeva.js",
     "name": "EyeInvisibleOutlined",
     "imports": [
       "resources/js/index.tsx",
-      "_Container-BU27vRiL.js"
+      "_Container-Bp8gS4TQ.js"
     ]
   },
-  "_makeStyles-CjfWvPb_.js": {
-    "file": "assets/makeStyles-CjfWvPb_.js",
+  "_makeStyles-WUHUGu59.js": {
+    "file": "assets/makeStyles-WUHUGu59.js",
     "name": "makeStyles",
     "imports": [
       "resources/js/index.tsx",
-      "_toPropertyKey-Vfs27RhP.js"
+      "_toPropertyKey-Vfs27RhP.js",
+      "_ElementBuilder-DejoIXFr.js"
     ],
     "assets": [
       "assets/thumb-default-Dg5CL_y9.png",
@@ -732,7 +733,7 @@
     "src": "node_modules/slick-carousel/slick/fonts/slick.woff"
   },
   "node_modules/swagger-ui-react/index.mjs": {
-    "file": "assets/index-DW7zf-sF.js",
+    "file": "assets/index-BHdeKE5i.js",
     "name": "index",
     "src": "node_modules/swagger-ui-react/index.mjs",
     "isDynamicEntry": true,
@@ -760,7 +761,7 @@
     "src": "resources/js/assets/images/users/avatar-1.png"
   },
   "resources/js/index.tsx": {
-    "file": "assets/index-DXOsxttP.js",
+    "file": "assets/index-BrwH7Dza.js",
     "name": "index",
     "src": "resources/js/index.tsx",
     "isEntry": true,
@@ -776,65 +777,65 @@
     ]
   },
   "vendor/larabizcms/core/resources/js/components/MediaDialog.tsx": {
-    "file": "assets/MediaDialog-CbwVHGIm.js",
+    "file": "assets/MediaDialog-CRPKYEe_.js",
     "name": "MediaDialog",
     "src": "vendor/larabizcms/core/resources/js/components/MediaDialog.tsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/index.tsx",
-      "_makeStyles-CjfWvPb_.js",
-      "_ElementBuilder-B1UCTU6z.js",
-      "_Container-BU27vRiL.js",
-      "_AnimateButton-A3mGRSVU.js",
+      "_makeStyles-WUHUGu59.js",
+      "_ElementBuilder-DejoIXFr.js",
+      "_Container-Bp8gS4TQ.js",
+      "_AnimateButton-D-dXh-0J.js",
       "_toPropertyKey-Vfs27RhP.js",
-      "_ErrorMessage-ClzuK_Cr.js"
+      "_ErrorMessage-Da91bmNV.js"
     ]
   },
   "vendor/larabizcms/core/resources/js/components/forms/Editor.tsx": {
-    "file": "assets/Editor-Dsb_OPc9.js",
+    "file": "assets/Editor-DfjWjcnn.js",
     "name": "Editor",
     "src": "vendor/larabizcms/core/resources/js/components/forms/Editor.tsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/index.tsx",
-      "_AnimateButton-A3mGRSVU.js",
-      "_ErrorMessage-ClzuK_Cr.js"
+      "_AnimateButton-D-dXh-0J.js",
+      "_ErrorMessage-Da91bmNV.js"
     ]
   },
   "vendor/larabizcms/core/resources/js/views/Page.tsx": {
-    "file": "assets/Page-DVbYnRq4.js",
+    "file": "assets/Page-Hfc8Z96I.js",
     "name": "Page",
     "src": "vendor/larabizcms/core/resources/js/views/Page.tsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/index.tsx",
-      "_ElementBuilder-B1UCTU6z.js",
-      "_AnimateButton-A3mGRSVU.js",
-      "_makeStyles-CjfWvPb_.js",
+      "_ElementBuilder-DejoIXFr.js",
+      "_AnimateButton-D-dXh-0J.js",
+      "_makeStyles-WUHUGu59.js",
       "_tslib.es6-aqFK0STT.js",
-      "_Container-BU27vRiL.js",
-      "_ErrorMessage-ClzuK_Cr.js",
+      "_Container-Bp8gS4TQ.js",
+      "_ErrorMessage-Da91bmNV.js",
       "_toPropertyKey-Vfs27RhP.js"
     ],
     "dynamicImports": [
-      "_ElementBuilder-B1UCTU6z.js",
-      "_ElementBuilder-B1UCTU6z.js"
+      "_ElementBuilder-DejoIXFr.js",
+      "_ElementBuilder-DejoIXFr.js"
     ]
   },
   "vendor/larabizcms/core/resources/js/views/Setting.tsx": {
-    "file": "assets/Setting-DtH0hAVP.js",
+    "file": "assets/Setting-xW1-ie-i.js",
     "name": "Setting",
     "src": "vendor/larabizcms/core/resources/js/views/Setting.tsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/index.tsx",
-      "_ElementBuilder-B1UCTU6z.js",
-      "_ErrorMessage-ClzuK_Cr.js",
-      "_AnimateButton-A3mGRSVU.js"
+      "_ElementBuilder-DejoIXFr.js",
+      "_ErrorMessage-Da91bmNV.js",
+      "_AnimateButton-D-dXh-0J.js"
     ]
   },
   "vendor/larabizcms/core/resources/js/views/api/Document.tsx": {
-    "file": "assets/Document-3E8mdtRq.js",
+    "file": "assets/Document-_044VuPX.js",
     "name": "Document",
     "src": "vendor/larabizcms/core/resources/js/views/api/Document.tsx",
     "isDynamicEntry": true,
@@ -849,28 +850,28 @@
     ]
   },
   "vendor/larabizcms/core/resources/js/views/auth/Login.tsx": {
-    "file": "assets/Login-r1lUIYCO.js",
+    "file": "assets/Login-B7I2UI_x.js",
     "name": "Login",
     "src": "vendor/larabizcms/core/resources/js/views/auth/Login.tsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/index.tsx",
-      "_EyeInvisibleOutlined-BTt-0BS9.js",
-      "_AnimateButton-A3mGRSVU.js",
-      "_ErrorMessage-ClzuK_Cr.js",
-      "_Container-BU27vRiL.js"
+      "_EyeInvisibleOutlined-C1WyOeva.js",
+      "_AnimateButton-D-dXh-0J.js",
+      "_ErrorMessage-Da91bmNV.js",
+      "_Container-Bp8gS4TQ.js"
     ]
   },
   "vendor/larabizcms/core/resources/js/views/auth/Register.tsx": {
-    "file": "assets/Register-Dw5NTGSr.js",
+    "file": "assets/Register-CPhuMw-w.js",
     "name": "Register",
     "src": "vendor/larabizcms/core/resources/js/views/auth/Register.tsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/index.tsx",
-      "_EyeInvisibleOutlined-BTt-0BS9.js",
-      "_AnimateButton-A3mGRSVU.js",
-      "_Container-BU27vRiL.js"
+      "_EyeInvisibleOutlined-C1WyOeva.js",
+      "_AnimateButton-D-dXh-0J.js",
+      "_Container-Bp8gS4TQ.js"
     ]
   }
 }
