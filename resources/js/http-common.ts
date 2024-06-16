@@ -14,7 +14,7 @@ function getDefaultHeaders() {
 
 const http = (headers = []): { [key: string]: any } => axios.create({
     baseURL: apiBaseUrl,
-    headers: {...getDefaultHeaders(), ...headers},
+    headers: { ...getDefaultHeaders(), ...headers },
 });
 
 export default http;

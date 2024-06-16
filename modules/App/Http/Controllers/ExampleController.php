@@ -12,6 +12,7 @@ namespace LarabizCMS\Modules\App\Http\Controllers;
 use LarabizCMS\Core\Facades\Breadcrumb;
 use LarabizCMS\Core\Http\Controllers\Controller;
 use LarabizCMS\Core\Support\PageBuilder\Elements\Card;
+use LarabizCMS\Core\Support\PageBuilder\Elements\DataTable;
 use LarabizCMS\Core\Support\PageBuilder\Elements\Form;
 use LarabizCMS\Core\Support\PageBuilder\Elements\Forms\Editor;
 use LarabizCMS\Core\Support\PageBuilder\Elements\Forms\Select;
@@ -48,17 +49,32 @@ class ExampleController extends Controller
 
         $card = Card::make()->title('Form');
         $form = Form::make();
-        $container = ContainerGrid::make()->add(
+        $form->add(
             $input,
             $textarea,
             $select,
             $selectAutocomplete,
             $editor,
         );
-        $form->add($container);
-        $card->add($form);
-        $col3 = ItemGrid::make()->add($card);
 
-        return Page::make()->add(ContainerGrid::make()->add($col3))->fill(['title' => 'Example', 'description' => 'Example']);
+        $card->add($form);
+
+        $session1 = ItemGrid::make()->add($card);
+        $session2 = ItemGrid::make();
+
+        $dataTable = DataTable::make()->withColumns(['Name', 'Email', 'Phone']);
+        $dataTable->withRows([['id' => 1, 'name' => 'John', 'email' => 'a0sKk@example.com', 'phone' => '1234567890']]);
+
+        $card = Card::make(['title' => 'Datatable'])->add($dataTable);
+        //$session2->add($card);
+
+        // Datatable data from url
+        $dataTable = DataTable::make(['columns' => ['Name', 'Email', 'Phone']]);
+        $dataTable->dataUrl('https://jsonplaceholder.typicode.com/users')->hasPagination(false);
+        $card = Card::make(['title' => 'Datatable from url'])->add($dataTable);
+        $session2->add($card);
+
+        return Page::make(['title' => 'Example', 'description' => 'Example'])
+            ->add(ContainerGrid::make()->add($session2));
     }
 }
