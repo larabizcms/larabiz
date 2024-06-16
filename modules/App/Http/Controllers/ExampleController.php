@@ -57,7 +57,7 @@ class ExampleController extends Controller
         );
         $form->add($container);
         $card->add($form);
-        $col3 = ItemGrid::make()->xs(6)->add($card);
+        $col3 = ItemGrid::make()->add($card);
 
         return Page::make()->add(ContainerGrid::make()->add($col3))->fill(['title' => 'Example', 'description' => 'Example']);
     }
