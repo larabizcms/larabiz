@@ -17,7 +17,7 @@ export default defineConfig(() => {
                         'resources/views/**',
                         'routes/**',
                         'packages/**/resources/*.php',
-                        'packages/**/src/*.php',
+                        'packages/**/src/**/*.php',
                         'resources/js/app.tsx',
                         'modules/**/*.php',
                         'modules/**/resources/views/**',
