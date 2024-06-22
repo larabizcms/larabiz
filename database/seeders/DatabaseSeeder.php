@@ -13,8 +13,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        \LarabizCMS\Modules\App\Models\User::factory(10)->create();
 
-        \LarabizCMS\Core\Models\Media::factory(1)->create();
+        // \LarabizCMS\Core\Models\Media::factory(1)->create();
     }
 }

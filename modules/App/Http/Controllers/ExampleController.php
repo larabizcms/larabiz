@@ -70,8 +70,8 @@ class ExampleController extends Controller
 
         // Datatable data from url
         $dataTable = DataTable::make(['columns' => ['Name', 'Email', 'Phone']]);
-        $dataTable->dataUrl('https://jsonplaceholder.typicode.com/users')->hasPagination(false);
-        $card = Card::make(['title' => 'Datatable from url'])->add($dataTable);
+        $dataTable->dataUrl('https://jsonplaceholder.typicode.com/users');
+        $card = Card::make()->title('Datatable from url')->add($dataTable);
         $session2->add($card);
 
         return Page::make(['title' => 'Example', 'description' => 'Example'])
