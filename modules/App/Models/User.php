@@ -87,5 +87,9 @@ class User extends UserBase
         'is_super_admin' => 'boolean',
     ];
 
+    protected $sortable = ['id', 'name', 'email', 'status'];
+
+    protected $sortDefault = ['id' => 'DESC'];
+
     // Override here
 }
