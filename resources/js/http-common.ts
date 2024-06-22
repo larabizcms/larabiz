@@ -8,16 +8,19 @@ const http = axios.create({
 
 http.interceptors.request.use(
     config => {
-        // Get the token from cookies
-        const authToken = localStorage.getItem("lb_auth_token")
-            ? JSON.parse(localStorage.getItem("lb_auth_token") as string)
-            : null; // Adjust according to your storage method
+        // Check is internal request
+        if (config.url?.startsWith(apiBaseUrl) || config.url?.startsWith("/")) {
+            // Get the token from cookies
+            const authToken = localStorage.getItem("lb_auth_token")
+                ? JSON.parse(localStorage.getItem("lb_auth_token") as string)
+                : null; // Adjust according to your storage method
 
-        config.headers = config.headers || {};
+            config.headers = config.headers || {};
 
-        if (authToken) {
-            // If the token exists, set the Authorization header
-            config.headers['Authorization'] = `Bearer ${authToken.access_token}`;
+            if (authToken) {
+                // If the token exists, set the Authorization header
+                config.headers['Authorization'] = `Bearer ${authToken.access_token}`;
+            }
         }
 
         return config;
