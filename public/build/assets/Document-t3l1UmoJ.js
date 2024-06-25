@@ -1,0 +1,2 @@
+const __vite__fileDeps=["assets/index-CR5KbaND.js","assets/index-BMvk5DLR.js","assets/toPropertyKey-Vfs27RhP.js","assets/tslib.es6-aqFK0STT.js"],__vite__mapDeps=i=>i.map(i=>__vite__fileDeps[i]);
+import{x as t,j as e,y as r,R as n,z as o}from"./index-BMvk5DLR.js";const i=n.lazy(()=>o(()=>import("./index-CR5KbaND.js"),__vite__mapDeps([0,1,2,3])));function x(){const[u,s,l,a]=t();return a(!1),s(!1),e.jsxs(e.Fragment,{children:[e.jsx(i,{url:r+"/swagger.json",deepLinking:!0,displayRequestDuration:!0}),e.jsx("p",{style:{marginTop:"50px"}})]})}export{x as default};
