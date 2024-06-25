@@ -89,6 +89,8 @@ class User extends UserBase
 
     protected $searchable = ['name', 'email'];
 
+    protected $filterable = ['status', 'is_super_admin'];
+
     protected $sortable = ['id', 'name', 'email', 'status'];
 
     protected $sortDefault = ['id' => 'DESC'];
