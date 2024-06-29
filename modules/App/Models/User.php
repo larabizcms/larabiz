@@ -52,6 +52,10 @@ use Laravel\Passport\Token;
  */
 class User extends UserBase
 {
+    public const STATUS_ACTIVE = 'active';
+
+    public const STATUS_INACTIVE = 'inactive';
+
     /**
      * The attributes that are mass assignable.
      *
