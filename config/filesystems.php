@@ -85,4 +85,13 @@ return [
         public_path('storage') => storage_path('app/public'),
     ],
 
+    'image_mime_types' => [
+        'image/png',
+        'image/jpeg',
+        'image/jpg',
+        'image/gif',
+        'image/svg+xml',
+        'image/svg',
+    ],
+
 ];
