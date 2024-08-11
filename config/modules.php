@@ -103,7 +103,7 @@ return [
         'generator' => [
             'config' => ['path' => 'config', 'generate' => true],
             'command' => ['path' => 'Commands', 'generate' => true],
-            'migration' => ['path' => 'Database/migrations', 'generate' => true],
+            'migration' => ['path' => 'Database/Migrations', 'generate' => true],
             'seeder' => ['path' => 'Database/Seeders', 'generate' => true],
             'factory' => ['path' => 'Database/Factories', 'generate' => true],
             'model' => ['path' => 'Models', 'generate' => true],
