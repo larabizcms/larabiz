@@ -15,6 +15,8 @@ use LarabizCMS\Core\Support\PageBuilder\Elements\Card;
 use LarabizCMS\Core\Support\PageBuilder\Elements\DataTable;
 use LarabizCMS\Core\Support\PageBuilder\Elements\Form;
 use LarabizCMS\Core\Support\PageBuilder\Elements\Forms\Editor;
+use LarabizCMS\Core\Support\PageBuilder\Elements\Forms\File;
+use LarabizCMS\Core\Support\PageBuilder\Elements\Forms\Image;
 use LarabizCMS\Core\Support\PageBuilder\Elements\Forms\Select;
 use LarabizCMS\Core\Support\PageBuilder\Elements\Forms\Text as TextField;
 use LarabizCMS\Core\Support\PageBuilder\Elements\Forms\Textarea;
@@ -28,6 +30,7 @@ class ExampleController extends Controller
     {
         Breadcrumb::add('Example');
 
+        // Form example
         $input = TextField::make(['name' => 'textfield', 'label' => 'Textfield'])
             ->placeholder('Placeholder text')
             ->rules(['required']);
@@ -47,19 +50,31 @@ class ExampleController extends Controller
 
         $editor = Editor::make(['name' => 'editor', 'label' => 'Editor'])->value('<b>Hello</b>');
 
-        $card = Card::make()->title('Form');
         $form = Form::make();
+        $card = Card::make()->title('Form');
+        $card->add(
+            ContainerGrid::make()->add(
+                $input,
+                $textarea,
+                $select,
+                $selectAutocomplete,
+                $editor,
+            )
+        );
         $form->add(
-            $input,
-            $textarea,
-            $select,
-            $selectAutocomplete,
-            $editor,
+            ItemGrid::make()->attributes(['xs' => 8, 'md' => 8, 'item' => true])->add($card),
+            ItemGrid::make()->attributes(['xs' => 4, 'md' => 4, 'item' => true])->add(
+                Card::make()->add(
+                    ContainerGrid::make()->add(
+                        Image::make(['name' => 'image', 'label' => 'Image']),
+                        File::make(['name' => 'file', 'label' => 'File']),
+                        File::make(['name' => 'files', 'label' => 'Files'])->multiple(),
+                    )
+                )
+            )
         );
 
-        $card->add($form);
-
-        $session1 = ItemGrid::make()->add($card);
+        $session1 = ItemGrid::make()->add($form);
         $session2 = ItemGrid::make();
 
         $dataTable = DataTable::make()->withColumns(['Name', 'Email', 'Phone']);
@@ -72,9 +87,9 @@ class ExampleController extends Controller
         $dataTable = DataTable::make(['columns' => ['Name', 'Email', 'Phone']]);
         $dataTable->dataUrl('https://jsonplaceholder.typicode.com/users');
         $card = Card::make()->title('Datatable from url')->add($dataTable);
-        $session2->add($card);
+        //$session2->add($card);
 
         return Page::make(['title' => 'Example', 'description' => 'Example'])
-            ->add(ContainerGrid::make()->add($session2));
+            ->add(ContainerGrid::make()->add($session1, $session2));
     }
 }
