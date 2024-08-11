@@ -10,8 +10,12 @@ use Illuminate\Notifications\DatabaseNotificationCollection;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection as BaseCollection;
 use LarabizCMS\Core\Contracts\Permissions\Permission as PermissionContract;
+use LarabizCMS\Core\Contracts\Permissions\Role;
+use LarabizCMS\Core\Models\PasswordReset;
 use LarabizCMS\Core\Models\Permissions\Permission;
-use LarabizCMS\Core\Models\User as UserBase;
+use LarabizCMS\Core\Models\Users\User as UserBase;
+use LarabizCMS\Mediable\Models\Media;
+use LarabizCMS\Mediable\Traits\HasMedia;
 use Laravel\Passport\Client;
 use Laravel\Passport\Token;
 
@@ -48,10 +52,34 @@ use Laravel\Passport\Token;
  * @method static Builder|User permission(PermissionContract|BaseCollection|array|string|int $permissions)
  * @property-read Collection<int, Permission> $permissions
  * @property-read int|null $permissions_count
+ * @property Carbon|null $birthday
+ * @property string $status
+ * @property bool $is_super_admin
+ * @property-read Media|null $avatar
+ * @property-read Collection<int, Media> $media
+ * @property-read int|null $media_count
+ * @property-read Collection<int, PasswordReset> $passwordResets
+ * @property-read int|null $password_resets_count
+ * @property-read Collection<int, \LarabizCMS\Core\Models\Permissions\Role> $roles
+ * @property-read int|null $roles_count
+ * @method static Builder|User api(array $params = [])
+ * @method static Builder|User filter(array $params)
+ * @method static Builder|User inApi(array $params = [])
+ * @method static Builder|User role(Role|BaseCollection|array|string|int $roles, ?string $guard = null)
+ * @method static Builder|User search(string $keyword)
+ * @method static Builder|User sort(array $params)
+ * @method static Builder|User whereBirthday($value)
+ * @method static Builder|User whereIsSuperAdmin($value)
+ * @method static Builder|User whereStatus($value)
+ * @method static Builder|User withMedia(array|string|null $channel = null)
+ * @property-read Collection<int, \LarabizCMS\Core\Models\Users\UserSocialConnection> $socialConnections
+ * @property-read int|null $social_connections_count
  * @mixin Eloquent
  */
 class User extends UserBase
 {
+    use HasMedia;
+
     public const STATUS_ACTIVE = 'active';
 
     public const STATUS_INACTIVE = 'inactive';
@@ -99,5 +127,19 @@ class User extends UserBase
 
     protected $sortDefault = ['id' => 'DESC'];
 
-    // Override here
+    protected $appends = ['avatar'];
+
+    public function scopeInApi(Builder $builder, array $params = []): Builder
+    {
+        return $builder->withMedia('avatar');
+    }
+
+    public function getAvatarAttribute(): ?Media
+    {
+        if (! $this->relationLoaded('media')) {
+            return null;
+        }
+
+        return $this->getFirstMedia('avatar');
+    }
 }
