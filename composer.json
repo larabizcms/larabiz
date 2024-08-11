@@ -1,8 +1,8 @@
 {
-    "name": "laravel/laravel",
+    "name": "larabizcms/larabiz",
     "type": "project",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "description": "The Larabiz CMS.",
+    "keywords": ["framework", "laravel", "cms", "larabiz"],
     "license": "MIT",
     "require": {
         "php": "^8.0|^8.1",
@@ -15,7 +15,8 @@
         "ext-xmlwriter": "*",
         "ext-zip": "*",
         "guzzlehttp/guzzle": "^7.8",
-        "larabizcms/core": "@dev",
+        "larabizcms/core": "^1.0",
+        "larabizcms/mediable": "^1.0",
         "laravel/framework": "^9.52",
         "laravel/tinker": "^2.8"
     },
