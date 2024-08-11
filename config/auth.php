@@ -14,7 +14,7 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
+        'guard' => 'api',
         'passwords' => 'users',
     ],
 
@@ -70,6 +70,15 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => LarabizCMS\Modules\App\Models\User::class,
+            'social_connections' => \LarabizCMS\Core\Models\Users\UserSocialConnection::class,
+            'passport' => [
+                'client_id' => env('PASSPORT_USER_GRANT_CLIENT_ID'),
+                'client_secret' => env('PASSPORT_USER_GRANT_CLIENT_SECRET'),
+            ],
+            'login_socials' => array_filter(
+                explode(',', env('LB_USER_LOGIN_SOCIALS')),
+                'trim'
+            ),
         ],
 
         // 'users' => [
@@ -114,5 +123,12 @@ return [
     */
 
     'password_timeout' => 10800,
+
+    'default_roles' => [
+        'admin' => 'Administrator',
+        'user' => [
+            'name' => 'Registered User',
+        ],
+    ],
 
 ];
