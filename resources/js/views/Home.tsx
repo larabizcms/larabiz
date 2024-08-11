@@ -8,7 +8,7 @@ const Home = (): JSX.Element => {
             World for instance
 
 
-            <Link href="/admin-cp/login">Login</Link>
+            <Link href="/user/login">Login</Link>
         </>
     );
 };

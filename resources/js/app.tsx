@@ -6,6 +6,8 @@ import router from '@local/routes';
 import ThemeCustomization from '@larabiz/themes';
 import ScrollTop from '@larabiz/layouts/components/ScrollTop';
 import { SnackbarProvider } from 'notistack';
+import '@larabiz/i18n';
+import './firebase';
 
 export default function App() {
     return (

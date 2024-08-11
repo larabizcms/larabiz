@@ -23,7 +23,3 @@
 @import '@fontsource/public-sans/700.css';
 
 @import 'material-icons/iconfont/material-icons.css';
-
-.ck-editor__editable_inline {
-    min-height: 350px;
-}
