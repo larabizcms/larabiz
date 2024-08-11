@@ -15,14 +15,14 @@
         "ext-xmlwriter": "*",
         "ext-zip": "*",
         "guzzlehttp/guzzle": "^7.8",
-        "larabizcms/core": "^1.0",
+        "larabizcms/core": "@dev",
+        "larabizcms/laravel-model-helper": "^1.0",
         "larabizcms/mediable": "^1.0",
         "laravel/framework": "^9.52",
         "laravel/tinker": "^2.8"
     },
     "require-dev": {
-        "barryvdh/laravel-debugbar": "^3.13",
-        "barryvdh/laravel-ide-helper": "^2.13",
+        "larabizcms/for-dev": "^1.0",
         "fakerphp/faker": "^1.9.1",
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.4.4",
@@ -33,8 +33,6 @@
     },
     "autoload": {
         "psr-4": {
-            "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/",
             "LarabizCMS\\Modules\\": "modules/"
         }
     },
