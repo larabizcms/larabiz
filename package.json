@@ -36,7 +36,7 @@
         "i18next": "^23.12.2",
         "i18next-browser-languagedetector": "^8.0.0",
         "i18next-http-backend": "^2.5.2",
-        "larabizcms": "^1.0",
+        "@larabizcms/larabizcms": "^1.0",
         "laravel-echo": "^1.16.1",
         "prismjs": "^1.29.0",
         "pusher-js": "^8.4.0-rc2",
