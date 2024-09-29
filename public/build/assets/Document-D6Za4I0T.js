@@ -1,2 +1,0 @@
-const __vite__fileDeps=["assets/index-DM11tu1q.js","assets/index-C-recmsz.js"],__vite__mapDeps=i=>i.map(i=>__vite__fileDeps[i]);
-import{w as t,j as e,x as r,R as o,_ as n}from"./index-C-recmsz.js";const i=o.lazy(()=>n(()=>import("./index-DM11tu1q.js"),__vite__mapDeps([0,1])));function d(){const[u,s,l,a]=t();return a(!1),s(!1),e.jsxs(e.Fragment,{children:[e.jsx(i,{url:r+"/docs/api-docs.json",deepLinking:!0,displayRequestDuration:!0}),e.jsx("p",{style:{marginTop:"50px"}})]})}export{d as default};
