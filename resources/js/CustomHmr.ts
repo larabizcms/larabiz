@@ -7,7 +7,7 @@ export function customWatchPlugin(): PluginOption {
         configureServer(server: any) {
             // Add files or directories to watch
             server.watcher.add(path.resolve(__dirname, '../../modules/**/react/**/*'));
-            server.watcher.add(path.resolve(__dirname, '../../packages/core/react/**/*'));
+            server.watcher.add(path.resolve(__dirname, '../../vendor/larabizcms/core/react/**/*'));
             server.watcher.on('change', (file: any) => {
                 // Custom actions when files change
             });

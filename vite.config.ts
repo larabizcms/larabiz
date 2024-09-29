@@ -31,7 +31,6 @@ async function getConfig() {
                         'resources/views/**',
                         'resources/js/config.ts',
                         'routes/**',
-                        'packages/**/resources/views/**/*.php',
                         'modules/**/resources/views/**/*.php',
                         'modules/**/module.config.js',
                     ],
@@ -54,7 +53,7 @@ async function getConfig() {
                 },
                 {
                     find: '@larabiz',
-                    replacement: path.resolve(__dirname, 'packages/core/react'),
+                    replacement: path.resolve(__dirname, 'vendor/larabizcms/core/react'),
                 },
                 {
                     find: /^\@modules\/([a-zA-Z0-9]+)\/(.+)/,
