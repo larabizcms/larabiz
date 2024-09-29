@@ -9,13 +9,13 @@ use Illuminate\Notifications\DatabaseNotification;
 use Illuminate\Notifications\DatabaseNotificationCollection;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection as BaseCollection;
-use LarabizCMS\Core\Contracts\Permissions\Permission as PermissionContract;
-use LarabizCMS\Core\Contracts\Permissions\Role;
+use LarabizCMS\Core\Media\Traits\HasMedia;
 use LarabizCMS\Core\Models\PasswordReset;
 use LarabizCMS\Core\Models\Permissions\Permission;
 use LarabizCMS\Core\Models\Users\User as UserBase;
-use LarabizCMS\Mediable\Models\Media;
-use LarabizCMS\Mediable\Traits\HasMedia;
+use LarabizCMS\Core\Permissions\Contracts\Permission as PermissionContract;
+use LarabizCMS\Core\Permissions\Contracts\Role;
+use LarabizCMS\Core\Models\Media;
 use Laravel\Passport\Client;
 use Laravel\Passport\Token;
 
@@ -80,10 +80,6 @@ class User extends UserBase
 {
     use HasMedia;
 
-    public const STATUS_ACTIVE = 'active';
-
-    public const STATUS_INACTIVE = 'inactive';
-
     /**
      * The attributes that are mass assignable.
      *
@@ -129,6 +125,11 @@ class User extends UserBase
 
     protected $appends = ['avatar'];
 
+    /**
+     * @param  Builder|static $builder
+     * @param  array  $params
+     * @return Builder
+     */
     public function scopeInApi(Builder $builder, array $params = []): Builder
     {
         return $builder->withMedia('avatar');

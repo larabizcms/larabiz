@@ -10,3 +10,9 @@
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+use LarabizCMS\Modules\App\Http\Controllers\ExampleController;
+
+if (config('app.example_enabled')) {
+    Route::post('example', [ExampleController::class, 'handle']);
+}

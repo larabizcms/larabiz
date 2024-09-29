@@ -123,12 +123,4 @@ return [
     */
 
     'password_timeout' => 10800,
-
-    'default_roles' => [
-        'admin' => 'Administrator',
-        'user' => [
-            'name' => 'Registered User',
-        ],
-    ],
-
 ];

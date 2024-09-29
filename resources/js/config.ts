@@ -1,14 +1,17 @@
-// ==============================|| THEME CONFIG  ||============================== //
-
 const config = {
     defaultPath: '/admin-cp/dashboard',
     fontFamily: `'Public Sans', sans-serif`,
-    i18n: 'en',
+    // i18n: 'en',
     miniDrawer: false,
     container: true,
     mode: 'light',
     presetColor: 'default',
-    themeDirection: 'ltr'
+    themeDirection: 'ltr',
+    adminAnalyticsEnabled: (window as any).LaraBiz.adminAnalyticsEnabled,
+    supportedLanguages: (window as any).LaraBiz.supportedLanguages || ["en", "vi"],
+    language: localStorage.getItem('i18nextLng') || (window as any).LaraBiz.language || "en",
+    recaptchaSiteKey: (window as any).LaraBiz.recaptchaSiteKey,
+    firebaseConfig: (window as any).LaraBiz.firebaseConfig,
 };
 
 export default config;

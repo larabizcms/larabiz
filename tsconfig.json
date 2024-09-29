@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "target": "es2016",
+        "target": "es2017",
         "lib": [
             "dom",
             "es2018"
@@ -13,7 +13,7 @@
                 "./resources/js/*"
             ],
             "@larabiz/*": [
-                "./vendor/larabizcms/core/resources/js/*"
+                "./vendor/larabizcms/core/react/*"
             ],
         },
         "esModuleInterop": true,
@@ -29,9 +29,13 @@
         "vite.config.ts",
         "resources/js/**/*.ts",
         "resources/js/**/*.tsx",
-        "packages/core/resources/js/**/*.ts",
-        "packages/core/resources/js/**/*.tsx",
-        "vendor/larabizcms/core/resources/js/**/*.ts",
-        "vendor/larabizcms/core/resources/js/**/*.tsx"
+        "vendor/larabizcms/core/react/**/*.ts",
+        "vendor/larabizcms/core/react/**/*.tsx",
+        "themes/**/src/**/*.ts",
+        "themes/**/src/**/*.tsx",
+        "themes/**/vite.config.ts",
+        "modules/**/react/**/*.ts",
+        "modules/**/react/**/*.tsx",
+        "modules/**/vite.config.ts"
     ]
 }

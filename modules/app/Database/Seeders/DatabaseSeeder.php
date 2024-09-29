@@ -15,6 +15,6 @@ class DatabaseSeeder extends Seeder
     {
         \LarabizCMS\Modules\App\Models\User::factory(10)->create();
 
-        // \LarabizCMS\Mediable\Models\Media::factory(1)->create();
+        // \LarabizCMS\Core\Models\Media::factory(1)->create();
     }
 }

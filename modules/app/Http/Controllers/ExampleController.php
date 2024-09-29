@@ -9,20 +9,21 @@
 
 namespace LarabizCMS\Modules\App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use LarabizCMS\Core\Facades\Breadcrumb;
 use LarabizCMS\Core\Http\Controllers\Controller;
-use LarabizCMS\Core\Support\PageBuilder\Elements\Card;
-use LarabizCMS\Core\Support\PageBuilder\Elements\DataTable;
-use LarabizCMS\Core\Support\PageBuilder\Elements\Form;
-use LarabizCMS\Core\Support\PageBuilder\Elements\Forms\Editor;
-use LarabizCMS\Core\Support\PageBuilder\Elements\Forms\File;
-use LarabizCMS\Core\Support\PageBuilder\Elements\Forms\Image;
-use LarabizCMS\Core\Support\PageBuilder\Elements\Forms\Select;
-use LarabizCMS\Core\Support\PageBuilder\Elements\Forms\Text as TextField;
-use LarabizCMS\Core\Support\PageBuilder\Elements\Forms\Textarea;
-use LarabizCMS\Core\Support\PageBuilder\Elements\Grids\ContainerGrid;
-use LarabizCMS\Core\Support\PageBuilder\Elements\Grids\ItemGrid;
-use LarabizCMS\Core\Support\PageBuilder\Page;
+use LarabizCMS\Core\PageBuilder\Elements\Card;
+use LarabizCMS\Core\PageBuilder\Elements\DataTable;
+use LarabizCMS\Core\PageBuilder\Elements\Form;
+use LarabizCMS\Core\PageBuilder\Elements\Forms\Editor;
+use LarabizCMS\Core\PageBuilder\Elements\Forms\File;
+use LarabizCMS\Core\PageBuilder\Elements\Forms\Image;
+use LarabizCMS\Core\PageBuilder\Elements\Forms\Select;
+use LarabizCMS\Core\PageBuilder\Elements\Forms\Text as TextField;
+use LarabizCMS\Core\PageBuilder\Elements\Forms\Textarea;
+use LarabizCMS\Core\PageBuilder\Elements\Grids\ContainerGrid;
+use LarabizCMS\Core\PageBuilder\Elements\Grids\ItemGrid;
+use LarabizCMS\Core\PageBuilder\Page;
 
 class ExampleController extends Controller
 {
@@ -50,7 +51,7 @@ class ExampleController extends Controller
 
         $editor = Editor::make(['name' => 'editor', 'label' => 'Editor'])->value('<b>Hello</b>');
 
-        $form = Form::make();
+        $form = Form::make()->action(action([static::class, 'handle']));
         $card = Card::make()->title('Form');
         $card->add(
             ContainerGrid::make()->add(
@@ -62,8 +63,8 @@ class ExampleController extends Controller
             )
         );
         $form->add(
-            ItemGrid::make()->attributes(['xs' => 8, 'md' => 8, 'item' => true])->add($card),
-            ItemGrid::make()->attributes(['xs' => 4, 'md' => 4, 'item' => true])->add(
+            ItemGrid::make()->attributes(['xs' => 12, 'md' => 8, 'item' => true])->add($card),
+            ItemGrid::make()->attributes(['xs' => 12, 'md' => 4, 'item' => true])->add(
                 Card::make()->add(
                     ContainerGrid::make()->add(
                         Image::make(['name' => 'image', 'label' => 'Image']),
@@ -91,5 +92,10 @@ class ExampleController extends Controller
 
         return Page::make(['title' => 'Example', 'description' => 'Example'])
             ->add(ContainerGrid::make()->add($session1, $session2));
+    }
+
+    public function handle(Request $request)
+    {
+        dd($request->all());
     }
 }

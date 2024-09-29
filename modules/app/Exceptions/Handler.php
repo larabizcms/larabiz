@@ -43,8 +43,11 @@ class Handler extends ExceptionHandler
      */
     public function register()
     {
-        $this->reportable(function (Throwable $e) {
-            //
+        $this->reportable(function (\League\OAuth2\Server\Exception\OAuthServerException $e) {
+            // Disable error reporting: "The resource owner or authorization server denied the request..."
+            if($e->getCode() == 9) {
+                return false;
+            }
         });
     }
 

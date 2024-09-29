@@ -1,10 +1,14 @@
 import React from "react";
-import {RouteObject, createBrowserRouter} from "react-router-dom";
+import { RouteObject, createBrowserRouter } from "react-router-dom";
 import { authRoutes, appRoutes } from "@larabiz/routes";
 import NotFound from "./views/NotFound";
 
+import ecommerceRouter from "@modules/ecommerce/routes";
+import themeRouter from "../../themes/landing-page/src/routes";
+
 const customRoutes: RouteObject[] = [
-    // Your custom routes here
+    ...ecommerceRouter,
+    ...themeRouter,
 ];
 
 const routes = createBrowserRouter([

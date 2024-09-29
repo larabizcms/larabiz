@@ -4,7 +4,6 @@ namespace LarabizCMS\Modules\App\Providers;
 
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
-use Illuminate\Support\Facades\Gate;
 use Laravel\Passport\Passport;
 
 class AuthServiceProvider extends ServiceProvider
@@ -36,16 +35,5 @@ class AuthServiceProvider extends ServiceProvider
         Passport::tokensExpireIn(now()->addDay());
         Passport::refreshTokensExpireIn(now()->addDays(30));
         // Passport::personalAccessTokensExpireIn(now()->addMonths(6));
-
-        // Before check user permission
-        Gate::before(function ($user, $ability) {
-            if ($user->isSuperAdmin()) {
-                return true;
-            }
-
-            if ($user->isBanned()) {
-                return false;
-            }
-        });
     }
 }

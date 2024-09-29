@@ -4,8 +4,8 @@ namespace LarabizCMS\Modules\App\Providers;
 
 use Illuminate\Database\Eloquent\Model;
 use Intervention\Image\Image;
+use LarabizCMS\Core\Media\Contracts\ImageConversion;
 use LarabizCMS\Core\Providers\ServiceProvider;
-use LarabizCMS\Mediable\ImageConversion;
 
 class AppServiceProvider extends ServiceProvider
 {

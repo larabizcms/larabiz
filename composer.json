@@ -5,7 +5,7 @@
     "keywords": ["framework", "laravel", "cms", "larabiz"],
     "license": "MIT",
     "require": {
-        "php": "^8.0|^8.1",
+        "php": "^8.2",
         "ext-curl": "*",
         "ext-fileinfo": "*",
         "ext-json": "*",
@@ -15,25 +15,22 @@
         "ext-xmlwriter": "*",
         "ext-zip": "*",
         "guzzlehttp/guzzle": "^7.8",
-        "larabizcms/core": "@dev",
-        "larabizcms/laravel-model-helper": "^1.0",
-        "larabizcms/mediable": "^1.0",
-        "laravel/framework": "^9.52",
-        "laravel/tinker": "^2.8"
+        "laravel/framework": "^11.9",
+        "laravel/tinker": "^2.9"
     },
     "require-dev": {
-        "larabizcms/for-dev": "^1.0",
-        "fakerphp/faker": "^1.9.1",
-        "laravel/sail": "^1.0.1",
-        "mockery/mockery": "^1.4.4",
-        "nunomaduro/collision": "^6.1",
-        "phpunit/phpunit": "^9.5.10",
+        "larabizcms/for-dev": "@dev",
         "roave/security-advisories": "dev-latest",
-        "spatie/laravel-ignition": "^1.0"
+        "fakerphp/faker": "^1.23",
+        "laravel/pint": "^1.13",
+        "laravel/sail": "^1.26",
+        "mockery/mockery": "^1.6",
+        "nunomaduro/collision": "^8.1",
+        "phpunit/phpunit": "^11.0.1"
     },
     "autoload": {
         "psr-4": {
-            "LarabizCMS\\Modules\\": "modules/"
+            "LarabizCMS\\Modules\\App\\": "modules/app/"
         }
     },
     "autoload-dev": {
@@ -59,19 +56,22 @@
     "extra": {
         "laravel": {
             "dont-discover": []
+        },
+        "merge-plugin": {
+            "include": [
+                "modules/*/composer.json"
+            ]
         }
     },
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "php-http/discovery": true,
+            "wikimedia/composer-merge-plugin": true
+        }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true,
-    "repositories": [
-        {
-            "type": "path",
-            "url": "./packages/*"
-        }
-    ]
+    "prefer-stable": true
 }

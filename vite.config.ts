@@ -1,32 +1,46 @@
 import path from 'path';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import laravel from 'laravel-vite-plugin';
-//import tsconfigPaths from 'vite-tsconfig-paths';
+import laravel, { refreshPaths } from 'laravel-vite-plugin';
+import { collectModuleAssetsPaths } from './resources/js/vite-module-loader';
+import { customWatchPlugin } from './resources/js/CustomHmr';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
-export default defineConfig(() => {
-    return {
+async function getConfig() {
+    const paths = [
+        'resources/js/index.tsx',
+        'resources/css/app.css',
+    ];
+
+    const allPaths = await collectModuleAssetsPaths(paths, path.join(__dirname, 'modules'));
+
+    return defineConfig({
+        optimizeDeps: {
+            include: [
+                '@emotion/react',
+                '@emotion/styled',
+                '@mui/material/Tooltip',
+            ],
+        },
         plugins: [
             laravel({
-                input: [
-                    'resources/js/index.tsx',
-                    'resources/css/app.css',
-                ],
+                input: allPaths,
                 refresh: {
                     paths: [
+                        ...refreshPaths,
                         'resources/views/**',
+                        'resources/js/config.ts',
                         'routes/**',
                         'packages/**/resources/views/**/*.php',
-                        'packages/**/src/**/Admin/*Controller.php',
-                        'resources/js/app.tsx',
-                        'modules/**/**/Admin/*Controller.php',
                         'modules/**/resources/views/**/*.php',
+                        'modules/**/module.config.js',
                     ],
                     config: { delay: 300 },
                 },
             }),
             react(),
-            //tsconfigPaths(),
+            customWatchPlugin(),
+            tsconfigPaths(),
         ],
         define: {
             global: 'window',
@@ -40,11 +54,11 @@ export default defineConfig(() => {
                 },
                 {
                     find: '@larabiz',
-                    replacement: path.resolve(__dirname, 'vendor/larabizcms/core/resources/js'),
+                    replacement: path.resolve(__dirname, 'packages/core/react'),
                 },
                 {
                     find: /^\@modules\/([a-zA-Z0-9]+)\/(.+)/,
-                    replacement: path.join(process.cwd(), 'modules/$1/resources/js/$2'),
+                    replacement: path.join(process.cwd(), 'modules/$1/react/$2'),
                 },
             ],
             preserveSymlinks: true,
@@ -54,5 +68,10 @@ export default defineConfig(() => {
                 usePolling: true,
             }
         },
-    }
-});
+        build: {
+            chunkSizeWarningLimit: 1300,
+        },
+    });
+}
+
+export default getConfig();

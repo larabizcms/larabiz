@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Larabiz'),
 
     /*
     |--------------------------------------------------------------------------
@@ -167,7 +167,7 @@ return [
         /*
          * Package Service Providers...
          */
-        LarabizCMS\Core\Providers\LarabizServiceProvider::class,
+
         /*
          * Application Service Providers...
          */
@@ -196,4 +196,6 @@ return [
     'query_cache' => [
         'lifetime' => 3600 * 24,
     ],
+
+    'example_enabled' => env('EXAMPLE_ENABLED', false),
 ];

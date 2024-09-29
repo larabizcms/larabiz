@@ -46,7 +46,7 @@ class Kernel extends HttpKernel
             \LarabizCMS\Core\Http\Middleware\ForceLocale::class,
         ],
 
-        'static' => [
+        'theme' => [
             // 'throttle:api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
