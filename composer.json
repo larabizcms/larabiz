@@ -14,11 +14,9 @@
         "ext-simplexml": "*",
         "ext-xmlwriter": "*",
         "ext-zip": "*",
-        "embed/embed": "^4.4",
         "guzzlehttp/guzzle": "^7.8",
         "laravel/framework": "^11.9",
-        "laravel/tinker": "^2.9",
-        "league/commonmark": "^2.5"
+        "laravel/tinker": "^2.9"
     },
     "require-dev": {
         "larabizcms/for-dev": "@dev",
@@ -75,11 +73,5 @@
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true,
-    "repositories": [
-        {
-            "type": "path",
-            "url": "./packages/*"
-        }
-    ]
+    "prefer-stable": true
 }
