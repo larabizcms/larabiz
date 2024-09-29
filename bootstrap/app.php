@@ -15,7 +15,7 @@ $app = new \LarabizCMS\Core\Application(
     $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
 );
 
-$app->useAppPath('modules/App');
+$app->useAppPath('modules/app');
 
 /*
 |--------------------------------------------------------------------------
