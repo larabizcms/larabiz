@@ -23,12 +23,12 @@ export const store = configureStore({
 
 // Hot Module Replacement
 if (import.meta.hot) {
-    import.meta.hot.accept(['../../packages/core/resources/js/features/reducers'], async () =>  {
+    import.meta.hot.accept(['../../packages/core/react/features/reducers'], async () =>  {
         const newRootReducers = (await import('@larabiz/features/reducers')).default;
         store.replaceReducer(combineReducers({...newRootReducers, ...customReducers}));
     });
 
-    import.meta.hot.accept(['../../vendor/larabizcms/core/resources/js/features/reducers'], async () =>  {
+    import.meta.hot.accept(['../../vendor/larabizcms/core/react/features/reducers'], async () =>  {
         const newRootReducers = (await import('@larabiz/features/reducers')).default;
         store.replaceReducer(combineReducers({...newRootReducers, ...customReducers}));
     });
