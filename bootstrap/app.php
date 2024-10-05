@@ -15,8 +15,6 @@ $app = new \LarabizCMS\Core\Application(
     $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
 );
 
-$app->useAppPath('modules/app');
-
 /*
 |--------------------------------------------------------------------------
 | Bind Important Interfaces
@@ -30,17 +28,17 @@ $app->useAppPath('modules/app');
 
 $app->singleton(
     Illuminate\Contracts\Http\Kernel::class,
-    LarabizCMS\Modules\App\Http\Kernel::class
+    App\Http\Kernel::class
 );
 
 $app->singleton(
     Illuminate\Contracts\Console\Kernel::class,
-    LarabizCMS\Modules\App\Console\Kernel::class
+    App\Console\Kernel::class
 );
 
 $app->singleton(
     Illuminate\Contracts\Debug\ExceptionHandler::class,
-    LarabizCMS\Modules\App\Exceptions\Handler::class
+    App\Exceptions\Handler::class
 );
 
 /*
