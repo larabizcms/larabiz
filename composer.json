@@ -1,12 +1,17 @@
 {
     "name": "larabizcms/larabiz",
     "type": "project",
-    "description": "The Larabiz CMS.",
+    "description": "LaraBiz is an Laravel CMS developed based on Laravel Framework 11 and web platform whose sole purpose is to make your development workflow simple again.",
     "keywords": [
         "framework",
         "laravel",
         "cms",
-        "larabiz"
+        "larabiz",
+        "larabizcms",
+        "larabiz cms",
+        "larabiz cms laravel",
+        "laravel cms",
+        "laravel 11 cms"
     ],
     "license": "MIT",
     "require": {
@@ -20,7 +25,7 @@
         "ext-xmlwriter": "*",
         "ext-zip": "*",
         "guzzlehttp/guzzle": "^7.8",
-        "larabizcms/core": "dev-master",
+        "larabizcms/core": "^1.0",
         "laravel/framework": "^11.9",
         "laravel/tinker": "^2.9"
     },
