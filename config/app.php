@@ -171,11 +171,11 @@ return [
         /*
          * Application Service Providers...
          */
-        LarabizCMS\Modules\App\Providers\AppServiceProvider::class,
-        LarabizCMS\Modules\App\Providers\AuthServiceProvider::class,
-        // LarabizCMS\Modules\App\Providers\BroadcastServiceProvider::class,
-        LarabizCMS\Modules\App\Providers\EventServiceProvider::class,
-        LarabizCMS\Modules\App\Providers\RouteServiceProvider::class,
+        App\Providers\AppServiceProvider::class,
+        App\Providers\AuthServiceProvider::class,
+        // App\Providers\BroadcastServiceProvider::class,
+        App\Providers\EventServiceProvider::class,
+        App\Providers\RouteServiceProvider::class,
     ],
 
     /*
@@ -190,7 +190,7 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
-        // 'ExampleClass' => LarabizCMS\Modules\App\Example\ExampleClass::class,
+        // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
 
     'example_enabled' => env('EXAMPLE_ENABLED', false),

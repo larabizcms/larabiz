@@ -25,7 +25,7 @@
         "ext-xmlwriter": "*",
         "ext-zip": "*",
         "guzzlehttp/guzzle": "^7.8",
-        "larabizcms/core": "^1.0",
+        "larabizcms/core": "dev-master",
         "laravel/framework": "^11.9",
         "laravel/tinker": "^2.9"
     },
@@ -41,7 +41,9 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "app/"
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
         }
     },
     "autoload-dev": {
@@ -72,6 +74,18 @@
             "include": [
                 "modules/*/composer.json"
             ]
+        },
+        "installer-types": [
+            "larabiz-module",
+            "larabiz-theme"
+        ],
+        "installer-paths": {
+            "modules/{$name}/": [
+                "type:larabiz-module"
+            ],
+            "themes/{$name}/": [
+                "type:larabiz-theme"
+            ]
         }
     },
     "config": {
@@ -80,7 +94,9 @@
         "sort-packages": true,
         "allow-plugins": {
             "php-http/discovery": true,
-            "wikimedia/composer-merge-plugin": true
+            "wikimedia/composer-merge-plugin": true,
+            "composer/installers": true,
+            "oomphinc/composer-installers-extender": true
         }
     },
     "minimum-stability": "dev",
