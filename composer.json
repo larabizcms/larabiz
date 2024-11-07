@@ -80,7 +80,9 @@
         "sort-packages": true,
         "allow-plugins": {
             "php-http/discovery": true,
-            "wikimedia/composer-merge-plugin": true
+            "wikimedia/composer-merge-plugin": true,
+            "composer/installers": true,
+            "oomphinc/composer-installers-extender": true
         }
     },
     "minimum-stability": "dev",

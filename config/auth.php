@@ -69,7 +69,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => LarabizCMS\Modules\App\Models\User::class,
+            'model' => App\Models\User::class,
             'social_connections' => \LarabizCMS\Core\Models\Users\UserSocialConnection::class,
             'passport' => [
                 'client_id' => env('PASSPORT_USER_GRANT_CLIENT_ID'),
