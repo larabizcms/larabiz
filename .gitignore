@@ -13,5 +13,4 @@ yarn-error.log
 /.idea
 /.vscode
 /modules/statuses.json
-/public/build
 /.php-cs-fixer.cache
