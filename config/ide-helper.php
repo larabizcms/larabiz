@@ -139,8 +139,7 @@ return [
     */
 
     'model_locations' => [
-        'modules/**/Models',
-        'packages/**/src/Models',
+        'app/Models',
     ],
 
     /*
