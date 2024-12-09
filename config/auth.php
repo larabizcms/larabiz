@@ -76,7 +76,7 @@ return [
                 'client_secret' => env('PASSPORT_USER_GRANT_CLIENT_SECRET'),
             ],
             'login_socials' => array_filter(
-                explode(',', env('LB_USER_LOGIN_SOCIALS')),
+                explode(',', env('LB_USER_LOGIN_SOCIALS', '')),
                 'trim'
             ),
         ],

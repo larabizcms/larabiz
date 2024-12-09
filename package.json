@@ -43,7 +43,6 @@
         "@mui/lab": "5.0.0-alpha.170",
         "@mui/material": "^5.15.20",
         "@mui/styled-engine-sc": "^6.0.0-alpha.18",
-        "@mui/styles": "^5.15.18",
         "@mui/system": "^5.15.12",
         "@mui/utils": "^5.15.1",
         "@mui/x-charts": "^7.18.0",
