@@ -32,9 +32,12 @@ Instructions on how to install Larabiz can be found at the [installation guide](
 - Users and Roles
 - Multiple modules
 - Translation
-- API document generate
+- Firebase Analytics and Push Notification
+- API documentation generator
 - Page builder
-- SEO
+- Media manager
+- Elements and Forms builder
+- More...
 
 ## Contact
 
@@ -42,4 +45,4 @@ For announcements and updates:
 
 - Email: support@larabiz.com
 - [Like us on Facebook](https://www.facebook.com/larabizcms)
-- [Follow us on Youtube](https://youtube.com/larabizcms)
+- [Follow us on Youtube](https://youtube.com/@larabizcms)
