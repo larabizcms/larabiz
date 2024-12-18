@@ -8,6 +8,7 @@
 
 - Documentation: https://larabiz.com/docs/v1
 - Demo site: https://demo.larabiz.com
+    - Demo User: demo@larabiz.com / password: demo@larabiz.com
 - Pricing: https://larabiz.com/#pricing
 
 ## Installing LaraBiz
