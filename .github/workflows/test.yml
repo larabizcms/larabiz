@@ -56,7 +56,7 @@ jobs:
           php-version: "8.2"
       - uses: actions/setup-node@v4
         with:
-          node-version: '12.x'
+          node-version: 18
       - name: Config Lisence
         run: composer global config http-basic.packages.larabiz.com ${{ secrets.TEST_LICENSE_KEY }} ${{ secrets.TEST_LICENSE_SECRET }}
       - name: Create project
