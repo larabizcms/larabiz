@@ -22,7 +22,7 @@ jobs:
       - name: Install Dependencies
         run: composer install -q --no-ansi --no-scripts --no-progress --prefer-dist
       - name: Require Version Dependencies
-        run: composer require larabizcms/larabiz:dev-master
+        run: composer require larabizcms/core:dev-master
       - name: Generate key
         run: php artisan key:generate
       - name: Directory Permissions
@@ -53,6 +53,8 @@ jobs:
         run: composer global config http-basic.packages.larabiz.com ${{ secrets.TEST_LICENSE_KEY }} ${{ secrets.TEST_LICENSE_SECRET }}
       - name: Create project
         run: composer create-project larabizcms/larabiz:dev-master .
+      - name: Require Version Dependencies
+        run: composer require larabizcms/core:dev-master
       - name: Generate key
         run: php artisan key:generate
       - name: Directory Permissions
