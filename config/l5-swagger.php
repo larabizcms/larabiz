@@ -36,7 +36,7 @@ return [
                  * Absolute paths to directory containing the swagger annotations are stored.
                 */
                 'annotations' => [
-                    base_path('modules/**/src'),
+                    // base_path('modules/**/src'),
                     base_path('vendor/larabizcms/*/src'),
                 ],
 
@@ -300,7 +300,7 @@ return [
         'constants' => [
             'L5_SWAGGER_CONST_HOST' => env('L5_SWAGGER_CONST_HOST', 'http://my-default-host.com'),
 
-            'APP_API_URL' => config('app.url') . '/api',
+            'APP_API_URL' => config('app.url') . '/api/v1',
         ],
     ],
 ];

@@ -3,50 +3,38 @@
 namespace App\Http\Controllers;
 
 use LarabizCMS\Core\Http\Controllers\Controller;
-use LarabizCMS\Core\PageBuilder\Elements\Grids\ContainerGrid;
-use LarabizCMS\Core\PageBuilder\Elements\Grids\ItemGrid;
+use LarabizCMS\Core\PageBuilder\Elements\Grids\Container;
+use LarabizCMS\Core\PageBuilder\Elements\Grids\Col12;
 use LarabizCMS\Core\PageBuilder\Page;
 use LarabizCMS\Core\Support\Analytic;
-use LarabizCMS\Core\Support\Customizers\Traits\HasTitle;
 
 class DashboardController extends Controller
 {
-    use HasTitle {
-        HasTitle::getTitle as getTitleTrait;
-    }
-
-    public function index()
+    public function index(): Page
     {
         $page = Page::make(['title' => __('Dashboard')]);
 
-        $container = ContainerGrid::make()->attributes([
-            'container' => true, 'rowSpacing' => 4.5, 'columnSpacing' => 2.75
+        $container = Container::make()->attributes([
+            'container' => true,
+            'rowSpacing' => 4.5,
+            'columnSpacing' => 2.75
         ]);
 
-        $container->add(Analytic::userCard(), Analytic::pageViewCard(), Analytic::visitorCard(), Analytic::returningCard());
+        do_action('dashboard.container.before-analytic-card', $container);
 
-        $container->add(ItemGrid::make()->attributes(['item' => true, 'xs' => 12, 'sm' => 12, 'md' => 8])
-            ->add(Analytic::visitorChart()));
+        $container->add(
+            Analytic::userCard(),
+            Analytic::pageViewCard(),
+            Analytic::visitorCard(),
+            Analytic::returningCard()
+        );
 
-        $container->add(ItemGrid::make()->attributes(['item' => true, 'xs' => 12, 'sm' => 12, 'md' => 4])
-            ->add(Analytic::topCountriesChart()));
+        do_action('dashboard.container.before-user-chart', $container);
 
-        $container->add(ItemGrid::make()->attributes(['item' => true, 'xs' => 12, 'sm' => 12, 'md' => 8])
-            ->add(Analytic::mostVisitedPagesChart()));
+        $container->add(Col12::make()->add(Analytic::userChart()));
 
-        $container->add(ItemGrid::make()->attributes(['item' => true, 'xs' => 12, 'sm' => 12, 'md' => 4])
-            ->add(Analytic::visitorTypesChart()));
-
-        $container->add(ItemGrid::make()->attributes(['item' => true, 'xs' => 12])
-            ->add(Analytic::topReferrersChart()));
-
-        $container->add(ItemGrid::make()->add(Analytic::userChart()));
+        do_action('dashboard.container.after-user-chart', $container);
 
         return $page->add($container)->showTitle(false);
-    }
-
-    public function settings()
-    {
-        //
     }
 }
