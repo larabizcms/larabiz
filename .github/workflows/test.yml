@@ -14,6 +14,9 @@ jobs:
       - uses: shivammathur/setup-php@15c43e89cdef867065b0213be354c2841860869e
         with:
           php-version: "8.2"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '12.x'
       - uses: actions/checkout@v4
       - name: Copy .env
         run: php -r "file_exists('.env') || copy('.env.example', '.env');"
@@ -37,6 +40,8 @@ jobs:
         env:
           DB_CONNECTION: sqlite
           DB_DATABASE: database/database.sqlite
+      - name: Run Statis Build
+        run: npm install && npm run build
       - name: Execute tests (Unit and Feature tests) via PHPUnit/Pest
         env:
           DB_CONNECTION: sqlite
@@ -49,6 +54,9 @@ jobs:
       - uses: shivammathur/setup-php@15c43e89cdef867065b0213be354c2841860869e
         with:
           php-version: "8.2"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '12.x'
       - name: Config Lisence
         run: composer global config http-basic.packages.larabiz.com ${{ secrets.TEST_LICENSE_KEY }} ${{ secrets.TEST_LICENSE_SECRET }}
       - name: Create project
@@ -63,6 +71,8 @@ jobs:
         run: |
           mkdir -p database
           touch database/database.sqlite
+      - name: Run Statis Build
+        run: npm install && npm run build
       - name: Installation
         run: |
           php artisan larabiz:install --admin-name=Admin --admin-email=admin@larabiz.com --admin-pass=admin@larabiz.com
