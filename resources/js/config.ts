@@ -10,6 +10,7 @@ const config = {
     adminAnalyticsEnabled: (window as any).LaraBiz.adminAnalyticsEnabled,
     supportedLanguages: (window as any).LaraBiz.supportedLanguages || ["en", "vi"],
     language: localStorage.getItem('i18nextLng') || (window as any).LaraBiz.language || "en",
+    firebaseConfig: (window as any).LaraBiz.firebaseConfig,
 };
 
 export default config;
