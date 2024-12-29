@@ -1,4 +1,4 @@
-import Loader from "@larabiz/layouts/components/Loader";
+import Loader from "@admin/layouts/components/Loader";
 import React from "react";
 
 export default function LoadingPage() {
