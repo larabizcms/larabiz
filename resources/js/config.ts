@@ -1,7 +1,7 @@
 const config = {
     defaultPath: '/admin-cp/dashboard',
     fontFamily: `'Public Sans', sans-serif`,
-    // i18n: 'en',
+    apiBaseUrl: import.meta.env.VITE_APP_API_URL || location.origin + '/api/v1',
     miniDrawer: false,
     container: true,
     mode: 'light',

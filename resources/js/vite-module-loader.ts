@@ -46,7 +46,7 @@ export async function collectModuleAssetsPaths(configs: string[], modulesPath: s
             }
         }
     } catch (error) {
-        console.error(`Error reading module statuses or module configurations: ${error}`);
+        // console.error(`Error reading module statuses or module configurations: ${error}`);
     }
 
     return configs;

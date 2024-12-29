@@ -13,7 +13,7 @@
                 "./resources/js/*"
             ],
             "@admin/*": [
-                "./packages/premium/react/*"
+                "./vendor/larabizcms/premium/react/*"
             ],
         },
         "esModuleInterop": true,
@@ -29,8 +29,8 @@
         "vite.config.ts",
         "resources/js/**/*.ts",
         "resources/js/**/*.tsx",
-        "vendor/larabizcms/core/react/**/*.ts",
-        "vendor/larabizcms/core/react/**/*.tsx",
+        "vendor/larabizcms/premium/react/**/*.ts",
+        "vendor/larabizcms/premium/react/**/*.tsx",
         "themes/**/src/**/*.ts",
         "themes/**/src/**/*.tsx",
         "themes/**/vite.config.ts",
