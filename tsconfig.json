@@ -12,8 +12,8 @@
             "@local/*": [
                 "./resources/js/*"
             ],
-            "@larabiz/*": [
-                "./vendor/larabizcms/core/react/*"
+            "@admin/*": [
+                "./packages/premium/react/*"
             ],
         },
         "esModuleInterop": true,

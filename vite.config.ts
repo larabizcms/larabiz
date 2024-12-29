@@ -37,7 +37,12 @@ async function getConfig() {
                     config: { delay: 300 },
                 },
             }),
-            react(),
+            react({
+                jsxImportSource: '@emotion/react',
+                babel: {
+                    plugins: ['@emotion/babel-plugin'],
+                },
+            }),
             customWatchPlugin(),
             tsconfigPaths(),
         ],
@@ -52,8 +57,8 @@ async function getConfig() {
                     replacement: path.resolve(__dirname, 'resources/js')
                 },
                 {
-                    find: '@larabiz',
-                    replacement: path.resolve(__dirname, 'vendor/larabizcms/core/react'),
+                    find: '@admin',
+                    replacement: path.resolve(__dirname, 'vendor/larabizcms/premium/react'),
                 },
                 {
                     find: /^\@modules\/([a-zA-Z0-9]+)\/(.+)/,
