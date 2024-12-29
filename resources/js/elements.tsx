@@ -1,5 +1,5 @@
-import { ElementProps } from "@larabiz/views/ElementBuilder";
-import RootElements from "@larabiz/RootElements";
+import { ElementProps } from "@admin/views/ElementBuilder";
+import RootElements from "@admin/RootElements";
 
 const elements = (props: ElementProps, index: number): JSX.Element|null => {
     switch (props.config?.element) {

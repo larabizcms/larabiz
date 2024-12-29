@@ -1,5 +1,5 @@
 import { Middleware, combineReducers, configureStore } from '@reduxjs/toolkit';
-import rootReducers, { rootMiddleware } from '@larabiz/features/reducers';
+import rootReducers, { rootMiddleware } from '@admin/features/reducers';
 
 // Combine all reducers
 const customReducers = {
@@ -24,12 +24,12 @@ export const store = configureStore({
 // Hot Module Replacement
 if (import.meta.hot) {
     import.meta.hot.accept(['../../vendor/larabizcms/premium/react/features/reducers'], async () =>  {
-        const newRootReducers = (await import('@larabiz/features/reducers')).default;
+        const newRootReducers = (await import('@admin/features/reducers')).default;
         store.replaceReducer(combineReducers({...newRootReducers, ...customReducers}));
     });
 
     import.meta.hot.accept(['../../vendor/larabizcms/premium/react/features/reducers'], async () =>  {
-        const newRootReducers = (await import('@larabiz/features/reducers')).default;
+        const newRootReducers = (await import('@admin/features/reducers')).default;
         store.replaceReducer(combineReducers({...newRootReducers, ...customReducers}));
     });
 }

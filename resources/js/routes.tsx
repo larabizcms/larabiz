@@ -1,6 +1,6 @@
 import React from "react";
 import { RouteObject, createBrowserRouter } from "react-router-dom";
-import { authRoutes, appRoutes } from "@larabiz/routes";
+import { authRoutes, appRoutes } from "@admin/routes";
 import NotFound from "./views/NotFound";
 
 const customRoutes: RouteObject[] = [

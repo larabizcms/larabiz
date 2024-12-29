@@ -1,4 +1,4 @@
-import RootTemplates from "@larabiz/templates";
+import RootTemplates from "@admin/templates";
 
 const templates = (page: any, uri: string): JSX.Element => {
     switch (page.data.template) {
