@@ -1,7 +1,7 @@
 const config = {
-    defaultPath: '/admin-cp/dashboard',
-    fontFamily: `'Public Sans', sans-serif`,
+    defaultPath: '/',
     apiBaseUrl: import.meta.env.VITE_APP_API_URL || location.origin + '/api/v1',
+    fontFamily: `'Public Sans', sans-serif`,
     miniDrawer: false,
     container: true,
     mode: 'light',
@@ -10,6 +10,7 @@ const config = {
     adminAnalyticsEnabled: (window as any).LaraBiz.adminAnalyticsEnabled,
     supportedLanguages: (window as any).LaraBiz.supportedLanguages || ["en", "vi"],
     language: localStorage.getItem('i18nextLng') || (window as any).LaraBiz.language || "en",
+    recaptchaSiteKey: (window as any).LaraBiz.recaptchaSiteKey,
     firebaseConfig: (window as any).LaraBiz.firebaseConfig,
 };
 

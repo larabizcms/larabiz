@@ -3,8 +3,6 @@ import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import React from 'react';
 
-// ==============================|| AUTH BLUR BACK SVG ||============================== //
-
 export default function AuthBackground() {
     const theme = useTheme<any>();
     return (
